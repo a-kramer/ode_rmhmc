@@ -1,5 +1,7 @@
 function [] = steadystate_NRsensHMC( Data, U, F, Options )
 %
+% Copyright 2012-2013 Ben Calderhead <b.calderhead@imperial.ac.uk>, Andrei Kramer <andrei.kramer@ist.uni-stuttgart.de>
+%
 % Y will have to be a cell array with one entry per experiment condition 
 % (i.e. model input u)
 % for the apoptosis model, the input is the initial concentration of one of

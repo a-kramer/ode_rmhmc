@@ -1,4 +1,7 @@
 function [] = RMHMC_Single_MCMC( Data, U, TimePoints, Options )
+%
+% Copyright 2012-2013 Ben Calderhead <b.calderhead@imperial.ac.uk>, Andrei Kramer <andrei.kramer@ist.uni-stuttgart.de>
+%
 
 warning off
 
