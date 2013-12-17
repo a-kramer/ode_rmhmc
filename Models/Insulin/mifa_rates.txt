@@ -1,0 +1,30 @@
+d
+--IR = [V1a] + [V1b] + [V1r] + [V1g]
+dt
+d
+--IRins = [V1a] − [V1b] − [V1c]
+dt
+d
+--IRp = [V1c] − [V1d] − [V1g]
+dt
+d
+--IRip = [V1d] − [V1e]
+dt
+d
+--IRi = [V1e] − [V1r]
+dt
+d
+--IRS = [V2] + [Vm2]
+dt
+d
+--IRSip = [V2] − [Vm2]
+dt
+d
+--X = [V3] + [Vm3]
+dt
+d
+--Xp = [V3] − [Vm3]
+dt
+
+
+

@@ -1,0 +1,22 @@
+V1a = k1a · ins · [IR] + k1abasic · [IR]
+V1b = k1b · [IRins]
+V1c = k1c · [IRins]
+V1d = k1d · [IRp]
+                      k1f · [Xp]
+V1e = [IRip] · (k1e + ----------)
+                       1 + [Xp]
+
+V1g = k1g · [IRp]
+V1r = k1r · [IRi]
+V2 = k21 · ([IRp] + k22 · [IRip]) · [IRS]
+Vm2 = km2 · [IRSip]
+V3 = k3 · [X] · [IRSip]
+Vm3 = km3 · [Xp]
+
+
+#simXP = [Xp]
+#intamount = 0.1*([IRi] + [IRip])
+
+
+
+

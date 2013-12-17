@@ -1,0 +1,68 @@
+********** MODEL NAME
+FitzHughNagumo_2nd
+
+********** MODEL NOTES
+
+
+********** MODEL STATES
+d/dt(V) = c*(V-(V^3)/3+R)        
+d/dt(R) = -(V-a+b*R)/c
+d/dt(V_a) = -c*(V^2 - 1)*V_a + c*R_a
+d/dt(R_a) = -1/c*V_a - b/c*R_a + 1/c
+d/dt(V_b) = -c*(V^2 - 1)*V_b + c*R_b
+d/dt(R_b) = -1/c*V_b - b/c*R_b - R/c
+d/dt(V_c) = -c*(V^2 - 1)*V_c + c*R_c + V - V^3/3 + R
+d/dt(R_c) = -1/c*V_c - b/c*R_c + (V - a + R*b)/c^2
+d/dt(V_aa) = (-2)*V*c*V_a*V_a - c*(V^2 - 1)*V_aa + c*R_aa
+d/dt(R_aa) = -1/c*V_aa - b/c*R_aa
+d/dt(V_ab) = (-2)*V*c*V_b*V_a - c*(V^2 - 1)*V_ab + c*R_ab
+d/dt(R_ab) = -1/c*V_ab - 1/c*R_a - b/c*R_ab
+d/dt(V_ac) = (-2)*V*c*V_c*V_a + 1 - V^2*V_a - c*(V^2 - 1)*V_ac + 1*R_a + c*R_ac
+d/dt(R_ac) = 1/c^2*V_a - 1/c*V_ac + b/c^2*R_a - b/c*R_ac - 1/c^2
+d/dt(V_bb) = (-2)*V*c*V_b*V_b - c*(V^2 - 1)*V_bb + c*R_bb
+d/dt(R_bb) = -1/c*V_bb - 1/c*R_b - b/c*R_bb - 1/c*R_b
+d/dt(V_bc) = (-2)*V*c*V_c*V_b + 1 - V^2*V_b - c*(V^2 - 1)*V_bc + 1*R_b + c*R_bc
+d/dt(R_bc) = 1/c^2*V_b - 1/c*V_bc + b/c^2*R_b - b/c*R_bc - 1/c*R_c + R/c^2
+d/dt(V_cc) = (-2)*V*c*V_c*V_c + 1 - V^2*V_c - c*(V^2 - 1)*V_cc + 1 - V^2*V_c + 1*R_c + c*R_cc + 1*R_c
+d/dt(R_cc) = 1/c^2*V_c - 1/c*V_cc + 1/c^2*V_c + b/c^2*R_c - b/c*R_cc + b/c^2*R_c - (2*(V - a + R*b))/c^3
+                                 
+V(0) = -1                        
+R(0) = 1
+V_a(0) = 0
+R_a(0) = 0
+V_b(0) = 0
+R_b(0) = 0
+V_c(0) = 0
+R_c(0) = 0
+V_aa(0) = 0
+R_aa(0) = 0
+V_ab(0) = 0
+R_ab(0) = 0
+V_ac(0) = 0
+R_ac(0) = 0
+V_bb(0) = 0
+R_bb(0) = 0
+V_bc(0) = 0
+R_bc(0) = 0
+V_cc(0) = 0
+R_cc(0) = 0
+
+********** MODEL PARAMETERS
+a = 0.2                          
+b = 0.2                          
+c = 3
+
+********** MODEL VARIABLES
+
+
+********** MODEL REACTIONS
+
+
+********** MODEL FUNCTIONS
+
+
+********** MODEL EVENTS
+
+
+********** MODEL MATLAB FUNCTIONS
+

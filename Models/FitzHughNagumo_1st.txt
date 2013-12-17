@@ -1,0 +1,44 @@
+********** MODEL NAME
+FitzHughNagumo_1st
+
+********** MODEL NOTES
+
+
+********** MODEL STATES
+d/dt(V) = c*(V-(V^3)/3+R)        
+d/dt(R) = -(V-a+b*R)/c
+d/dt(V_a) = (-c*(V^2 - 1))*V_a + (c)*R_a
+d/dt(R_a) = (-1/c)*V_a + (-b/c)*R_a + 1/c
+d/dt(V_b) = (-c*(V^2 - 1))*V_b + (c)*R_b
+d/dt(R_b) = (-1/c)*V_b + (-b/c)*R_b - R/c
+d/dt(V_c) = (-c*(V^2 - 1))*V_c + (c)*R_c + V - V^3/3 + R
+d/dt(R_c) = (-1/c)*V_c + (-b/c)*R_c + (V - a + R*b)/c^2
+                                 
+V(0) = -1                        
+R(0) = 1
+V_a(0) = 0
+R_a(0) = 0
+V_b(0) = 0
+R_b(0) = 0
+V_c(0) = 0
+R_c(0) = 0
+
+********** MODEL PARAMETERS
+a = 0.2                          
+b = 0.2                          
+c = 3
+
+********** MODEL VARIABLES
+
+
+********** MODEL REACTIONS
+
+
+********** MODEL FUNCTIONS
+
+
+********** MODEL EVENTS
+
+
+********** MODEL MATLAB FUNCTIONS
+

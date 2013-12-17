@@ -1,0 +1,3223 @@
+********** MODEL NAME
+SBMifa
+********** MODEL NOTES
+exponential parameters
+********** MODEL STATES
+d/dt(x_01) = flux_02+flux_07-flux_01+flux_06
+d/dt(x_02) = -flux_02+flux_01-flux_03
+d/dt(x_03) = -flux_04-flux_06+flux_03
+d/dt(x_04) = -flux_05+flux_04
+d/dt(x_05) = -flux_09+flux_08
+d/dt(x_06) = flux_10-flux_11
+
+d/dt(S_1_1) = S_2_1*(rho_03-rho_07)+(rho_06-rho_07)*S_3_1-(u_1*rho_01+rho_02+rho_07)*S_1_1-S_4_1*rho_07-u_1*x_01*rho_01
+d/dt(S_2_1) = -S_2_1*(rho_03+rho_13)+S_1_1*(u_1*rho_01+rho_02)+u_1*x_01*rho_01
+d/dt(S_3_1) = -S_3_1*(rho_06+rho_14)+S_2_1*rho_13
+d/dt(S_4_1) = S_3_1*rho_14-x_04*S_6_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_1
+d/dt(S_5_1) = -rho_08*(-10.0+x_05)*S_3_1-(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_1-rho_08*S_4_1*rho_09*(-10.0+x_05)
+d/dt(S_6_1) = -S_6_1*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*S_5_1
+d/dt(S_1_2) = -rho_07*S_4_2-x_01*rho_02+S_2_2*(rho_03-rho_07)+S_3_2*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*S_1_2
+d/dt(S_2_2) = (u_1*rho_01+rho_02)*S_1_2+x_01*rho_02-S_2_2*(rho_03+rho_13)
+d/dt(S_3_2) = rho_13*S_2_2-S_3_2*(rho_06+rho_14)
+d/dt(S_4_2) = -x_04*S_6_2*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+S_3_2*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_2
+d/dt(S_5_2) = -(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_2-rho_08*rho_09*(-10.0+x_05)*S_4_2-rho_08*S_3_2*(-10.0+x_05)
+d/dt(S_6_2) = -rho_11*(-10.0+x_06)*S_5_2-S_6_2*(rho_12+rho_11*x_05)
+d/dt(S_1_3) = (rho_06-rho_07)*S_3_3-(u_1*rho_01+rho_02+rho_07)*S_1_3+S_2_3*(rho_03-rho_07)+rho_03*x_02-S_4_3*rho_07
+d/dt(S_2_3) = -S_2_3*(rho_03+rho_13)-rho_03*x_02+(u_1*rho_01+rho_02)*S_1_3
+d/dt(S_3_3) = -(rho_06+rho_14)*S_3_3+S_2_3*rho_13
+d/dt(S_4_3) = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_3+rho_14*S_3_3-x_04*S_6_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+d/dt(S_5_3) = -rho_08*(-10.0+x_05)*S_3_3-rho_08*rho_09*(-10.0+x_05)*S_4_3-S_5_3*(rho_08*(x_03+x_04*rho_09)+rho_10)
+d/dt(S_6_3) = -S_6_3*(rho_12+rho_11*x_05)-S_5_3*rho_11*(-10.0+x_06)
+d/dt(S_1_4) = -S_4_4*rho_07+(rho_03-rho_07)*S_2_4-(u_1*rho_01+rho_02+rho_07)*S_1_4+(rho_06-rho_07)*S_3_4
+d/dt(S_2_4) = S_1_4*(u_1*rho_01+rho_02)-(rho_03+rho_13)*S_2_4
+d/dt(S_3_4) = rho_13*S_2_4-S_3_4*(rho_06+rho_14)
+d/dt(S_4_4) = -x_04*S_6_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_4+S_3_4*rho_14-x_04*rho_04
+d/dt(S_5_4) = -rho_08*S_4_4*rho_09*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_4-rho_08*(-10.0+x_05)*S_3_4
+d/dt(S_6_4) = -S_6_4*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*S_5_4
+d/dt(S_1_5) = S_3_5*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*S_1_5-S_4_5*rho_07+S_2_5*(rho_03-rho_07)
+d/dt(S_2_5) = (u_1*rho_01+rho_02)*S_1_5-S_2_5*(rho_03+rho_13)
+d/dt(S_3_5) = -S_3_5*(rho_06+rho_14)+S_2_5*rho_13
+d/dt(S_4_5) = -x_04*x_06*rho_05*(1.0+x_06)^(-1)-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+S_3_5*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_5
+d/dt(S_5_5) = -rho_08*rho_09*(-10.0+x_05)*S_4_5-S_3_5*rho_08*(-10.0+x_05)-S_5_5*(rho_08*(x_03+x_04*rho_09)+rho_10)
+d/dt(S_6_5) = -rho_11*(-10.0+x_06)*S_5_5-(rho_12+rho_11*x_05)*S_6_5
+d/dt(S_1_6) = -S_4_6*rho_07+(rho_06-rho_07)*S_3_6+S_2_6*(rho_03-rho_07)+x_03*rho_06-(u_1*rho_01+rho_02+rho_07)*S_1_6
+d/dt(S_2_6) = (u_1*rho_01+rho_02)*S_1_6-S_2_6*(rho_03+rho_13)
+d/dt(S_3_6) = S_2_6*rho_13-S_3_6*(rho_06+rho_14)-x_03*rho_06
+d/dt(S_4_6) = -x_04*S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_6+S_3_6*rho_14
+d/dt(S_5_6) = -rho_08*S_4_6*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*S_3_6-(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_6
+d/dt(S_6_6) = -rho_11*(-10.0+x_06)*S_5_6-S_6_6*(rho_12+rho_11*x_05)
+d/dt(S_1_7) = S_3_7*(rho_06-rho_07)-S_1_7*(u_1*rho_01+rho_02+rho_07)-(-10.0+x_04+x_01+x_03+x_02)*rho_07-S_4_7*rho_07+(rho_03-rho_07)*S_2_7
+d/dt(S_2_7) = S_1_7*(u_1*rho_01+rho_02)-S_2_7*(rho_03+rho_13)
+d/dt(S_3_7) = -S_3_7*(rho_06+rho_14)+rho_13*S_2_7
+d/dt(S_4_7) = S_3_7*rho_14-S_4_7*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-x_04*S_6_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+d/dt(S_5_7) = -S_4_7*rho_08*rho_09*(-10.0+x_05)-rho_08*S_3_7*(-10.0+x_05)-S_5_7*(rho_08*(x_03+x_04*rho_09)+rho_10)
+d/dt(S_6_7) = -S_6_7*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*S_5_7
+d/dt(S_1_8) = -S_4_8*rho_07+(rho_06-rho_07)*S_3_8+S_2_8*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*S_1_8
+d/dt(S_2_8) = -S_2_8*(rho_03+rho_13)+(u_1*rho_01+rho_02)*S_1_8
+d/dt(S_3_8) = S_2_8*rho_13-(rho_06+rho_14)*S_3_8
+d/dt(S_4_8) = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_8+rho_14*S_3_8-x_04*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+d/dt(S_5_8) = -rho_08*(-10.0+x_05)*S_3_8-S_5_8*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(x_03+x_04*rho_09)*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*S_4_8
+d/dt(S_6_8) = -S_6_8*(rho_12+rho_11*x_05)-S_5_8*rho_11*(-10.0+x_06)
+d/dt(S_1_9) = (rho_03-rho_07)*S_2_9-(u_1*rho_01+rho_02+rho_07)*S_1_9-S_4_9*rho_07+(rho_06-rho_07)*S_3_9
+d/dt(S_2_9) = -(rho_03+rho_13)*S_2_9+S_1_9*(u_1*rho_01+rho_02)
+d/dt(S_3_9) = rho_13*S_2_9-S_3_9*(rho_06+rho_14)
+d/dt(S_4_9) = -x_04*S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_9+S_3_9*rho_14
+d/dt(S_5_9) = -rho_08*S_4_9*rho_09*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_9-x_04*rho_08*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*S_3_9
+d/dt(S_6_9) = -rho_11*(-10.0+x_06)*S_5_9-S_6_9*(rho_12+rho_11*x_05)
+d/dt(S_1_10) = -S_4_10*rho_07+S_3_10*(rho_06-rho_07)+S_2_10*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*S_1_10
+d/dt(S_2_10) = (u_1*rho_01+rho_02)*S_1_10-S_2_10*(rho_03+rho_13)
+d/dt(S_3_10) = rho_13*S_2_10-S_3_10*(rho_06+rho_14)
+d/dt(S_4_10) = S_3_10*rho_14-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_10
+d/dt(S_5_10) = -rho_08*S_3_10*(-10.0+x_05)-S_5_10*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*S_4_10-x_05*rho_10
+d/dt(S_6_10) = -(rho_12+rho_11*x_05)*S_6_10-rho_11*(-10.0+x_06)*S_5_10
+d/dt(S_1_11) = -(u_1*rho_01+rho_02+rho_07)*S_1_11+(rho_06-rho_07)*S_3_11-S_4_11*rho_07+S_2_11*(rho_03-rho_07)
+d/dt(S_2_11) = (u_1*rho_01+rho_02)*S_1_11-S_2_11*(rho_03+rho_13)
+d/dt(S_3_11) = S_2_11*rho_13-S_3_11*(rho_06+rho_14)
+d/dt(S_4_11) = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_11-x_04*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*S_3_11
+d/dt(S_5_11) = -rho_08*(-10.0+x_05)*S_3_11-rho_08*rho_09*S_4_11*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_11
+d/dt(S_6_11) = -rho_11*(-10.0+x_06)*x_05-S_6_11*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*S_5_11
+d/dt(S_1_12) = (rho_03-rho_07)*S_2_12+(rho_06-rho_07)*S_3_12-(u_1*rho_01+rho_02+rho_07)*S_1_12-S_4_12*rho_07
+d/dt(S_2_12) = -(rho_03+rho_13)*S_2_12+S_1_12*(u_1*rho_01+rho_02)
+d/dt(S_3_12) = -S_3_12*(rho_06+rho_14)+rho_13*S_2_12
+d/dt(S_4_12) = S_3_12*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_12-x_04*S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+d/dt(S_5_12) = -rho_08*S_3_12*(-10.0+x_05)-S_4_12*rho_08*rho_09*(-10.0+x_05)-S_5_12*(rho_08*(x_03+x_04*rho_09)+rho_10)
+d/dt(S_6_12) = -S_6_12*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*S_5_12-x_06*rho_12
+d/dt(S_1_13) = -S_4_13*rho_07+S_2_13*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*S_1_13+S_3_13*(rho_06-rho_07)
+d/dt(S_2_13) = (u_1*rho_01+rho_02)*S_1_13-S_2_13*(rho_03+rho_13)-rho_13*x_02
+d/dt(S_3_13) = -S_3_13*(rho_06+rho_14)+rho_13*x_02+S_2_13*rho_13
+d/dt(S_4_13) = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_13+S_3_13*rho_14
+d/dt(S_5_13) = -S_3_13*rho_08*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*S_4_13-S_5_13*(rho_08*(x_03+x_04*rho_09)+rho_10)
+d/dt(S_6_13) = -S_5_13*rho_11*(-10.0+x_06)-S_6_13*(rho_12+rho_11*x_05)
+d/dt(S_1_14) = S_2_14*(rho_03-rho_07)+(rho_06-rho_07)*S_3_14-(u_1*rho_01+rho_02+rho_07)*S_1_14-S_4_14*rho_07
+d/dt(S_2_14) = (u_1*rho_01+rho_02)*S_1_14-S_2_14*(rho_03+rho_13)
+d/dt(S_3_14) = -S_3_14*(rho_06+rho_14)-x_03*rho_14+S_2_14*rho_13
+d/dt(S_4_14) = S_3_14*rho_14+x_03*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*S_4_14-x_04*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+d/dt(S_5_14) = -rho_08*(-10.0+x_05)*S_3_14-(rho_08*(x_03+x_04*rho_09)+rho_10)*S_5_14-rho_08*S_4_14*rho_09*(-10.0+x_05)
+d/dt(S_6_14) = -S_6_14*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*S_5_14
+
+d/dt(dS_1_1_1) = dSFlux_01_01_01
+d/dt(dS_2_1_1) = dSFlux_02_01_01
+d/dt(dS_3_1_1) = dSFlux_03_01_01
+d/dt(dS_4_1_1) = dSFlux_04_01_01
+d/dt(dS_5_1_1) = dSFlux_05_01_01
+d/dt(dS_6_1_1) = dSFlux_06_01_01
+d/dt(dS_1_2_1) = dSFlux_01_01_02  % =  dSFlux_01_02_01
+d/dt(dS_2_2_1) = dSFlux_02_01_02  % =  dSFlux_02_02_01
+d/dt(dS_3_2_1) = dSFlux_03_01_02  % =  dSFlux_03_02_01
+d/dt(dS_4_2_1) = dSFlux_04_01_02  % =  dSFlux_04_02_01
+d/dt(dS_5_2_1) = dSFlux_05_01_02  % =  dSFlux_05_02_01
+d/dt(dS_6_2_1) = dSFlux_06_01_02  % =  dSFlux_06_02_01
+d/dt(dS_1_3_1) = dSFlux_01_01_03  % =  dSFlux_01_03_01
+d/dt(dS_2_3_1) = dSFlux_02_01_03  % =  dSFlux_02_03_01
+d/dt(dS_3_3_1) = dSFlux_03_01_03  % =  dSFlux_03_03_01
+d/dt(dS_4_3_1) = dSFlux_04_01_03  % =  dSFlux_04_03_01
+d/dt(dS_5_3_1) = dSFlux_05_01_03  % =  dSFlux_05_03_01
+d/dt(dS_6_3_1) = dSFlux_06_01_03  % =  dSFlux_06_03_01
+d/dt(dS_1_4_1) = dSFlux_01_01_04  % =  dSFlux_01_04_01
+d/dt(dS_2_4_1) = dSFlux_02_01_04  % =  dSFlux_02_04_01
+d/dt(dS_3_4_1) = dSFlux_03_01_04  % =  dSFlux_03_04_01
+d/dt(dS_4_4_1) = dSFlux_04_01_04  % =  dSFlux_04_04_01
+d/dt(dS_5_4_1) = dSFlux_05_01_04  % =  dSFlux_05_04_01
+d/dt(dS_6_4_1) = dSFlux_06_01_04  % =  dSFlux_06_04_01
+d/dt(dS_1_5_1) = dSFlux_01_01_05  % =  dSFlux_01_05_01
+d/dt(dS_2_5_1) = dSFlux_02_01_05  % =  dSFlux_02_05_01
+d/dt(dS_3_5_1) = dSFlux_03_01_05  % =  dSFlux_03_05_01
+d/dt(dS_4_5_1) = dSFlux_04_01_05  % =  dSFlux_04_05_01
+d/dt(dS_5_5_1) = dSFlux_05_01_05  % =  dSFlux_05_05_01
+d/dt(dS_6_5_1) = dSFlux_06_01_05  % =  dSFlux_06_05_01
+d/dt(dS_1_6_1) = dSFlux_01_01_06  % =  dSFlux_01_06_01
+d/dt(dS_2_6_1) = dSFlux_02_01_06  % =  dSFlux_02_06_01
+d/dt(dS_3_6_1) = dSFlux_03_01_06  % =  dSFlux_03_06_01
+d/dt(dS_4_6_1) = dSFlux_04_01_06  % =  dSFlux_04_06_01
+d/dt(dS_5_6_1) = dSFlux_05_01_06  % =  dSFlux_05_06_01
+d/dt(dS_6_6_1) = dSFlux_06_01_06  % =  dSFlux_06_06_01
+d/dt(dS_1_7_1) = dSFlux_01_01_07  % =  dSFlux_01_07_01
+d/dt(dS_2_7_1) = dSFlux_02_01_07  % =  dSFlux_02_07_01
+d/dt(dS_3_7_1) = dSFlux_03_01_07  % =  dSFlux_03_07_01
+d/dt(dS_4_7_1) = dSFlux_04_01_07  % =  dSFlux_04_07_01
+d/dt(dS_5_7_1) = dSFlux_05_01_07  % =  dSFlux_05_07_01
+d/dt(dS_6_7_1) = dSFlux_06_01_07  % =  dSFlux_06_07_01
+d/dt(dS_1_8_1) = dSFlux_01_01_08  % =  dSFlux_01_08_01
+d/dt(dS_2_8_1) = dSFlux_02_01_08  % =  dSFlux_02_08_01
+d/dt(dS_3_8_1) = dSFlux_03_01_08  % =  dSFlux_03_08_01
+d/dt(dS_4_8_1) = dSFlux_04_01_08  % =  dSFlux_04_08_01
+d/dt(dS_5_8_1) = dSFlux_05_01_08  % =  dSFlux_05_08_01
+d/dt(dS_6_8_1) = dSFlux_06_01_08  % =  dSFlux_06_08_01
+d/dt(dS_1_9_1) = dSFlux_01_01_09  % =  dSFlux_01_09_01
+d/dt(dS_2_9_1) = dSFlux_02_01_09  % =  dSFlux_02_09_01
+d/dt(dS_3_9_1) = dSFlux_03_01_09  % =  dSFlux_03_09_01
+d/dt(dS_4_9_1) = dSFlux_04_01_09  % =  dSFlux_04_09_01
+d/dt(dS_5_9_1) = dSFlux_05_01_09  % =  dSFlux_05_09_01
+d/dt(dS_6_9_1) = dSFlux_06_01_09  % =  dSFlux_06_09_01
+d/dt(dS_1_10_1) = dSFlux_01_01_10  % =  dSFlux_01_10_01
+d/dt(dS_2_10_1) = dSFlux_02_01_10  % =  dSFlux_02_10_01
+d/dt(dS_3_10_1) = dSFlux_03_01_10  % =  dSFlux_03_10_01
+d/dt(dS_4_10_1) = dSFlux_04_01_10  % =  dSFlux_04_10_01
+d/dt(dS_5_10_1) = dSFlux_05_01_10  % =  dSFlux_05_10_01
+d/dt(dS_6_10_1) = dSFlux_06_01_10  % =  dSFlux_06_10_01
+d/dt(dS_1_11_1) = dSFlux_01_01_11  % =  dSFlux_01_11_01
+d/dt(dS_2_11_1) = dSFlux_02_01_11  % =  dSFlux_02_11_01
+d/dt(dS_3_11_1) = dSFlux_03_01_11  % =  dSFlux_03_11_01
+d/dt(dS_4_11_1) = dSFlux_04_01_11  % =  dSFlux_04_11_01
+d/dt(dS_5_11_1) = dSFlux_05_01_11  % =  dSFlux_05_11_01
+d/dt(dS_6_11_1) = dSFlux_06_01_11  % =  dSFlux_06_11_01
+d/dt(dS_1_12_1) = dSFlux_01_01_12  % =  dSFlux_01_12_01
+d/dt(dS_2_12_1) = dSFlux_02_01_12  % =  dSFlux_02_12_01
+d/dt(dS_3_12_1) = dSFlux_03_01_12  % =  dSFlux_03_12_01
+d/dt(dS_4_12_1) = dSFlux_04_01_12  % =  dSFlux_04_12_01
+d/dt(dS_5_12_1) = dSFlux_05_01_12  % =  dSFlux_05_12_01
+d/dt(dS_6_12_1) = dSFlux_06_01_12  % =  dSFlux_06_12_01
+d/dt(dS_1_13_1) = dSFlux_01_01_13  % =  dSFlux_01_13_01
+d/dt(dS_2_13_1) = dSFlux_02_01_13  % =  dSFlux_02_13_01
+d/dt(dS_3_13_1) = dSFlux_03_01_13  % =  dSFlux_03_13_01
+d/dt(dS_4_13_1) = dSFlux_04_01_13  % =  dSFlux_04_13_01
+d/dt(dS_5_13_1) = dSFlux_05_01_13  % =  dSFlux_05_13_01
+d/dt(dS_6_13_1) = dSFlux_06_01_13  % =  dSFlux_06_13_01
+d/dt(dS_1_14_1) = dSFlux_01_01_14  % =  dSFlux_01_14_01
+d/dt(dS_2_14_1) = dSFlux_02_01_14  % =  dSFlux_02_14_01
+d/dt(dS_3_14_1) = dSFlux_03_01_14  % =  dSFlux_03_14_01
+d/dt(dS_4_14_1) = dSFlux_04_01_14  % =  dSFlux_04_14_01
+d/dt(dS_5_14_1) = dSFlux_05_01_14  % =  dSFlux_05_14_01
+d/dt(dS_6_14_1) = dSFlux_06_01_14  % =  dSFlux_06_14_01
+d/dt(dS_1_1_2) = dSFlux_01_01_02
+d/dt(dS_2_1_2) = dSFlux_02_01_02
+d/dt(dS_3_1_2) = dSFlux_03_01_02
+d/dt(dS_4_1_2) = dSFlux_04_01_02
+d/dt(dS_5_1_2) = dSFlux_05_01_02
+d/dt(dS_6_1_2) = dSFlux_06_01_02
+d/dt(dS_1_2_2) = dSFlux_01_02_02
+d/dt(dS_2_2_2) = dSFlux_02_02_02
+d/dt(dS_3_2_2) = dSFlux_03_02_02
+d/dt(dS_4_2_2) = dSFlux_04_02_02
+d/dt(dS_5_2_2) = dSFlux_05_02_02
+d/dt(dS_6_2_2) = dSFlux_06_02_02
+d/dt(dS_1_3_2) = dSFlux_01_02_03  % =  dSFlux_01_03_02
+d/dt(dS_2_3_2) = dSFlux_02_02_03  % =  dSFlux_02_03_02
+d/dt(dS_3_3_2) = dSFlux_03_02_03  % =  dSFlux_03_03_02
+d/dt(dS_4_3_2) = dSFlux_04_02_03  % =  dSFlux_04_03_02
+d/dt(dS_5_3_2) = dSFlux_05_02_03  % =  dSFlux_05_03_02
+d/dt(dS_6_3_2) = dSFlux_06_02_03  % =  dSFlux_06_03_02
+d/dt(dS_1_4_2) = dSFlux_01_02_04  % =  dSFlux_01_04_02
+d/dt(dS_2_4_2) = dSFlux_02_02_04  % =  dSFlux_02_04_02
+d/dt(dS_3_4_2) = dSFlux_03_02_04  % =  dSFlux_03_04_02
+d/dt(dS_4_4_2) = dSFlux_04_02_04  % =  dSFlux_04_04_02
+d/dt(dS_5_4_2) = dSFlux_05_02_04  % =  dSFlux_05_04_02
+d/dt(dS_6_4_2) = dSFlux_06_02_04  % =  dSFlux_06_04_02
+d/dt(dS_1_5_2) = dSFlux_01_02_05  % =  dSFlux_01_05_02
+d/dt(dS_2_5_2) = dSFlux_02_02_05  % =  dSFlux_02_05_02
+d/dt(dS_3_5_2) = dSFlux_03_02_05  % =  dSFlux_03_05_02
+d/dt(dS_4_5_2) = dSFlux_04_02_05  % =  dSFlux_04_05_02
+d/dt(dS_5_5_2) = dSFlux_05_02_05  % =  dSFlux_05_05_02
+d/dt(dS_6_5_2) = dSFlux_06_02_05  % =  dSFlux_06_05_02
+d/dt(dS_1_6_2) = dSFlux_01_02_06  % =  dSFlux_01_06_02
+d/dt(dS_2_6_2) = dSFlux_02_02_06  % =  dSFlux_02_06_02
+d/dt(dS_3_6_2) = dSFlux_03_02_06  % =  dSFlux_03_06_02
+d/dt(dS_4_6_2) = dSFlux_04_02_06  % =  dSFlux_04_06_02
+d/dt(dS_5_6_2) = dSFlux_05_02_06  % =  dSFlux_05_06_02
+d/dt(dS_6_6_2) = dSFlux_06_02_06  % =  dSFlux_06_06_02
+d/dt(dS_1_7_2) = dSFlux_01_02_07  % =  dSFlux_01_07_02
+d/dt(dS_2_7_2) = dSFlux_02_02_07  % =  dSFlux_02_07_02
+d/dt(dS_3_7_2) = dSFlux_03_02_07  % =  dSFlux_03_07_02
+d/dt(dS_4_7_2) = dSFlux_04_02_07  % =  dSFlux_04_07_02
+d/dt(dS_5_7_2) = dSFlux_05_02_07  % =  dSFlux_05_07_02
+d/dt(dS_6_7_2) = dSFlux_06_02_07  % =  dSFlux_06_07_02
+d/dt(dS_1_8_2) = dSFlux_01_02_08  % =  dSFlux_01_08_02
+d/dt(dS_2_8_2) = dSFlux_02_02_08  % =  dSFlux_02_08_02
+d/dt(dS_3_8_2) = dSFlux_03_02_08  % =  dSFlux_03_08_02
+d/dt(dS_4_8_2) = dSFlux_04_02_08  % =  dSFlux_04_08_02
+d/dt(dS_5_8_2) = dSFlux_05_02_08  % =  dSFlux_05_08_02
+d/dt(dS_6_8_2) = dSFlux_06_02_08  % =  dSFlux_06_08_02
+d/dt(dS_1_9_2) = dSFlux_01_02_09  % =  dSFlux_01_09_02
+d/dt(dS_2_9_2) = dSFlux_02_02_09  % =  dSFlux_02_09_02
+d/dt(dS_3_9_2) = dSFlux_03_02_09  % =  dSFlux_03_09_02
+d/dt(dS_4_9_2) = dSFlux_04_02_09  % =  dSFlux_04_09_02
+d/dt(dS_5_9_2) = dSFlux_05_02_09  % =  dSFlux_05_09_02
+d/dt(dS_6_9_2) = dSFlux_06_02_09  % =  dSFlux_06_09_02
+d/dt(dS_1_10_2) = dSFlux_01_02_10  % =  dSFlux_01_10_02
+d/dt(dS_2_10_2) = dSFlux_02_02_10  % =  dSFlux_02_10_02
+d/dt(dS_3_10_2) = dSFlux_03_02_10  % =  dSFlux_03_10_02
+d/dt(dS_4_10_2) = dSFlux_04_02_10  % =  dSFlux_04_10_02
+d/dt(dS_5_10_2) = dSFlux_05_02_10  % =  dSFlux_05_10_02
+d/dt(dS_6_10_2) = dSFlux_06_02_10  % =  dSFlux_06_10_02
+d/dt(dS_1_11_2) = dSFlux_01_02_11  % =  dSFlux_01_11_02
+d/dt(dS_2_11_2) = dSFlux_02_02_11  % =  dSFlux_02_11_02
+d/dt(dS_3_11_2) = dSFlux_03_02_11  % =  dSFlux_03_11_02
+d/dt(dS_4_11_2) = dSFlux_04_02_11  % =  dSFlux_04_11_02
+d/dt(dS_5_11_2) = dSFlux_05_02_11  % =  dSFlux_05_11_02
+d/dt(dS_6_11_2) = dSFlux_06_02_11  % =  dSFlux_06_11_02
+d/dt(dS_1_12_2) = dSFlux_01_02_12  % =  dSFlux_01_12_02
+d/dt(dS_2_12_2) = dSFlux_02_02_12  % =  dSFlux_02_12_02
+d/dt(dS_3_12_2) = dSFlux_03_02_12  % =  dSFlux_03_12_02
+d/dt(dS_4_12_2) = dSFlux_04_02_12  % =  dSFlux_04_12_02
+d/dt(dS_5_12_2) = dSFlux_05_02_12  % =  dSFlux_05_12_02
+d/dt(dS_6_12_2) = dSFlux_06_02_12  % =  dSFlux_06_12_02
+d/dt(dS_1_13_2) = dSFlux_01_02_13  % =  dSFlux_01_13_02
+d/dt(dS_2_13_2) = dSFlux_02_02_13  % =  dSFlux_02_13_02
+d/dt(dS_3_13_2) = dSFlux_03_02_13  % =  dSFlux_03_13_02
+d/dt(dS_4_13_2) = dSFlux_04_02_13  % =  dSFlux_04_13_02
+d/dt(dS_5_13_2) = dSFlux_05_02_13  % =  dSFlux_05_13_02
+d/dt(dS_6_13_2) = dSFlux_06_02_13  % =  dSFlux_06_13_02
+d/dt(dS_1_14_2) = dSFlux_01_02_14  % =  dSFlux_01_14_02
+d/dt(dS_2_14_2) = dSFlux_02_02_14  % =  dSFlux_02_14_02
+d/dt(dS_3_14_2) = dSFlux_03_02_14  % =  dSFlux_03_14_02
+d/dt(dS_4_14_2) = dSFlux_04_02_14  % =  dSFlux_04_14_02
+d/dt(dS_5_14_2) = dSFlux_05_02_14  % =  dSFlux_05_14_02
+d/dt(dS_6_14_2) = dSFlux_06_02_14  % =  dSFlux_06_14_02
+d/dt(dS_1_1_3) = dSFlux_01_01_03
+d/dt(dS_2_1_3) = dSFlux_02_01_03
+d/dt(dS_3_1_3) = dSFlux_03_01_03
+d/dt(dS_4_1_3) = dSFlux_04_01_03
+d/dt(dS_5_1_3) = dSFlux_05_01_03
+d/dt(dS_6_1_3) = dSFlux_06_01_03
+d/dt(dS_1_2_3) = dSFlux_01_02_03
+d/dt(dS_2_2_3) = dSFlux_02_02_03
+d/dt(dS_3_2_3) = dSFlux_03_02_03
+d/dt(dS_4_2_3) = dSFlux_04_02_03
+d/dt(dS_5_2_3) = dSFlux_05_02_03
+d/dt(dS_6_2_3) = dSFlux_06_02_03
+d/dt(dS_1_3_3) = dSFlux_01_03_03
+d/dt(dS_2_3_3) = dSFlux_02_03_03
+d/dt(dS_3_3_3) = dSFlux_03_03_03
+d/dt(dS_4_3_3) = dSFlux_04_03_03
+d/dt(dS_5_3_3) = dSFlux_05_03_03
+d/dt(dS_6_3_3) = dSFlux_06_03_03
+d/dt(dS_1_4_3) = dSFlux_01_03_04  % =  dSFlux_01_04_03
+d/dt(dS_2_4_3) = dSFlux_02_03_04  % =  dSFlux_02_04_03
+d/dt(dS_3_4_3) = dSFlux_03_03_04  % =  dSFlux_03_04_03
+d/dt(dS_4_4_3) = dSFlux_04_03_04  % =  dSFlux_04_04_03
+d/dt(dS_5_4_3) = dSFlux_05_03_04  % =  dSFlux_05_04_03
+d/dt(dS_6_4_3) = dSFlux_06_03_04  % =  dSFlux_06_04_03
+d/dt(dS_1_5_3) = dSFlux_01_03_05  % =  dSFlux_01_05_03
+d/dt(dS_2_5_3) = dSFlux_02_03_05  % =  dSFlux_02_05_03
+d/dt(dS_3_5_3) = dSFlux_03_03_05  % =  dSFlux_03_05_03
+d/dt(dS_4_5_3) = dSFlux_04_03_05  % =  dSFlux_04_05_03
+d/dt(dS_5_5_3) = dSFlux_05_03_05  % =  dSFlux_05_05_03
+d/dt(dS_6_5_3) = dSFlux_06_03_05  % =  dSFlux_06_05_03
+d/dt(dS_1_6_3) = dSFlux_01_03_06  % =  dSFlux_01_06_03
+d/dt(dS_2_6_3) = dSFlux_02_03_06  % =  dSFlux_02_06_03
+d/dt(dS_3_6_3) = dSFlux_03_03_06  % =  dSFlux_03_06_03
+d/dt(dS_4_6_3) = dSFlux_04_03_06  % =  dSFlux_04_06_03
+d/dt(dS_5_6_3) = dSFlux_05_03_06  % =  dSFlux_05_06_03
+d/dt(dS_6_6_3) = dSFlux_06_03_06  % =  dSFlux_06_06_03
+d/dt(dS_1_7_3) = dSFlux_01_03_07  % =  dSFlux_01_07_03
+d/dt(dS_2_7_3) = dSFlux_02_03_07  % =  dSFlux_02_07_03
+d/dt(dS_3_7_3) = dSFlux_03_03_07  % =  dSFlux_03_07_03
+d/dt(dS_4_7_3) = dSFlux_04_03_07  % =  dSFlux_04_07_03
+d/dt(dS_5_7_3) = dSFlux_05_03_07  % =  dSFlux_05_07_03
+d/dt(dS_6_7_3) = dSFlux_06_03_07  % =  dSFlux_06_07_03
+d/dt(dS_1_8_3) = dSFlux_01_03_08  % =  dSFlux_01_08_03
+d/dt(dS_2_8_3) = dSFlux_02_03_08  % =  dSFlux_02_08_03
+d/dt(dS_3_8_3) = dSFlux_03_03_08  % =  dSFlux_03_08_03
+d/dt(dS_4_8_3) = dSFlux_04_03_08  % =  dSFlux_04_08_03
+d/dt(dS_5_8_3) = dSFlux_05_03_08  % =  dSFlux_05_08_03
+d/dt(dS_6_8_3) = dSFlux_06_03_08  % =  dSFlux_06_08_03
+d/dt(dS_1_9_3) = dSFlux_01_03_09  % =  dSFlux_01_09_03
+d/dt(dS_2_9_3) = dSFlux_02_03_09  % =  dSFlux_02_09_03
+d/dt(dS_3_9_3) = dSFlux_03_03_09  % =  dSFlux_03_09_03
+d/dt(dS_4_9_3) = dSFlux_04_03_09  % =  dSFlux_04_09_03
+d/dt(dS_5_9_3) = dSFlux_05_03_09  % =  dSFlux_05_09_03
+d/dt(dS_6_9_3) = dSFlux_06_03_09  % =  dSFlux_06_09_03
+d/dt(dS_1_10_3) = dSFlux_01_03_10  % =  dSFlux_01_10_03
+d/dt(dS_2_10_3) = dSFlux_02_03_10  % =  dSFlux_02_10_03
+d/dt(dS_3_10_3) = dSFlux_03_03_10  % =  dSFlux_03_10_03
+d/dt(dS_4_10_3) = dSFlux_04_03_10  % =  dSFlux_04_10_03
+d/dt(dS_5_10_3) = dSFlux_05_03_10  % =  dSFlux_05_10_03
+d/dt(dS_6_10_3) = dSFlux_06_03_10  % =  dSFlux_06_10_03
+d/dt(dS_1_11_3) = dSFlux_01_03_11  % =  dSFlux_01_11_03
+d/dt(dS_2_11_3) = dSFlux_02_03_11  % =  dSFlux_02_11_03
+d/dt(dS_3_11_3) = dSFlux_03_03_11  % =  dSFlux_03_11_03
+d/dt(dS_4_11_3) = dSFlux_04_03_11  % =  dSFlux_04_11_03
+d/dt(dS_5_11_3) = dSFlux_05_03_11  % =  dSFlux_05_11_03
+d/dt(dS_6_11_3) = dSFlux_06_03_11  % =  dSFlux_06_11_03
+d/dt(dS_1_12_3) = dSFlux_01_03_12  % =  dSFlux_01_12_03
+d/dt(dS_2_12_3) = dSFlux_02_03_12  % =  dSFlux_02_12_03
+d/dt(dS_3_12_3) = dSFlux_03_03_12  % =  dSFlux_03_12_03
+d/dt(dS_4_12_3) = dSFlux_04_03_12  % =  dSFlux_04_12_03
+d/dt(dS_5_12_3) = dSFlux_05_03_12  % =  dSFlux_05_12_03
+d/dt(dS_6_12_3) = dSFlux_06_03_12  % =  dSFlux_06_12_03
+d/dt(dS_1_13_3) = dSFlux_01_03_13  % =  dSFlux_01_13_03
+d/dt(dS_2_13_3) = dSFlux_02_03_13  % =  dSFlux_02_13_03
+d/dt(dS_3_13_3) = dSFlux_03_03_13  % =  dSFlux_03_13_03
+d/dt(dS_4_13_3) = dSFlux_04_03_13  % =  dSFlux_04_13_03
+d/dt(dS_5_13_3) = dSFlux_05_03_13  % =  dSFlux_05_13_03
+d/dt(dS_6_13_3) = dSFlux_06_03_13  % =  dSFlux_06_13_03
+d/dt(dS_1_14_3) = dSFlux_01_03_14  % =  dSFlux_01_14_03
+d/dt(dS_2_14_3) = dSFlux_02_03_14  % =  dSFlux_02_14_03
+d/dt(dS_3_14_3) = dSFlux_03_03_14  % =  dSFlux_03_14_03
+d/dt(dS_4_14_3) = dSFlux_04_03_14  % =  dSFlux_04_14_03
+d/dt(dS_5_14_3) = dSFlux_05_03_14  % =  dSFlux_05_14_03
+d/dt(dS_6_14_3) = dSFlux_06_03_14  % =  dSFlux_06_14_03
+d/dt(dS_1_1_4) = dSFlux_01_01_04
+d/dt(dS_2_1_4) = dSFlux_02_01_04
+d/dt(dS_3_1_4) = dSFlux_03_01_04
+d/dt(dS_4_1_4) = dSFlux_04_01_04
+d/dt(dS_5_1_4) = dSFlux_05_01_04
+d/dt(dS_6_1_4) = dSFlux_06_01_04
+d/dt(dS_1_2_4) = dSFlux_01_02_04
+d/dt(dS_2_2_4) = dSFlux_02_02_04
+d/dt(dS_3_2_4) = dSFlux_03_02_04
+d/dt(dS_4_2_4) = dSFlux_04_02_04
+d/dt(dS_5_2_4) = dSFlux_05_02_04
+d/dt(dS_6_2_4) = dSFlux_06_02_04
+d/dt(dS_1_3_4) = dSFlux_01_03_04
+d/dt(dS_2_3_4) = dSFlux_02_03_04
+d/dt(dS_3_3_4) = dSFlux_03_03_04
+d/dt(dS_4_3_4) = dSFlux_04_03_04
+d/dt(dS_5_3_4) = dSFlux_05_03_04
+d/dt(dS_6_3_4) = dSFlux_06_03_04
+d/dt(dS_1_4_4) = dSFlux_01_04_04
+d/dt(dS_2_4_4) = dSFlux_02_04_04
+d/dt(dS_3_4_4) = dSFlux_03_04_04
+d/dt(dS_4_4_4) = dSFlux_04_04_04
+d/dt(dS_5_4_4) = dSFlux_05_04_04
+d/dt(dS_6_4_4) = dSFlux_06_04_04
+d/dt(dS_1_5_4) = dSFlux_01_04_05  % =  dSFlux_01_05_04
+d/dt(dS_2_5_4) = dSFlux_02_04_05  % =  dSFlux_02_05_04
+d/dt(dS_3_5_4) = dSFlux_03_04_05  % =  dSFlux_03_05_04
+d/dt(dS_4_5_4) = dSFlux_04_04_05  % =  dSFlux_04_05_04
+d/dt(dS_5_5_4) = dSFlux_05_04_05  % =  dSFlux_05_05_04
+d/dt(dS_6_5_4) = dSFlux_06_04_05  % =  dSFlux_06_05_04
+d/dt(dS_1_6_4) = dSFlux_01_04_06  % =  dSFlux_01_06_04
+d/dt(dS_2_6_4) = dSFlux_02_04_06  % =  dSFlux_02_06_04
+d/dt(dS_3_6_4) = dSFlux_03_04_06  % =  dSFlux_03_06_04
+d/dt(dS_4_6_4) = dSFlux_04_04_06  % =  dSFlux_04_06_04
+d/dt(dS_5_6_4) = dSFlux_05_04_06  % =  dSFlux_05_06_04
+d/dt(dS_6_6_4) = dSFlux_06_04_06  % =  dSFlux_06_06_04
+d/dt(dS_1_7_4) = dSFlux_01_04_07  % =  dSFlux_01_07_04
+d/dt(dS_2_7_4) = dSFlux_02_04_07  % =  dSFlux_02_07_04
+d/dt(dS_3_7_4) = dSFlux_03_04_07  % =  dSFlux_03_07_04
+d/dt(dS_4_7_4) = dSFlux_04_04_07  % =  dSFlux_04_07_04
+d/dt(dS_5_7_4) = dSFlux_05_04_07  % =  dSFlux_05_07_04
+d/dt(dS_6_7_4) = dSFlux_06_04_07  % =  dSFlux_06_07_04
+d/dt(dS_1_8_4) = dSFlux_01_04_08  % =  dSFlux_01_08_04
+d/dt(dS_2_8_4) = dSFlux_02_04_08  % =  dSFlux_02_08_04
+d/dt(dS_3_8_4) = dSFlux_03_04_08  % =  dSFlux_03_08_04
+d/dt(dS_4_8_4) = dSFlux_04_04_08  % =  dSFlux_04_08_04
+d/dt(dS_5_8_4) = dSFlux_05_04_08  % =  dSFlux_05_08_04
+d/dt(dS_6_8_4) = dSFlux_06_04_08  % =  dSFlux_06_08_04
+d/dt(dS_1_9_4) = dSFlux_01_04_09  % =  dSFlux_01_09_04
+d/dt(dS_2_9_4) = dSFlux_02_04_09  % =  dSFlux_02_09_04
+d/dt(dS_3_9_4) = dSFlux_03_04_09  % =  dSFlux_03_09_04
+d/dt(dS_4_9_4) = dSFlux_04_04_09  % =  dSFlux_04_09_04
+d/dt(dS_5_9_4) = dSFlux_05_04_09  % =  dSFlux_05_09_04
+d/dt(dS_6_9_4) = dSFlux_06_04_09  % =  dSFlux_06_09_04
+d/dt(dS_1_10_4) = dSFlux_01_04_10  % =  dSFlux_01_10_04
+d/dt(dS_2_10_4) = dSFlux_02_04_10  % =  dSFlux_02_10_04
+d/dt(dS_3_10_4) = dSFlux_03_04_10  % =  dSFlux_03_10_04
+d/dt(dS_4_10_4) = dSFlux_04_04_10  % =  dSFlux_04_10_04
+d/dt(dS_5_10_4) = dSFlux_05_04_10  % =  dSFlux_05_10_04
+d/dt(dS_6_10_4) = dSFlux_06_04_10  % =  dSFlux_06_10_04
+d/dt(dS_1_11_4) = dSFlux_01_04_11  % =  dSFlux_01_11_04
+d/dt(dS_2_11_4) = dSFlux_02_04_11  % =  dSFlux_02_11_04
+d/dt(dS_3_11_4) = dSFlux_03_04_11  % =  dSFlux_03_11_04
+d/dt(dS_4_11_4) = dSFlux_04_04_11  % =  dSFlux_04_11_04
+d/dt(dS_5_11_4) = dSFlux_05_04_11  % =  dSFlux_05_11_04
+d/dt(dS_6_11_4) = dSFlux_06_04_11  % =  dSFlux_06_11_04
+d/dt(dS_1_12_4) = dSFlux_01_04_12  % =  dSFlux_01_12_04
+d/dt(dS_2_12_4) = dSFlux_02_04_12  % =  dSFlux_02_12_04
+d/dt(dS_3_12_4) = dSFlux_03_04_12  % =  dSFlux_03_12_04
+d/dt(dS_4_12_4) = dSFlux_04_04_12  % =  dSFlux_04_12_04
+d/dt(dS_5_12_4) = dSFlux_05_04_12  % =  dSFlux_05_12_04
+d/dt(dS_6_12_4) = dSFlux_06_04_12  % =  dSFlux_06_12_04
+d/dt(dS_1_13_4) = dSFlux_01_04_13  % =  dSFlux_01_13_04
+d/dt(dS_2_13_4) = dSFlux_02_04_13  % =  dSFlux_02_13_04
+d/dt(dS_3_13_4) = dSFlux_03_04_13  % =  dSFlux_03_13_04
+d/dt(dS_4_13_4) = dSFlux_04_04_13  % =  dSFlux_04_13_04
+d/dt(dS_5_13_4) = dSFlux_05_04_13  % =  dSFlux_05_13_04
+d/dt(dS_6_13_4) = dSFlux_06_04_13  % =  dSFlux_06_13_04
+d/dt(dS_1_14_4) = dSFlux_01_04_14  % =  dSFlux_01_14_04
+d/dt(dS_2_14_4) = dSFlux_02_04_14  % =  dSFlux_02_14_04
+d/dt(dS_3_14_4) = dSFlux_03_04_14  % =  dSFlux_03_14_04
+d/dt(dS_4_14_4) = dSFlux_04_04_14  % =  dSFlux_04_14_04
+d/dt(dS_5_14_4) = dSFlux_05_04_14  % =  dSFlux_05_14_04
+d/dt(dS_6_14_4) = dSFlux_06_04_14  % =  dSFlux_06_14_04
+d/dt(dS_1_1_5) = dSFlux_01_01_05
+d/dt(dS_2_1_5) = dSFlux_02_01_05
+d/dt(dS_3_1_5) = dSFlux_03_01_05
+d/dt(dS_4_1_5) = dSFlux_04_01_05
+d/dt(dS_5_1_5) = dSFlux_05_01_05
+d/dt(dS_6_1_5) = dSFlux_06_01_05
+d/dt(dS_1_2_5) = dSFlux_01_02_05
+d/dt(dS_2_2_5) = dSFlux_02_02_05
+d/dt(dS_3_2_5) = dSFlux_03_02_05
+d/dt(dS_4_2_5) = dSFlux_04_02_05
+d/dt(dS_5_2_5) = dSFlux_05_02_05
+d/dt(dS_6_2_5) = dSFlux_06_02_05
+d/dt(dS_1_3_5) = dSFlux_01_03_05
+d/dt(dS_2_3_5) = dSFlux_02_03_05
+d/dt(dS_3_3_5) = dSFlux_03_03_05
+d/dt(dS_4_3_5) = dSFlux_04_03_05
+d/dt(dS_5_3_5) = dSFlux_05_03_05
+d/dt(dS_6_3_5) = dSFlux_06_03_05
+d/dt(dS_1_4_5) = dSFlux_01_04_05
+d/dt(dS_2_4_5) = dSFlux_02_04_05
+d/dt(dS_3_4_5) = dSFlux_03_04_05
+d/dt(dS_4_4_5) = dSFlux_04_04_05
+d/dt(dS_5_4_5) = dSFlux_05_04_05
+d/dt(dS_6_4_5) = dSFlux_06_04_05
+d/dt(dS_1_5_5) = dSFlux_01_05_05
+d/dt(dS_2_5_5) = dSFlux_02_05_05
+d/dt(dS_3_5_5) = dSFlux_03_05_05
+d/dt(dS_4_5_5) = dSFlux_04_05_05
+d/dt(dS_5_5_5) = dSFlux_05_05_05
+d/dt(dS_6_5_5) = dSFlux_06_05_05
+d/dt(dS_1_6_5) = dSFlux_01_05_06  % =  dSFlux_01_06_05
+d/dt(dS_2_6_5) = dSFlux_02_05_06  % =  dSFlux_02_06_05
+d/dt(dS_3_6_5) = dSFlux_03_05_06  % =  dSFlux_03_06_05
+d/dt(dS_4_6_5) = dSFlux_04_05_06  % =  dSFlux_04_06_05
+d/dt(dS_5_6_5) = dSFlux_05_05_06  % =  dSFlux_05_06_05
+d/dt(dS_6_6_5) = dSFlux_06_05_06  % =  dSFlux_06_06_05
+d/dt(dS_1_7_5) = dSFlux_01_05_07  % =  dSFlux_01_07_05
+d/dt(dS_2_7_5) = dSFlux_02_05_07  % =  dSFlux_02_07_05
+d/dt(dS_3_7_5) = dSFlux_03_05_07  % =  dSFlux_03_07_05
+d/dt(dS_4_7_5) = dSFlux_04_05_07  % =  dSFlux_04_07_05
+d/dt(dS_5_7_5) = dSFlux_05_05_07  % =  dSFlux_05_07_05
+d/dt(dS_6_7_5) = dSFlux_06_05_07  % =  dSFlux_06_07_05
+d/dt(dS_1_8_5) = dSFlux_01_05_08  % =  dSFlux_01_08_05
+d/dt(dS_2_8_5) = dSFlux_02_05_08  % =  dSFlux_02_08_05
+d/dt(dS_3_8_5) = dSFlux_03_05_08  % =  dSFlux_03_08_05
+d/dt(dS_4_8_5) = dSFlux_04_05_08  % =  dSFlux_04_08_05
+d/dt(dS_5_8_5) = dSFlux_05_05_08  % =  dSFlux_05_08_05
+d/dt(dS_6_8_5) = dSFlux_06_05_08  % =  dSFlux_06_08_05
+d/dt(dS_1_9_5) = dSFlux_01_05_09  % =  dSFlux_01_09_05
+d/dt(dS_2_9_5) = dSFlux_02_05_09  % =  dSFlux_02_09_05
+d/dt(dS_3_9_5) = dSFlux_03_05_09  % =  dSFlux_03_09_05
+d/dt(dS_4_9_5) = dSFlux_04_05_09  % =  dSFlux_04_09_05
+d/dt(dS_5_9_5) = dSFlux_05_05_09  % =  dSFlux_05_09_05
+d/dt(dS_6_9_5) = dSFlux_06_05_09  % =  dSFlux_06_09_05
+d/dt(dS_1_10_5) = dSFlux_01_05_10  % =  dSFlux_01_10_05
+d/dt(dS_2_10_5) = dSFlux_02_05_10  % =  dSFlux_02_10_05
+d/dt(dS_3_10_5) = dSFlux_03_05_10  % =  dSFlux_03_10_05
+d/dt(dS_4_10_5) = dSFlux_04_05_10  % =  dSFlux_04_10_05
+d/dt(dS_5_10_5) = dSFlux_05_05_10  % =  dSFlux_05_10_05
+d/dt(dS_6_10_5) = dSFlux_06_05_10  % =  dSFlux_06_10_05
+d/dt(dS_1_11_5) = dSFlux_01_05_11  % =  dSFlux_01_11_05
+d/dt(dS_2_11_5) = dSFlux_02_05_11  % =  dSFlux_02_11_05
+d/dt(dS_3_11_5) = dSFlux_03_05_11  % =  dSFlux_03_11_05
+d/dt(dS_4_11_5) = dSFlux_04_05_11  % =  dSFlux_04_11_05
+d/dt(dS_5_11_5) = dSFlux_05_05_11  % =  dSFlux_05_11_05
+d/dt(dS_6_11_5) = dSFlux_06_05_11  % =  dSFlux_06_11_05
+d/dt(dS_1_12_5) = dSFlux_01_05_12  % =  dSFlux_01_12_05
+d/dt(dS_2_12_5) = dSFlux_02_05_12  % =  dSFlux_02_12_05
+d/dt(dS_3_12_5) = dSFlux_03_05_12  % =  dSFlux_03_12_05
+d/dt(dS_4_12_5) = dSFlux_04_05_12  % =  dSFlux_04_12_05
+d/dt(dS_5_12_5) = dSFlux_05_05_12  % =  dSFlux_05_12_05
+d/dt(dS_6_12_5) = dSFlux_06_05_12  % =  dSFlux_06_12_05
+d/dt(dS_1_13_5) = dSFlux_01_05_13  % =  dSFlux_01_13_05
+d/dt(dS_2_13_5) = dSFlux_02_05_13  % =  dSFlux_02_13_05
+d/dt(dS_3_13_5) = dSFlux_03_05_13  % =  dSFlux_03_13_05
+d/dt(dS_4_13_5) = dSFlux_04_05_13  % =  dSFlux_04_13_05
+d/dt(dS_5_13_5) = dSFlux_05_05_13  % =  dSFlux_05_13_05
+d/dt(dS_6_13_5) = dSFlux_06_05_13  % =  dSFlux_06_13_05
+d/dt(dS_1_14_5) = dSFlux_01_05_14  % =  dSFlux_01_14_05
+d/dt(dS_2_14_5) = dSFlux_02_05_14  % =  dSFlux_02_14_05
+d/dt(dS_3_14_5) = dSFlux_03_05_14  % =  dSFlux_03_14_05
+d/dt(dS_4_14_5) = dSFlux_04_05_14  % =  dSFlux_04_14_05
+d/dt(dS_5_14_5) = dSFlux_05_05_14  % =  dSFlux_05_14_05
+d/dt(dS_6_14_5) = dSFlux_06_05_14  % =  dSFlux_06_14_05
+d/dt(dS_1_1_6) = dSFlux_01_01_06
+d/dt(dS_2_1_6) = dSFlux_02_01_06
+d/dt(dS_3_1_6) = dSFlux_03_01_06
+d/dt(dS_4_1_6) = dSFlux_04_01_06
+d/dt(dS_5_1_6) = dSFlux_05_01_06
+d/dt(dS_6_1_6) = dSFlux_06_01_06
+d/dt(dS_1_2_6) = dSFlux_01_02_06
+d/dt(dS_2_2_6) = dSFlux_02_02_06
+d/dt(dS_3_2_6) = dSFlux_03_02_06
+d/dt(dS_4_2_6) = dSFlux_04_02_06
+d/dt(dS_5_2_6) = dSFlux_05_02_06
+d/dt(dS_6_2_6) = dSFlux_06_02_06
+d/dt(dS_1_3_6) = dSFlux_01_03_06
+d/dt(dS_2_3_6) = dSFlux_02_03_06
+d/dt(dS_3_3_6) = dSFlux_03_03_06
+d/dt(dS_4_3_6) = dSFlux_04_03_06
+d/dt(dS_5_3_6) = dSFlux_05_03_06
+d/dt(dS_6_3_6) = dSFlux_06_03_06
+d/dt(dS_1_4_6) = dSFlux_01_04_06
+d/dt(dS_2_4_6) = dSFlux_02_04_06
+d/dt(dS_3_4_6) = dSFlux_03_04_06
+d/dt(dS_4_4_6) = dSFlux_04_04_06
+d/dt(dS_5_4_6) = dSFlux_05_04_06
+d/dt(dS_6_4_6) = dSFlux_06_04_06
+d/dt(dS_1_5_6) = dSFlux_01_05_06
+d/dt(dS_2_5_6) = dSFlux_02_05_06
+d/dt(dS_3_5_6) = dSFlux_03_05_06
+d/dt(dS_4_5_6) = dSFlux_04_05_06
+d/dt(dS_5_5_6) = dSFlux_05_05_06
+d/dt(dS_6_5_6) = dSFlux_06_05_06
+d/dt(dS_1_6_6) = dSFlux_01_06_06
+d/dt(dS_2_6_6) = dSFlux_02_06_06
+d/dt(dS_3_6_6) = dSFlux_03_06_06
+d/dt(dS_4_6_6) = dSFlux_04_06_06
+d/dt(dS_5_6_6) = dSFlux_05_06_06
+d/dt(dS_6_6_6) = dSFlux_06_06_06
+d/dt(dS_1_7_6) = dSFlux_01_06_07  % =  dSFlux_01_07_06
+d/dt(dS_2_7_6) = dSFlux_02_06_07  % =  dSFlux_02_07_06
+d/dt(dS_3_7_6) = dSFlux_03_06_07  % =  dSFlux_03_07_06
+d/dt(dS_4_7_6) = dSFlux_04_06_07  % =  dSFlux_04_07_06
+d/dt(dS_5_7_6) = dSFlux_05_06_07  % =  dSFlux_05_07_06
+d/dt(dS_6_7_6) = dSFlux_06_06_07  % =  dSFlux_06_07_06
+d/dt(dS_1_8_6) = dSFlux_01_06_08  % =  dSFlux_01_08_06
+d/dt(dS_2_8_6) = dSFlux_02_06_08  % =  dSFlux_02_08_06
+d/dt(dS_3_8_6) = dSFlux_03_06_08  % =  dSFlux_03_08_06
+d/dt(dS_4_8_6) = dSFlux_04_06_08  % =  dSFlux_04_08_06
+d/dt(dS_5_8_6) = dSFlux_05_06_08  % =  dSFlux_05_08_06
+d/dt(dS_6_8_6) = dSFlux_06_06_08  % =  dSFlux_06_08_06
+d/dt(dS_1_9_6) = dSFlux_01_06_09  % =  dSFlux_01_09_06
+d/dt(dS_2_9_6) = dSFlux_02_06_09  % =  dSFlux_02_09_06
+d/dt(dS_3_9_6) = dSFlux_03_06_09  % =  dSFlux_03_09_06
+d/dt(dS_4_9_6) = dSFlux_04_06_09  % =  dSFlux_04_09_06
+d/dt(dS_5_9_6) = dSFlux_05_06_09  % =  dSFlux_05_09_06
+d/dt(dS_6_9_6) = dSFlux_06_06_09  % =  dSFlux_06_09_06
+d/dt(dS_1_10_6) = dSFlux_01_06_10  % =  dSFlux_01_10_06
+d/dt(dS_2_10_6) = dSFlux_02_06_10  % =  dSFlux_02_10_06
+d/dt(dS_3_10_6) = dSFlux_03_06_10  % =  dSFlux_03_10_06
+d/dt(dS_4_10_6) = dSFlux_04_06_10  % =  dSFlux_04_10_06
+d/dt(dS_5_10_6) = dSFlux_05_06_10  % =  dSFlux_05_10_06
+d/dt(dS_6_10_6) = dSFlux_06_06_10  % =  dSFlux_06_10_06
+d/dt(dS_1_11_6) = dSFlux_01_06_11  % =  dSFlux_01_11_06
+d/dt(dS_2_11_6) = dSFlux_02_06_11  % =  dSFlux_02_11_06
+d/dt(dS_3_11_6) = dSFlux_03_06_11  % =  dSFlux_03_11_06
+d/dt(dS_4_11_6) = dSFlux_04_06_11  % =  dSFlux_04_11_06
+d/dt(dS_5_11_6) = dSFlux_05_06_11  % =  dSFlux_05_11_06
+d/dt(dS_6_11_6) = dSFlux_06_06_11  % =  dSFlux_06_11_06
+d/dt(dS_1_12_6) = dSFlux_01_06_12  % =  dSFlux_01_12_06
+d/dt(dS_2_12_6) = dSFlux_02_06_12  % =  dSFlux_02_12_06
+d/dt(dS_3_12_6) = dSFlux_03_06_12  % =  dSFlux_03_12_06
+d/dt(dS_4_12_6) = dSFlux_04_06_12  % =  dSFlux_04_12_06
+d/dt(dS_5_12_6) = dSFlux_05_06_12  % =  dSFlux_05_12_06
+d/dt(dS_6_12_6) = dSFlux_06_06_12  % =  dSFlux_06_12_06
+d/dt(dS_1_13_6) = dSFlux_01_06_13  % =  dSFlux_01_13_06
+d/dt(dS_2_13_6) = dSFlux_02_06_13  % =  dSFlux_02_13_06
+d/dt(dS_3_13_6) = dSFlux_03_06_13  % =  dSFlux_03_13_06
+d/dt(dS_4_13_6) = dSFlux_04_06_13  % =  dSFlux_04_13_06
+d/dt(dS_5_13_6) = dSFlux_05_06_13  % =  dSFlux_05_13_06
+d/dt(dS_6_13_6) = dSFlux_06_06_13  % =  dSFlux_06_13_06
+d/dt(dS_1_14_6) = dSFlux_01_06_14  % =  dSFlux_01_14_06
+d/dt(dS_2_14_6) = dSFlux_02_06_14  % =  dSFlux_02_14_06
+d/dt(dS_3_14_6) = dSFlux_03_06_14  % =  dSFlux_03_14_06
+d/dt(dS_4_14_6) = dSFlux_04_06_14  % =  dSFlux_04_14_06
+d/dt(dS_5_14_6) = dSFlux_05_06_14  % =  dSFlux_05_14_06
+d/dt(dS_6_14_6) = dSFlux_06_06_14  % =  dSFlux_06_14_06
+d/dt(dS_1_1_7) = dSFlux_01_01_07
+d/dt(dS_2_1_7) = dSFlux_02_01_07
+d/dt(dS_3_1_7) = dSFlux_03_01_07
+d/dt(dS_4_1_7) = dSFlux_04_01_07
+d/dt(dS_5_1_7) = dSFlux_05_01_07
+d/dt(dS_6_1_7) = dSFlux_06_01_07
+d/dt(dS_1_2_7) = dSFlux_01_02_07
+d/dt(dS_2_2_7) = dSFlux_02_02_07
+d/dt(dS_3_2_7) = dSFlux_03_02_07
+d/dt(dS_4_2_7) = dSFlux_04_02_07
+d/dt(dS_5_2_7) = dSFlux_05_02_07
+d/dt(dS_6_2_7) = dSFlux_06_02_07
+d/dt(dS_1_3_7) = dSFlux_01_03_07
+d/dt(dS_2_3_7) = dSFlux_02_03_07
+d/dt(dS_3_3_7) = dSFlux_03_03_07
+d/dt(dS_4_3_7) = dSFlux_04_03_07
+d/dt(dS_5_3_7) = dSFlux_05_03_07
+d/dt(dS_6_3_7) = dSFlux_06_03_07
+d/dt(dS_1_4_7) = dSFlux_01_04_07
+d/dt(dS_2_4_7) = dSFlux_02_04_07
+d/dt(dS_3_4_7) = dSFlux_03_04_07
+d/dt(dS_4_4_7) = dSFlux_04_04_07
+d/dt(dS_5_4_7) = dSFlux_05_04_07
+d/dt(dS_6_4_7) = dSFlux_06_04_07
+d/dt(dS_1_5_7) = dSFlux_01_05_07
+d/dt(dS_2_5_7) = dSFlux_02_05_07
+d/dt(dS_3_5_7) = dSFlux_03_05_07
+d/dt(dS_4_5_7) = dSFlux_04_05_07
+d/dt(dS_5_5_7) = dSFlux_05_05_07
+d/dt(dS_6_5_7) = dSFlux_06_05_07
+d/dt(dS_1_6_7) = dSFlux_01_06_07
+d/dt(dS_2_6_7) = dSFlux_02_06_07
+d/dt(dS_3_6_7) = dSFlux_03_06_07
+d/dt(dS_4_6_7) = dSFlux_04_06_07
+d/dt(dS_5_6_7) = dSFlux_05_06_07
+d/dt(dS_6_6_7) = dSFlux_06_06_07
+d/dt(dS_1_7_7) = dSFlux_01_07_07
+d/dt(dS_2_7_7) = dSFlux_02_07_07
+d/dt(dS_3_7_7) = dSFlux_03_07_07
+d/dt(dS_4_7_7) = dSFlux_04_07_07
+d/dt(dS_5_7_7) = dSFlux_05_07_07
+d/dt(dS_6_7_7) = dSFlux_06_07_07
+d/dt(dS_1_8_7) = dSFlux_01_07_08  % =  dSFlux_01_08_07
+d/dt(dS_2_8_7) = dSFlux_02_07_08  % =  dSFlux_02_08_07
+d/dt(dS_3_8_7) = dSFlux_03_07_08  % =  dSFlux_03_08_07
+d/dt(dS_4_8_7) = dSFlux_04_07_08  % =  dSFlux_04_08_07
+d/dt(dS_5_8_7) = dSFlux_05_07_08  % =  dSFlux_05_08_07
+d/dt(dS_6_8_7) = dSFlux_06_07_08  % =  dSFlux_06_08_07
+d/dt(dS_1_9_7) = dSFlux_01_07_09  % =  dSFlux_01_09_07
+d/dt(dS_2_9_7) = dSFlux_02_07_09  % =  dSFlux_02_09_07
+d/dt(dS_3_9_7) = dSFlux_03_07_09  % =  dSFlux_03_09_07
+d/dt(dS_4_9_7) = dSFlux_04_07_09  % =  dSFlux_04_09_07
+d/dt(dS_5_9_7) = dSFlux_05_07_09  % =  dSFlux_05_09_07
+d/dt(dS_6_9_7) = dSFlux_06_07_09  % =  dSFlux_06_09_07
+d/dt(dS_1_10_7) = dSFlux_01_07_10  % =  dSFlux_01_10_07
+d/dt(dS_2_10_7) = dSFlux_02_07_10  % =  dSFlux_02_10_07
+d/dt(dS_3_10_7) = dSFlux_03_07_10  % =  dSFlux_03_10_07
+d/dt(dS_4_10_7) = dSFlux_04_07_10  % =  dSFlux_04_10_07
+d/dt(dS_5_10_7) = dSFlux_05_07_10  % =  dSFlux_05_10_07
+d/dt(dS_6_10_7) = dSFlux_06_07_10  % =  dSFlux_06_10_07
+d/dt(dS_1_11_7) = dSFlux_01_07_11  % =  dSFlux_01_11_07
+d/dt(dS_2_11_7) = dSFlux_02_07_11  % =  dSFlux_02_11_07
+d/dt(dS_3_11_7) = dSFlux_03_07_11  % =  dSFlux_03_11_07
+d/dt(dS_4_11_7) = dSFlux_04_07_11  % =  dSFlux_04_11_07
+d/dt(dS_5_11_7) = dSFlux_05_07_11  % =  dSFlux_05_11_07
+d/dt(dS_6_11_7) = dSFlux_06_07_11  % =  dSFlux_06_11_07
+d/dt(dS_1_12_7) = dSFlux_01_07_12  % =  dSFlux_01_12_07
+d/dt(dS_2_12_7) = dSFlux_02_07_12  % =  dSFlux_02_12_07
+d/dt(dS_3_12_7) = dSFlux_03_07_12  % =  dSFlux_03_12_07
+d/dt(dS_4_12_7) = dSFlux_04_07_12  % =  dSFlux_04_12_07
+d/dt(dS_5_12_7) = dSFlux_05_07_12  % =  dSFlux_05_12_07
+d/dt(dS_6_12_7) = dSFlux_06_07_12  % =  dSFlux_06_12_07
+d/dt(dS_1_13_7) = dSFlux_01_07_13  % =  dSFlux_01_13_07
+d/dt(dS_2_13_7) = dSFlux_02_07_13  % =  dSFlux_02_13_07
+d/dt(dS_3_13_7) = dSFlux_03_07_13  % =  dSFlux_03_13_07
+d/dt(dS_4_13_7) = dSFlux_04_07_13  % =  dSFlux_04_13_07
+d/dt(dS_5_13_7) = dSFlux_05_07_13  % =  dSFlux_05_13_07
+d/dt(dS_6_13_7) = dSFlux_06_07_13  % =  dSFlux_06_13_07
+d/dt(dS_1_14_7) = dSFlux_01_07_14  % =  dSFlux_01_14_07
+d/dt(dS_2_14_7) = dSFlux_02_07_14  % =  dSFlux_02_14_07
+d/dt(dS_3_14_7) = dSFlux_03_07_14  % =  dSFlux_03_14_07
+d/dt(dS_4_14_7) = dSFlux_04_07_14  % =  dSFlux_04_14_07
+d/dt(dS_5_14_7) = dSFlux_05_07_14  % =  dSFlux_05_14_07
+d/dt(dS_6_14_7) = dSFlux_06_07_14  % =  dSFlux_06_14_07
+d/dt(dS_1_1_8) = dSFlux_01_01_08
+d/dt(dS_2_1_8) = dSFlux_02_01_08
+d/dt(dS_3_1_8) = dSFlux_03_01_08
+d/dt(dS_4_1_8) = dSFlux_04_01_08
+d/dt(dS_5_1_8) = dSFlux_05_01_08
+d/dt(dS_6_1_8) = dSFlux_06_01_08
+d/dt(dS_1_2_8) = dSFlux_01_02_08
+d/dt(dS_2_2_8) = dSFlux_02_02_08
+d/dt(dS_3_2_8) = dSFlux_03_02_08
+d/dt(dS_4_2_8) = dSFlux_04_02_08
+d/dt(dS_5_2_8) = dSFlux_05_02_08
+d/dt(dS_6_2_8) = dSFlux_06_02_08
+d/dt(dS_1_3_8) = dSFlux_01_03_08
+d/dt(dS_2_3_8) = dSFlux_02_03_08
+d/dt(dS_3_3_8) = dSFlux_03_03_08
+d/dt(dS_4_3_8) = dSFlux_04_03_08
+d/dt(dS_5_3_8) = dSFlux_05_03_08
+d/dt(dS_6_3_8) = dSFlux_06_03_08
+d/dt(dS_1_4_8) = dSFlux_01_04_08
+d/dt(dS_2_4_8) = dSFlux_02_04_08
+d/dt(dS_3_4_8) = dSFlux_03_04_08
+d/dt(dS_4_4_8) = dSFlux_04_04_08
+d/dt(dS_5_4_8) = dSFlux_05_04_08
+d/dt(dS_6_4_8) = dSFlux_06_04_08
+d/dt(dS_1_5_8) = dSFlux_01_05_08
+d/dt(dS_2_5_8) = dSFlux_02_05_08
+d/dt(dS_3_5_8) = dSFlux_03_05_08
+d/dt(dS_4_5_8) = dSFlux_04_05_08
+d/dt(dS_5_5_8) = dSFlux_05_05_08
+d/dt(dS_6_5_8) = dSFlux_06_05_08
+d/dt(dS_1_6_8) = dSFlux_01_06_08
+d/dt(dS_2_6_8) = dSFlux_02_06_08
+d/dt(dS_3_6_8) = dSFlux_03_06_08
+d/dt(dS_4_6_8) = dSFlux_04_06_08
+d/dt(dS_5_6_8) = dSFlux_05_06_08
+d/dt(dS_6_6_8) = dSFlux_06_06_08
+d/dt(dS_1_7_8) = dSFlux_01_07_08
+d/dt(dS_2_7_8) = dSFlux_02_07_08
+d/dt(dS_3_7_8) = dSFlux_03_07_08
+d/dt(dS_4_7_8) = dSFlux_04_07_08
+d/dt(dS_5_7_8) = dSFlux_05_07_08
+d/dt(dS_6_7_8) = dSFlux_06_07_08
+d/dt(dS_1_8_8) = dSFlux_01_08_08
+d/dt(dS_2_8_8) = dSFlux_02_08_08
+d/dt(dS_3_8_8) = dSFlux_03_08_08
+d/dt(dS_4_8_8) = dSFlux_04_08_08
+d/dt(dS_5_8_8) = dSFlux_05_08_08
+d/dt(dS_6_8_8) = dSFlux_06_08_08
+d/dt(dS_1_9_8) = dSFlux_01_08_09  % =  dSFlux_01_09_08
+d/dt(dS_2_9_8) = dSFlux_02_08_09  % =  dSFlux_02_09_08
+d/dt(dS_3_9_8) = dSFlux_03_08_09  % =  dSFlux_03_09_08
+d/dt(dS_4_9_8) = dSFlux_04_08_09  % =  dSFlux_04_09_08
+d/dt(dS_5_9_8) = dSFlux_05_08_09  % =  dSFlux_05_09_08
+d/dt(dS_6_9_8) = dSFlux_06_08_09  % =  dSFlux_06_09_08
+d/dt(dS_1_10_8) = dSFlux_01_08_10  % =  dSFlux_01_10_08
+d/dt(dS_2_10_8) = dSFlux_02_08_10  % =  dSFlux_02_10_08
+d/dt(dS_3_10_8) = dSFlux_03_08_10  % =  dSFlux_03_10_08
+d/dt(dS_4_10_8) = dSFlux_04_08_10  % =  dSFlux_04_10_08
+d/dt(dS_5_10_8) = dSFlux_05_08_10  % =  dSFlux_05_10_08
+d/dt(dS_6_10_8) = dSFlux_06_08_10  % =  dSFlux_06_10_08
+d/dt(dS_1_11_8) = dSFlux_01_08_11  % =  dSFlux_01_11_08
+d/dt(dS_2_11_8) = dSFlux_02_08_11  % =  dSFlux_02_11_08
+d/dt(dS_3_11_8) = dSFlux_03_08_11  % =  dSFlux_03_11_08
+d/dt(dS_4_11_8) = dSFlux_04_08_11  % =  dSFlux_04_11_08
+d/dt(dS_5_11_8) = dSFlux_05_08_11  % =  dSFlux_05_11_08
+d/dt(dS_6_11_8) = dSFlux_06_08_11  % =  dSFlux_06_11_08
+d/dt(dS_1_12_8) = dSFlux_01_08_12  % =  dSFlux_01_12_08
+d/dt(dS_2_12_8) = dSFlux_02_08_12  % =  dSFlux_02_12_08
+d/dt(dS_3_12_8) = dSFlux_03_08_12  % =  dSFlux_03_12_08
+d/dt(dS_4_12_8) = dSFlux_04_08_12  % =  dSFlux_04_12_08
+d/dt(dS_5_12_8) = dSFlux_05_08_12  % =  dSFlux_05_12_08
+d/dt(dS_6_12_8) = dSFlux_06_08_12  % =  dSFlux_06_12_08
+d/dt(dS_1_13_8) = dSFlux_01_08_13  % =  dSFlux_01_13_08
+d/dt(dS_2_13_8) = dSFlux_02_08_13  % =  dSFlux_02_13_08
+d/dt(dS_3_13_8) = dSFlux_03_08_13  % =  dSFlux_03_13_08
+d/dt(dS_4_13_8) = dSFlux_04_08_13  % =  dSFlux_04_13_08
+d/dt(dS_5_13_8) = dSFlux_05_08_13  % =  dSFlux_05_13_08
+d/dt(dS_6_13_8) = dSFlux_06_08_13  % =  dSFlux_06_13_08
+d/dt(dS_1_14_8) = dSFlux_01_08_14  % =  dSFlux_01_14_08
+d/dt(dS_2_14_8) = dSFlux_02_08_14  % =  dSFlux_02_14_08
+d/dt(dS_3_14_8) = dSFlux_03_08_14  % =  dSFlux_03_14_08
+d/dt(dS_4_14_8) = dSFlux_04_08_14  % =  dSFlux_04_14_08
+d/dt(dS_5_14_8) = dSFlux_05_08_14  % =  dSFlux_05_14_08
+d/dt(dS_6_14_8) = dSFlux_06_08_14  % =  dSFlux_06_14_08
+d/dt(dS_1_1_9) = dSFlux_01_01_09
+d/dt(dS_2_1_9) = dSFlux_02_01_09
+d/dt(dS_3_1_9) = dSFlux_03_01_09
+d/dt(dS_4_1_9) = dSFlux_04_01_09
+d/dt(dS_5_1_9) = dSFlux_05_01_09
+d/dt(dS_6_1_9) = dSFlux_06_01_09
+d/dt(dS_1_2_9) = dSFlux_01_02_09
+d/dt(dS_2_2_9) = dSFlux_02_02_09
+d/dt(dS_3_2_9) = dSFlux_03_02_09
+d/dt(dS_4_2_9) = dSFlux_04_02_09
+d/dt(dS_5_2_9) = dSFlux_05_02_09
+d/dt(dS_6_2_9) = dSFlux_06_02_09
+d/dt(dS_1_3_9) = dSFlux_01_03_09
+d/dt(dS_2_3_9) = dSFlux_02_03_09
+d/dt(dS_3_3_9) = dSFlux_03_03_09
+d/dt(dS_4_3_9) = dSFlux_04_03_09
+d/dt(dS_5_3_9) = dSFlux_05_03_09
+d/dt(dS_6_3_9) = dSFlux_06_03_09
+d/dt(dS_1_4_9) = dSFlux_01_04_09
+d/dt(dS_2_4_9) = dSFlux_02_04_09
+d/dt(dS_3_4_9) = dSFlux_03_04_09
+d/dt(dS_4_4_9) = dSFlux_04_04_09
+d/dt(dS_5_4_9) = dSFlux_05_04_09
+d/dt(dS_6_4_9) = dSFlux_06_04_09
+d/dt(dS_1_5_9) = dSFlux_01_05_09
+d/dt(dS_2_5_9) = dSFlux_02_05_09
+d/dt(dS_3_5_9) = dSFlux_03_05_09
+d/dt(dS_4_5_9) = dSFlux_04_05_09
+d/dt(dS_5_5_9) = dSFlux_05_05_09
+d/dt(dS_6_5_9) = dSFlux_06_05_09
+d/dt(dS_1_6_9) = dSFlux_01_06_09
+d/dt(dS_2_6_9) = dSFlux_02_06_09
+d/dt(dS_3_6_9) = dSFlux_03_06_09
+d/dt(dS_4_6_9) = dSFlux_04_06_09
+d/dt(dS_5_6_9) = dSFlux_05_06_09
+d/dt(dS_6_6_9) = dSFlux_06_06_09
+d/dt(dS_1_7_9) = dSFlux_01_07_09
+d/dt(dS_2_7_9) = dSFlux_02_07_09
+d/dt(dS_3_7_9) = dSFlux_03_07_09
+d/dt(dS_4_7_9) = dSFlux_04_07_09
+d/dt(dS_5_7_9) = dSFlux_05_07_09
+d/dt(dS_6_7_9) = dSFlux_06_07_09
+d/dt(dS_1_8_9) = dSFlux_01_08_09
+d/dt(dS_2_8_9) = dSFlux_02_08_09
+d/dt(dS_3_8_9) = dSFlux_03_08_09
+d/dt(dS_4_8_9) = dSFlux_04_08_09
+d/dt(dS_5_8_9) = dSFlux_05_08_09
+d/dt(dS_6_8_9) = dSFlux_06_08_09
+d/dt(dS_1_9_9) = dSFlux_01_09_09
+d/dt(dS_2_9_9) = dSFlux_02_09_09
+d/dt(dS_3_9_9) = dSFlux_03_09_09
+d/dt(dS_4_9_9) = dSFlux_04_09_09
+d/dt(dS_5_9_9) = dSFlux_05_09_09
+d/dt(dS_6_9_9) = dSFlux_06_09_09
+d/dt(dS_1_10_9) = dSFlux_01_09_10  % =  dSFlux_01_10_09
+d/dt(dS_2_10_9) = dSFlux_02_09_10  % =  dSFlux_02_10_09
+d/dt(dS_3_10_9) = dSFlux_03_09_10  % =  dSFlux_03_10_09
+d/dt(dS_4_10_9) = dSFlux_04_09_10  % =  dSFlux_04_10_09
+d/dt(dS_5_10_9) = dSFlux_05_09_10  % =  dSFlux_05_10_09
+d/dt(dS_6_10_9) = dSFlux_06_09_10  % =  dSFlux_06_10_09
+d/dt(dS_1_11_9) = dSFlux_01_09_11  % =  dSFlux_01_11_09
+d/dt(dS_2_11_9) = dSFlux_02_09_11  % =  dSFlux_02_11_09
+d/dt(dS_3_11_9) = dSFlux_03_09_11  % =  dSFlux_03_11_09
+d/dt(dS_4_11_9) = dSFlux_04_09_11  % =  dSFlux_04_11_09
+d/dt(dS_5_11_9) = dSFlux_05_09_11  % =  dSFlux_05_11_09
+d/dt(dS_6_11_9) = dSFlux_06_09_11  % =  dSFlux_06_11_09
+d/dt(dS_1_12_9) = dSFlux_01_09_12  % =  dSFlux_01_12_09
+d/dt(dS_2_12_9) = dSFlux_02_09_12  % =  dSFlux_02_12_09
+d/dt(dS_3_12_9) = dSFlux_03_09_12  % =  dSFlux_03_12_09
+d/dt(dS_4_12_9) = dSFlux_04_09_12  % =  dSFlux_04_12_09
+d/dt(dS_5_12_9) = dSFlux_05_09_12  % =  dSFlux_05_12_09
+d/dt(dS_6_12_9) = dSFlux_06_09_12  % =  dSFlux_06_12_09
+d/dt(dS_1_13_9) = dSFlux_01_09_13  % =  dSFlux_01_13_09
+d/dt(dS_2_13_9) = dSFlux_02_09_13  % =  dSFlux_02_13_09
+d/dt(dS_3_13_9) = dSFlux_03_09_13  % =  dSFlux_03_13_09
+d/dt(dS_4_13_9) = dSFlux_04_09_13  % =  dSFlux_04_13_09
+d/dt(dS_5_13_9) = dSFlux_05_09_13  % =  dSFlux_05_13_09
+d/dt(dS_6_13_9) = dSFlux_06_09_13  % =  dSFlux_06_13_09
+d/dt(dS_1_14_9) = dSFlux_01_09_14  % =  dSFlux_01_14_09
+d/dt(dS_2_14_9) = dSFlux_02_09_14  % =  dSFlux_02_14_09
+d/dt(dS_3_14_9) = dSFlux_03_09_14  % =  dSFlux_03_14_09
+d/dt(dS_4_14_9) = dSFlux_04_09_14  % =  dSFlux_04_14_09
+d/dt(dS_5_14_9) = dSFlux_05_09_14  % =  dSFlux_05_14_09
+d/dt(dS_6_14_9) = dSFlux_06_09_14  % =  dSFlux_06_14_09
+d/dt(dS_1_1_10) = dSFlux_01_01_10
+d/dt(dS_2_1_10) = dSFlux_02_01_10
+d/dt(dS_3_1_10) = dSFlux_03_01_10
+d/dt(dS_4_1_10) = dSFlux_04_01_10
+d/dt(dS_5_1_10) = dSFlux_05_01_10
+d/dt(dS_6_1_10) = dSFlux_06_01_10
+d/dt(dS_1_2_10) = dSFlux_01_02_10
+d/dt(dS_2_2_10) = dSFlux_02_02_10
+d/dt(dS_3_2_10) = dSFlux_03_02_10
+d/dt(dS_4_2_10) = dSFlux_04_02_10
+d/dt(dS_5_2_10) = dSFlux_05_02_10
+d/dt(dS_6_2_10) = dSFlux_06_02_10
+d/dt(dS_1_3_10) = dSFlux_01_03_10
+d/dt(dS_2_3_10) = dSFlux_02_03_10
+d/dt(dS_3_3_10) = dSFlux_03_03_10
+d/dt(dS_4_3_10) = dSFlux_04_03_10
+d/dt(dS_5_3_10) = dSFlux_05_03_10
+d/dt(dS_6_3_10) = dSFlux_06_03_10
+d/dt(dS_1_4_10) = dSFlux_01_04_10
+d/dt(dS_2_4_10) = dSFlux_02_04_10
+d/dt(dS_3_4_10) = dSFlux_03_04_10
+d/dt(dS_4_4_10) = dSFlux_04_04_10
+d/dt(dS_5_4_10) = dSFlux_05_04_10
+d/dt(dS_6_4_10) = dSFlux_06_04_10
+d/dt(dS_1_5_10) = dSFlux_01_05_10
+d/dt(dS_2_5_10) = dSFlux_02_05_10
+d/dt(dS_3_5_10) = dSFlux_03_05_10
+d/dt(dS_4_5_10) = dSFlux_04_05_10
+d/dt(dS_5_5_10) = dSFlux_05_05_10
+d/dt(dS_6_5_10) = dSFlux_06_05_10
+d/dt(dS_1_6_10) = dSFlux_01_06_10
+d/dt(dS_2_6_10) = dSFlux_02_06_10
+d/dt(dS_3_6_10) = dSFlux_03_06_10
+d/dt(dS_4_6_10) = dSFlux_04_06_10
+d/dt(dS_5_6_10) = dSFlux_05_06_10
+d/dt(dS_6_6_10) = dSFlux_06_06_10
+d/dt(dS_1_7_10) = dSFlux_01_07_10
+d/dt(dS_2_7_10) = dSFlux_02_07_10
+d/dt(dS_3_7_10) = dSFlux_03_07_10
+d/dt(dS_4_7_10) = dSFlux_04_07_10
+d/dt(dS_5_7_10) = dSFlux_05_07_10
+d/dt(dS_6_7_10) = dSFlux_06_07_10
+d/dt(dS_1_8_10) = dSFlux_01_08_10
+d/dt(dS_2_8_10) = dSFlux_02_08_10
+d/dt(dS_3_8_10) = dSFlux_03_08_10
+d/dt(dS_4_8_10) = dSFlux_04_08_10
+d/dt(dS_5_8_10) = dSFlux_05_08_10
+d/dt(dS_6_8_10) = dSFlux_06_08_10
+d/dt(dS_1_9_10) = dSFlux_01_09_10
+d/dt(dS_2_9_10) = dSFlux_02_09_10
+d/dt(dS_3_9_10) = dSFlux_03_09_10
+d/dt(dS_4_9_10) = dSFlux_04_09_10
+d/dt(dS_5_9_10) = dSFlux_05_09_10
+d/dt(dS_6_9_10) = dSFlux_06_09_10
+d/dt(dS_1_10_10) = dSFlux_01_10_10
+d/dt(dS_2_10_10) = dSFlux_02_10_10
+d/dt(dS_3_10_10) = dSFlux_03_10_10
+d/dt(dS_4_10_10) = dSFlux_04_10_10
+d/dt(dS_5_10_10) = dSFlux_05_10_10
+d/dt(dS_6_10_10) = dSFlux_06_10_10
+d/dt(dS_1_11_10) = dSFlux_01_10_11  % =  dSFlux_01_11_10
+d/dt(dS_2_11_10) = dSFlux_02_10_11  % =  dSFlux_02_11_10
+d/dt(dS_3_11_10) = dSFlux_03_10_11  % =  dSFlux_03_11_10
+d/dt(dS_4_11_10) = dSFlux_04_10_11  % =  dSFlux_04_11_10
+d/dt(dS_5_11_10) = dSFlux_05_10_11  % =  dSFlux_05_11_10
+d/dt(dS_6_11_10) = dSFlux_06_10_11  % =  dSFlux_06_11_10
+d/dt(dS_1_12_10) = dSFlux_01_10_12  % =  dSFlux_01_12_10
+d/dt(dS_2_12_10) = dSFlux_02_10_12  % =  dSFlux_02_12_10
+d/dt(dS_3_12_10) = dSFlux_03_10_12  % =  dSFlux_03_12_10
+d/dt(dS_4_12_10) = dSFlux_04_10_12  % =  dSFlux_04_12_10
+d/dt(dS_5_12_10) = dSFlux_05_10_12  % =  dSFlux_05_12_10
+d/dt(dS_6_12_10) = dSFlux_06_10_12  % =  dSFlux_06_12_10
+d/dt(dS_1_13_10) = dSFlux_01_10_13  % =  dSFlux_01_13_10
+d/dt(dS_2_13_10) = dSFlux_02_10_13  % =  dSFlux_02_13_10
+d/dt(dS_3_13_10) = dSFlux_03_10_13  % =  dSFlux_03_13_10
+d/dt(dS_4_13_10) = dSFlux_04_10_13  % =  dSFlux_04_13_10
+d/dt(dS_5_13_10) = dSFlux_05_10_13  % =  dSFlux_05_13_10
+d/dt(dS_6_13_10) = dSFlux_06_10_13  % =  dSFlux_06_13_10
+d/dt(dS_1_14_10) = dSFlux_01_10_14  % =  dSFlux_01_14_10
+d/dt(dS_2_14_10) = dSFlux_02_10_14  % =  dSFlux_02_14_10
+d/dt(dS_3_14_10) = dSFlux_03_10_14  % =  dSFlux_03_14_10
+d/dt(dS_4_14_10) = dSFlux_04_10_14  % =  dSFlux_04_14_10
+d/dt(dS_5_14_10) = dSFlux_05_10_14  % =  dSFlux_05_14_10
+d/dt(dS_6_14_10) = dSFlux_06_10_14  % =  dSFlux_06_14_10
+d/dt(dS_1_1_11) = dSFlux_01_01_11
+d/dt(dS_2_1_11) = dSFlux_02_01_11
+d/dt(dS_3_1_11) = dSFlux_03_01_11
+d/dt(dS_4_1_11) = dSFlux_04_01_11
+d/dt(dS_5_1_11) = dSFlux_05_01_11
+d/dt(dS_6_1_11) = dSFlux_06_01_11
+d/dt(dS_1_2_11) = dSFlux_01_02_11
+d/dt(dS_2_2_11) = dSFlux_02_02_11
+d/dt(dS_3_2_11) = dSFlux_03_02_11
+d/dt(dS_4_2_11) = dSFlux_04_02_11
+d/dt(dS_5_2_11) = dSFlux_05_02_11
+d/dt(dS_6_2_11) = dSFlux_06_02_11
+d/dt(dS_1_3_11) = dSFlux_01_03_11
+d/dt(dS_2_3_11) = dSFlux_02_03_11
+d/dt(dS_3_3_11) = dSFlux_03_03_11
+d/dt(dS_4_3_11) = dSFlux_04_03_11
+d/dt(dS_5_3_11) = dSFlux_05_03_11
+d/dt(dS_6_3_11) = dSFlux_06_03_11
+d/dt(dS_1_4_11) = dSFlux_01_04_11
+d/dt(dS_2_4_11) = dSFlux_02_04_11
+d/dt(dS_3_4_11) = dSFlux_03_04_11
+d/dt(dS_4_4_11) = dSFlux_04_04_11
+d/dt(dS_5_4_11) = dSFlux_05_04_11
+d/dt(dS_6_4_11) = dSFlux_06_04_11
+d/dt(dS_1_5_11) = dSFlux_01_05_11
+d/dt(dS_2_5_11) = dSFlux_02_05_11
+d/dt(dS_3_5_11) = dSFlux_03_05_11
+d/dt(dS_4_5_11) = dSFlux_04_05_11
+d/dt(dS_5_5_11) = dSFlux_05_05_11
+d/dt(dS_6_5_11) = dSFlux_06_05_11
+d/dt(dS_1_6_11) = dSFlux_01_06_11
+d/dt(dS_2_6_11) = dSFlux_02_06_11
+d/dt(dS_3_6_11) = dSFlux_03_06_11
+d/dt(dS_4_6_11) = dSFlux_04_06_11
+d/dt(dS_5_6_11) = dSFlux_05_06_11
+d/dt(dS_6_6_11) = dSFlux_06_06_11
+d/dt(dS_1_7_11) = dSFlux_01_07_11
+d/dt(dS_2_7_11) = dSFlux_02_07_11
+d/dt(dS_3_7_11) = dSFlux_03_07_11
+d/dt(dS_4_7_11) = dSFlux_04_07_11
+d/dt(dS_5_7_11) = dSFlux_05_07_11
+d/dt(dS_6_7_11) = dSFlux_06_07_11
+d/dt(dS_1_8_11) = dSFlux_01_08_11
+d/dt(dS_2_8_11) = dSFlux_02_08_11
+d/dt(dS_3_8_11) = dSFlux_03_08_11
+d/dt(dS_4_8_11) = dSFlux_04_08_11
+d/dt(dS_5_8_11) = dSFlux_05_08_11
+d/dt(dS_6_8_11) = dSFlux_06_08_11
+d/dt(dS_1_9_11) = dSFlux_01_09_11
+d/dt(dS_2_9_11) = dSFlux_02_09_11
+d/dt(dS_3_9_11) = dSFlux_03_09_11
+d/dt(dS_4_9_11) = dSFlux_04_09_11
+d/dt(dS_5_9_11) = dSFlux_05_09_11
+d/dt(dS_6_9_11) = dSFlux_06_09_11
+d/dt(dS_1_10_11) = dSFlux_01_10_11
+d/dt(dS_2_10_11) = dSFlux_02_10_11
+d/dt(dS_3_10_11) = dSFlux_03_10_11
+d/dt(dS_4_10_11) = dSFlux_04_10_11
+d/dt(dS_5_10_11) = dSFlux_05_10_11
+d/dt(dS_6_10_11) = dSFlux_06_10_11
+d/dt(dS_1_11_11) = dSFlux_01_11_11
+d/dt(dS_2_11_11) = dSFlux_02_11_11
+d/dt(dS_3_11_11) = dSFlux_03_11_11
+d/dt(dS_4_11_11) = dSFlux_04_11_11
+d/dt(dS_5_11_11) = dSFlux_05_11_11
+d/dt(dS_6_11_11) = dSFlux_06_11_11
+d/dt(dS_1_12_11) = dSFlux_01_11_12  % =  dSFlux_01_12_11
+d/dt(dS_2_12_11) = dSFlux_02_11_12  % =  dSFlux_02_12_11
+d/dt(dS_3_12_11) = dSFlux_03_11_12  % =  dSFlux_03_12_11
+d/dt(dS_4_12_11) = dSFlux_04_11_12  % =  dSFlux_04_12_11
+d/dt(dS_5_12_11) = dSFlux_05_11_12  % =  dSFlux_05_12_11
+d/dt(dS_6_12_11) = dSFlux_06_11_12  % =  dSFlux_06_12_11
+d/dt(dS_1_13_11) = dSFlux_01_11_13  % =  dSFlux_01_13_11
+d/dt(dS_2_13_11) = dSFlux_02_11_13  % =  dSFlux_02_13_11
+d/dt(dS_3_13_11) = dSFlux_03_11_13  % =  dSFlux_03_13_11
+d/dt(dS_4_13_11) = dSFlux_04_11_13  % =  dSFlux_04_13_11
+d/dt(dS_5_13_11) = dSFlux_05_11_13  % =  dSFlux_05_13_11
+d/dt(dS_6_13_11) = dSFlux_06_11_13  % =  dSFlux_06_13_11
+d/dt(dS_1_14_11) = dSFlux_01_11_14  % =  dSFlux_01_14_11
+d/dt(dS_2_14_11) = dSFlux_02_11_14  % =  dSFlux_02_14_11
+d/dt(dS_3_14_11) = dSFlux_03_11_14  % =  dSFlux_03_14_11
+d/dt(dS_4_14_11) = dSFlux_04_11_14  % =  dSFlux_04_14_11
+d/dt(dS_5_14_11) = dSFlux_05_11_14  % =  dSFlux_05_14_11
+d/dt(dS_6_14_11) = dSFlux_06_11_14  % =  dSFlux_06_14_11
+d/dt(dS_1_1_12) = dSFlux_01_01_12
+d/dt(dS_2_1_12) = dSFlux_02_01_12
+d/dt(dS_3_1_12) = dSFlux_03_01_12
+d/dt(dS_4_1_12) = dSFlux_04_01_12
+d/dt(dS_5_1_12) = dSFlux_05_01_12
+d/dt(dS_6_1_12) = dSFlux_06_01_12
+d/dt(dS_1_2_12) = dSFlux_01_02_12
+d/dt(dS_2_2_12) = dSFlux_02_02_12
+d/dt(dS_3_2_12) = dSFlux_03_02_12
+d/dt(dS_4_2_12) = dSFlux_04_02_12
+d/dt(dS_5_2_12) = dSFlux_05_02_12
+d/dt(dS_6_2_12) = dSFlux_06_02_12
+d/dt(dS_1_3_12) = dSFlux_01_03_12
+d/dt(dS_2_3_12) = dSFlux_02_03_12
+d/dt(dS_3_3_12) = dSFlux_03_03_12
+d/dt(dS_4_3_12) = dSFlux_04_03_12
+d/dt(dS_5_3_12) = dSFlux_05_03_12
+d/dt(dS_6_3_12) = dSFlux_06_03_12
+d/dt(dS_1_4_12) = dSFlux_01_04_12
+d/dt(dS_2_4_12) = dSFlux_02_04_12
+d/dt(dS_3_4_12) = dSFlux_03_04_12
+d/dt(dS_4_4_12) = dSFlux_04_04_12
+d/dt(dS_5_4_12) = dSFlux_05_04_12
+d/dt(dS_6_4_12) = dSFlux_06_04_12
+d/dt(dS_1_5_12) = dSFlux_01_05_12
+d/dt(dS_2_5_12) = dSFlux_02_05_12
+d/dt(dS_3_5_12) = dSFlux_03_05_12
+d/dt(dS_4_5_12) = dSFlux_04_05_12
+d/dt(dS_5_5_12) = dSFlux_05_05_12
+d/dt(dS_6_5_12) = dSFlux_06_05_12
+d/dt(dS_1_6_12) = dSFlux_01_06_12
+d/dt(dS_2_6_12) = dSFlux_02_06_12
+d/dt(dS_3_6_12) = dSFlux_03_06_12
+d/dt(dS_4_6_12) = dSFlux_04_06_12
+d/dt(dS_5_6_12) = dSFlux_05_06_12
+d/dt(dS_6_6_12) = dSFlux_06_06_12
+d/dt(dS_1_7_12) = dSFlux_01_07_12
+d/dt(dS_2_7_12) = dSFlux_02_07_12
+d/dt(dS_3_7_12) = dSFlux_03_07_12
+d/dt(dS_4_7_12) = dSFlux_04_07_12
+d/dt(dS_5_7_12) = dSFlux_05_07_12
+d/dt(dS_6_7_12) = dSFlux_06_07_12
+d/dt(dS_1_8_12) = dSFlux_01_08_12
+d/dt(dS_2_8_12) = dSFlux_02_08_12
+d/dt(dS_3_8_12) = dSFlux_03_08_12
+d/dt(dS_4_8_12) = dSFlux_04_08_12
+d/dt(dS_5_8_12) = dSFlux_05_08_12
+d/dt(dS_6_8_12) = dSFlux_06_08_12
+d/dt(dS_1_9_12) = dSFlux_01_09_12
+d/dt(dS_2_9_12) = dSFlux_02_09_12
+d/dt(dS_3_9_12) = dSFlux_03_09_12
+d/dt(dS_4_9_12) = dSFlux_04_09_12
+d/dt(dS_5_9_12) = dSFlux_05_09_12
+d/dt(dS_6_9_12) = dSFlux_06_09_12
+d/dt(dS_1_10_12) = dSFlux_01_10_12
+d/dt(dS_2_10_12) = dSFlux_02_10_12
+d/dt(dS_3_10_12) = dSFlux_03_10_12
+d/dt(dS_4_10_12) = dSFlux_04_10_12
+d/dt(dS_5_10_12) = dSFlux_05_10_12
+d/dt(dS_6_10_12) = dSFlux_06_10_12
+d/dt(dS_1_11_12) = dSFlux_01_11_12
+d/dt(dS_2_11_12) = dSFlux_02_11_12
+d/dt(dS_3_11_12) = dSFlux_03_11_12
+d/dt(dS_4_11_12) = dSFlux_04_11_12
+d/dt(dS_5_11_12) = dSFlux_05_11_12
+d/dt(dS_6_11_12) = dSFlux_06_11_12
+d/dt(dS_1_12_12) = dSFlux_01_12_12
+d/dt(dS_2_12_12) = dSFlux_02_12_12
+d/dt(dS_3_12_12) = dSFlux_03_12_12
+d/dt(dS_4_12_12) = dSFlux_04_12_12
+d/dt(dS_5_12_12) = dSFlux_05_12_12
+d/dt(dS_6_12_12) = dSFlux_06_12_12
+d/dt(dS_1_13_12) = dSFlux_01_12_13  % =  dSFlux_01_13_12
+d/dt(dS_2_13_12) = dSFlux_02_12_13  % =  dSFlux_02_13_12
+d/dt(dS_3_13_12) = dSFlux_03_12_13  % =  dSFlux_03_13_12
+d/dt(dS_4_13_12) = dSFlux_04_12_13  % =  dSFlux_04_13_12
+d/dt(dS_5_13_12) = dSFlux_05_12_13  % =  dSFlux_05_13_12
+d/dt(dS_6_13_12) = dSFlux_06_12_13  % =  dSFlux_06_13_12
+d/dt(dS_1_14_12) = dSFlux_01_12_14  % =  dSFlux_01_14_12
+d/dt(dS_2_14_12) = dSFlux_02_12_14  % =  dSFlux_02_14_12
+d/dt(dS_3_14_12) = dSFlux_03_12_14  % =  dSFlux_03_14_12
+d/dt(dS_4_14_12) = dSFlux_04_12_14  % =  dSFlux_04_14_12
+d/dt(dS_5_14_12) = dSFlux_05_12_14  % =  dSFlux_05_14_12
+d/dt(dS_6_14_12) = dSFlux_06_12_14  % =  dSFlux_06_14_12
+d/dt(dS_1_1_13) = dSFlux_01_01_13
+d/dt(dS_2_1_13) = dSFlux_02_01_13
+d/dt(dS_3_1_13) = dSFlux_03_01_13
+d/dt(dS_4_1_13) = dSFlux_04_01_13
+d/dt(dS_5_1_13) = dSFlux_05_01_13
+d/dt(dS_6_1_13) = dSFlux_06_01_13
+d/dt(dS_1_2_13) = dSFlux_01_02_13
+d/dt(dS_2_2_13) = dSFlux_02_02_13
+d/dt(dS_3_2_13) = dSFlux_03_02_13
+d/dt(dS_4_2_13) = dSFlux_04_02_13
+d/dt(dS_5_2_13) = dSFlux_05_02_13
+d/dt(dS_6_2_13) = dSFlux_06_02_13
+d/dt(dS_1_3_13) = dSFlux_01_03_13
+d/dt(dS_2_3_13) = dSFlux_02_03_13
+d/dt(dS_3_3_13) = dSFlux_03_03_13
+d/dt(dS_4_3_13) = dSFlux_04_03_13
+d/dt(dS_5_3_13) = dSFlux_05_03_13
+d/dt(dS_6_3_13) = dSFlux_06_03_13
+d/dt(dS_1_4_13) = dSFlux_01_04_13
+d/dt(dS_2_4_13) = dSFlux_02_04_13
+d/dt(dS_3_4_13) = dSFlux_03_04_13
+d/dt(dS_4_4_13) = dSFlux_04_04_13
+d/dt(dS_5_4_13) = dSFlux_05_04_13
+d/dt(dS_6_4_13) = dSFlux_06_04_13
+d/dt(dS_1_5_13) = dSFlux_01_05_13
+d/dt(dS_2_5_13) = dSFlux_02_05_13
+d/dt(dS_3_5_13) = dSFlux_03_05_13
+d/dt(dS_4_5_13) = dSFlux_04_05_13
+d/dt(dS_5_5_13) = dSFlux_05_05_13
+d/dt(dS_6_5_13) = dSFlux_06_05_13
+d/dt(dS_1_6_13) = dSFlux_01_06_13
+d/dt(dS_2_6_13) = dSFlux_02_06_13
+d/dt(dS_3_6_13) = dSFlux_03_06_13
+d/dt(dS_4_6_13) = dSFlux_04_06_13
+d/dt(dS_5_6_13) = dSFlux_05_06_13
+d/dt(dS_6_6_13) = dSFlux_06_06_13
+d/dt(dS_1_7_13) = dSFlux_01_07_13
+d/dt(dS_2_7_13) = dSFlux_02_07_13
+d/dt(dS_3_7_13) = dSFlux_03_07_13
+d/dt(dS_4_7_13) = dSFlux_04_07_13
+d/dt(dS_5_7_13) = dSFlux_05_07_13
+d/dt(dS_6_7_13) = dSFlux_06_07_13
+d/dt(dS_1_8_13) = dSFlux_01_08_13
+d/dt(dS_2_8_13) = dSFlux_02_08_13
+d/dt(dS_3_8_13) = dSFlux_03_08_13
+d/dt(dS_4_8_13) = dSFlux_04_08_13
+d/dt(dS_5_8_13) = dSFlux_05_08_13
+d/dt(dS_6_8_13) = dSFlux_06_08_13
+d/dt(dS_1_9_13) = dSFlux_01_09_13
+d/dt(dS_2_9_13) = dSFlux_02_09_13
+d/dt(dS_3_9_13) = dSFlux_03_09_13
+d/dt(dS_4_9_13) = dSFlux_04_09_13
+d/dt(dS_5_9_13) = dSFlux_05_09_13
+d/dt(dS_6_9_13) = dSFlux_06_09_13
+d/dt(dS_1_10_13) = dSFlux_01_10_13
+d/dt(dS_2_10_13) = dSFlux_02_10_13
+d/dt(dS_3_10_13) = dSFlux_03_10_13
+d/dt(dS_4_10_13) = dSFlux_04_10_13
+d/dt(dS_5_10_13) = dSFlux_05_10_13
+d/dt(dS_6_10_13) = dSFlux_06_10_13
+d/dt(dS_1_11_13) = dSFlux_01_11_13
+d/dt(dS_2_11_13) = dSFlux_02_11_13
+d/dt(dS_3_11_13) = dSFlux_03_11_13
+d/dt(dS_4_11_13) = dSFlux_04_11_13
+d/dt(dS_5_11_13) = dSFlux_05_11_13
+d/dt(dS_6_11_13) = dSFlux_06_11_13
+d/dt(dS_1_12_13) = dSFlux_01_12_13
+d/dt(dS_2_12_13) = dSFlux_02_12_13
+d/dt(dS_3_12_13) = dSFlux_03_12_13
+d/dt(dS_4_12_13) = dSFlux_04_12_13
+d/dt(dS_5_12_13) = dSFlux_05_12_13
+d/dt(dS_6_12_13) = dSFlux_06_12_13
+d/dt(dS_1_13_13) = dSFlux_01_13_13
+d/dt(dS_2_13_13) = dSFlux_02_13_13
+d/dt(dS_3_13_13) = dSFlux_03_13_13
+d/dt(dS_4_13_13) = dSFlux_04_13_13
+d/dt(dS_5_13_13) = dSFlux_05_13_13
+d/dt(dS_6_13_13) = dSFlux_06_13_13
+d/dt(dS_1_14_13) = dSFlux_01_13_14  % =  dSFlux_01_14_13
+d/dt(dS_2_14_13) = dSFlux_02_13_14  % =  dSFlux_02_14_13
+d/dt(dS_3_14_13) = dSFlux_03_13_14  % =  dSFlux_03_14_13
+d/dt(dS_4_14_13) = dSFlux_04_13_14  % =  dSFlux_04_14_13
+d/dt(dS_5_14_13) = dSFlux_05_13_14  % =  dSFlux_05_14_13
+d/dt(dS_6_14_13) = dSFlux_06_13_14  % =  dSFlux_06_14_13
+d/dt(dS_1_1_14) = dSFlux_01_01_14
+d/dt(dS_2_1_14) = dSFlux_02_01_14
+d/dt(dS_3_1_14) = dSFlux_03_01_14
+d/dt(dS_4_1_14) = dSFlux_04_01_14
+d/dt(dS_5_1_14) = dSFlux_05_01_14
+d/dt(dS_6_1_14) = dSFlux_06_01_14
+d/dt(dS_1_2_14) = dSFlux_01_02_14
+d/dt(dS_2_2_14) = dSFlux_02_02_14
+d/dt(dS_3_2_14) = dSFlux_03_02_14
+d/dt(dS_4_2_14) = dSFlux_04_02_14
+d/dt(dS_5_2_14) = dSFlux_05_02_14
+d/dt(dS_6_2_14) = dSFlux_06_02_14
+d/dt(dS_1_3_14) = dSFlux_01_03_14
+d/dt(dS_2_3_14) = dSFlux_02_03_14
+d/dt(dS_3_3_14) = dSFlux_03_03_14
+d/dt(dS_4_3_14) = dSFlux_04_03_14
+d/dt(dS_5_3_14) = dSFlux_05_03_14
+d/dt(dS_6_3_14) = dSFlux_06_03_14
+d/dt(dS_1_4_14) = dSFlux_01_04_14
+d/dt(dS_2_4_14) = dSFlux_02_04_14
+d/dt(dS_3_4_14) = dSFlux_03_04_14
+d/dt(dS_4_4_14) = dSFlux_04_04_14
+d/dt(dS_5_4_14) = dSFlux_05_04_14
+d/dt(dS_6_4_14) = dSFlux_06_04_14
+d/dt(dS_1_5_14) = dSFlux_01_05_14
+d/dt(dS_2_5_14) = dSFlux_02_05_14
+d/dt(dS_3_5_14) = dSFlux_03_05_14
+d/dt(dS_4_5_14) = dSFlux_04_05_14
+d/dt(dS_5_5_14) = dSFlux_05_05_14
+d/dt(dS_6_5_14) = dSFlux_06_05_14
+d/dt(dS_1_6_14) = dSFlux_01_06_14
+d/dt(dS_2_6_14) = dSFlux_02_06_14
+d/dt(dS_3_6_14) = dSFlux_03_06_14
+d/dt(dS_4_6_14) = dSFlux_04_06_14
+d/dt(dS_5_6_14) = dSFlux_05_06_14
+d/dt(dS_6_6_14) = dSFlux_06_06_14
+d/dt(dS_1_7_14) = dSFlux_01_07_14
+d/dt(dS_2_7_14) = dSFlux_02_07_14
+d/dt(dS_3_7_14) = dSFlux_03_07_14
+d/dt(dS_4_7_14) = dSFlux_04_07_14
+d/dt(dS_5_7_14) = dSFlux_05_07_14
+d/dt(dS_6_7_14) = dSFlux_06_07_14
+d/dt(dS_1_8_14) = dSFlux_01_08_14
+d/dt(dS_2_8_14) = dSFlux_02_08_14
+d/dt(dS_3_8_14) = dSFlux_03_08_14
+d/dt(dS_4_8_14) = dSFlux_04_08_14
+d/dt(dS_5_8_14) = dSFlux_05_08_14
+d/dt(dS_6_8_14) = dSFlux_06_08_14
+d/dt(dS_1_9_14) = dSFlux_01_09_14
+d/dt(dS_2_9_14) = dSFlux_02_09_14
+d/dt(dS_3_9_14) = dSFlux_03_09_14
+d/dt(dS_4_9_14) = dSFlux_04_09_14
+d/dt(dS_5_9_14) = dSFlux_05_09_14
+d/dt(dS_6_9_14) = dSFlux_06_09_14
+d/dt(dS_1_10_14) = dSFlux_01_10_14
+d/dt(dS_2_10_14) = dSFlux_02_10_14
+d/dt(dS_3_10_14) = dSFlux_03_10_14
+d/dt(dS_4_10_14) = dSFlux_04_10_14
+d/dt(dS_5_10_14) = dSFlux_05_10_14
+d/dt(dS_6_10_14) = dSFlux_06_10_14
+d/dt(dS_1_11_14) = dSFlux_01_11_14
+d/dt(dS_2_11_14) = dSFlux_02_11_14
+d/dt(dS_3_11_14) = dSFlux_03_11_14
+d/dt(dS_4_11_14) = dSFlux_04_11_14
+d/dt(dS_5_11_14) = dSFlux_05_11_14
+d/dt(dS_6_11_14) = dSFlux_06_11_14
+d/dt(dS_1_12_14) = dSFlux_01_12_14
+d/dt(dS_2_12_14) = dSFlux_02_12_14
+d/dt(dS_3_12_14) = dSFlux_03_12_14
+d/dt(dS_4_12_14) = dSFlux_04_12_14
+d/dt(dS_5_12_14) = dSFlux_05_12_14
+d/dt(dS_6_12_14) = dSFlux_06_12_14
+d/dt(dS_1_13_14) = dSFlux_01_13_14
+d/dt(dS_2_13_14) = dSFlux_02_13_14
+d/dt(dS_3_13_14) = dSFlux_03_13_14
+d/dt(dS_4_13_14) = dSFlux_04_13_14
+d/dt(dS_5_13_14) = dSFlux_05_13_14
+d/dt(dS_6_13_14) = dSFlux_06_13_14
+d/dt(dS_1_14_14) = dSFlux_01_14_14
+d/dt(dS_2_14_14) = dSFlux_02_14_14
+d/dt(dS_3_14_14) = dSFlux_03_14_14
+d/dt(dS_4_14_14) = dSFlux_04_14_14
+d/dt(dS_5_14_14) = dSFlux_05_14_14
+d/dt(dS_6_14_14) = dSFlux_06_14_14
+
+x_01(0) = 10
+x_02(0) = 0
+x_03(0) = 0
+x_04(0) = 0
+x_05(0) = 0
+x_06(0) = 0
+S_1_1(0) = 0.0
+S_2_1(0) = 0.0
+S_3_1(0) = 0.0
+S_4_1(0) = 0.0
+S_5_1(0) = 0.0
+S_6_1(0) = 0.0
+S_1_2(0) = 0.0
+S_2_2(0) = 0.0
+S_3_2(0) = 0.0
+S_4_2(0) = 0.0
+S_5_2(0) = 0.0
+S_6_2(0) = 0.0
+S_1_3(0) = 0.0
+S_2_3(0) = 0.0
+S_3_3(0) = 0.0
+S_4_3(0) = 0.0
+S_5_3(0) = 0.0
+S_6_3(0) = 0.0
+S_1_4(0) = 0.0
+S_2_4(0) = 0.0
+S_3_4(0) = 0.0
+S_4_4(0) = 0.0
+S_5_4(0) = 0.0
+S_6_4(0) = 0.0
+S_1_5(0) = 0.0
+S_2_5(0) = 0.0
+S_3_5(0) = 0.0
+S_4_5(0) = 0.0
+S_5_5(0) = 0.0
+S_6_5(0) = 0.0
+S_1_6(0) = 0.0
+S_2_6(0) = 0.0
+S_3_6(0) = 0.0
+S_4_6(0) = 0.0
+S_5_6(0) = 0.0
+S_6_6(0) = 0.0
+S_1_7(0) = 0.0
+S_2_7(0) = 0.0
+S_3_7(0) = 0.0
+S_4_7(0) = 0.0
+S_5_7(0) = 0.0
+S_6_7(0) = 0.0
+S_1_8(0) = 0.0
+S_2_8(0) = 0.0
+S_3_8(0) = 0.0
+S_4_8(0) = 0.0
+S_5_8(0) = 0.0
+S_6_8(0) = 0.0
+S_1_9(0) = 0.0
+S_2_9(0) = 0.0
+S_3_9(0) = 0.0
+S_4_9(0) = 0.0
+S_5_9(0) = 0.0
+S_6_9(0) = 0.0
+S_1_10(0) = 0.0
+S_2_10(0) = 0.0
+S_3_10(0) = 0.0
+S_4_10(0) = 0.0
+S_5_10(0) = 0.0
+S_6_10(0) = 0.0
+S_1_11(0) = 0.0
+S_2_11(0) = 0.0
+S_3_11(0) = 0.0
+S_4_11(0) = 0.0
+S_5_11(0) = 0.0
+S_6_11(0) = 0.0
+S_1_12(0) = 0.0
+S_2_12(0) = 0.0
+S_3_12(0) = 0.0
+S_4_12(0) = 0.0
+S_5_12(0) = 0.0
+S_6_12(0) = 0.0
+S_1_13(0) = 0.0
+S_2_13(0) = 0.0
+S_3_13(0) = 0.0
+S_4_13(0) = 0.0
+S_5_13(0) = 0.0
+S_6_13(0) = 0.0
+S_1_14(0) = 0.0
+S_2_14(0) = 0.0
+S_3_14(0) = 0.0
+S_4_14(0) = 0.0
+S_5_14(0) = 0.0
+S_6_14(0) = 0.0
+dS_1_1_1(0) = 0.0
+dS_2_1_1(0) = 0.0
+dS_3_1_1(0) = 0.0
+dS_4_1_1(0) = 0.0
+dS_5_1_1(0) = 0.0
+dS_6_1_1(0) = 0.0
+dS_1_2_1(0) = 0.0
+dS_2_2_1(0) = 0.0
+dS_3_2_1(0) = 0.0
+dS_4_2_1(0) = 0.0
+dS_5_2_1(0) = 0.0
+dS_6_2_1(0) = 0.0
+dS_1_3_1(0) = 0.0
+dS_2_3_1(0) = 0.0
+dS_3_3_1(0) = 0.0
+dS_4_3_1(0) = 0.0
+dS_5_3_1(0) = 0.0
+dS_6_3_1(0) = 0.0
+dS_1_4_1(0) = 0.0
+dS_2_4_1(0) = 0.0
+dS_3_4_1(0) = 0.0
+dS_4_4_1(0) = 0.0
+dS_5_4_1(0) = 0.0
+dS_6_4_1(0) = 0.0
+dS_1_5_1(0) = 0.0
+dS_2_5_1(0) = 0.0
+dS_3_5_1(0) = 0.0
+dS_4_5_1(0) = 0.0
+dS_5_5_1(0) = 0.0
+dS_6_5_1(0) = 0.0
+dS_1_6_1(0) = 0.0
+dS_2_6_1(0) = 0.0
+dS_3_6_1(0) = 0.0
+dS_4_6_1(0) = 0.0
+dS_5_6_1(0) = 0.0
+dS_6_6_1(0) = 0.0
+dS_1_7_1(0) = 0.0
+dS_2_7_1(0) = 0.0
+dS_3_7_1(0) = 0.0
+dS_4_7_1(0) = 0.0
+dS_5_7_1(0) = 0.0
+dS_6_7_1(0) = 0.0
+dS_1_8_1(0) = 0.0
+dS_2_8_1(0) = 0.0
+dS_3_8_1(0) = 0.0
+dS_4_8_1(0) = 0.0
+dS_5_8_1(0) = 0.0
+dS_6_8_1(0) = 0.0
+dS_1_9_1(0) = 0.0
+dS_2_9_1(0) = 0.0
+dS_3_9_1(0) = 0.0
+dS_4_9_1(0) = 0.0
+dS_5_9_1(0) = 0.0
+dS_6_9_1(0) = 0.0
+dS_1_10_1(0) = 0.0
+dS_2_10_1(0) = 0.0
+dS_3_10_1(0) = 0.0
+dS_4_10_1(0) = 0.0
+dS_5_10_1(0) = 0.0
+dS_6_10_1(0) = 0.0
+dS_1_11_1(0) = 0.0
+dS_2_11_1(0) = 0.0
+dS_3_11_1(0) = 0.0
+dS_4_11_1(0) = 0.0
+dS_5_11_1(0) = 0.0
+dS_6_11_1(0) = 0.0
+dS_1_12_1(0) = 0.0
+dS_2_12_1(0) = 0.0
+dS_3_12_1(0) = 0.0
+dS_4_12_1(0) = 0.0
+dS_5_12_1(0) = 0.0
+dS_6_12_1(0) = 0.0
+dS_1_13_1(0) = 0.0
+dS_2_13_1(0) = 0.0
+dS_3_13_1(0) = 0.0
+dS_4_13_1(0) = 0.0
+dS_5_13_1(0) = 0.0
+dS_6_13_1(0) = 0.0
+dS_1_14_1(0) = 0.0
+dS_2_14_1(0) = 0.0
+dS_3_14_1(0) = 0.0
+dS_4_14_1(0) = 0.0
+dS_5_14_1(0) = 0.0
+dS_6_14_1(0) = 0.0
+dS_1_1_2(0) = 0.0
+dS_2_1_2(0) = 0.0
+dS_3_1_2(0) = 0.0
+dS_4_1_2(0) = 0.0
+dS_5_1_2(0) = 0.0
+dS_6_1_2(0) = 0.0
+dS_1_2_2(0) = 0.0
+dS_2_2_2(0) = 0.0
+dS_3_2_2(0) = 0.0
+dS_4_2_2(0) = 0.0
+dS_5_2_2(0) = 0.0
+dS_6_2_2(0) = 0.0
+dS_1_3_2(0) = 0.0
+dS_2_3_2(0) = 0.0
+dS_3_3_2(0) = 0.0
+dS_4_3_2(0) = 0.0
+dS_5_3_2(0) = 0.0
+dS_6_3_2(0) = 0.0
+dS_1_4_2(0) = 0.0
+dS_2_4_2(0) = 0.0
+dS_3_4_2(0) = 0.0
+dS_4_4_2(0) = 0.0
+dS_5_4_2(0) = 0.0
+dS_6_4_2(0) = 0.0
+dS_1_5_2(0) = 0.0
+dS_2_5_2(0) = 0.0
+dS_3_5_2(0) = 0.0
+dS_4_5_2(0) = 0.0
+dS_5_5_2(0) = 0.0
+dS_6_5_2(0) = 0.0
+dS_1_6_2(0) = 0.0
+dS_2_6_2(0) = 0.0
+dS_3_6_2(0) = 0.0
+dS_4_6_2(0) = 0.0
+dS_5_6_2(0) = 0.0
+dS_6_6_2(0) = 0.0
+dS_1_7_2(0) = 0.0
+dS_2_7_2(0) = 0.0
+dS_3_7_2(0) = 0.0
+dS_4_7_2(0) = 0.0
+dS_5_7_2(0) = 0.0
+dS_6_7_2(0) = 0.0
+dS_1_8_2(0) = 0.0
+dS_2_8_2(0) = 0.0
+dS_3_8_2(0) = 0.0
+dS_4_8_2(0) = 0.0
+dS_5_8_2(0) = 0.0
+dS_6_8_2(0) = 0.0
+dS_1_9_2(0) = 0.0
+dS_2_9_2(0) = 0.0
+dS_3_9_2(0) = 0.0
+dS_4_9_2(0) = 0.0
+dS_5_9_2(0) = 0.0
+dS_6_9_2(0) = 0.0
+dS_1_10_2(0) = 0.0
+dS_2_10_2(0) = 0.0
+dS_3_10_2(0) = 0.0
+dS_4_10_2(0) = 0.0
+dS_5_10_2(0) = 0.0
+dS_6_10_2(0) = 0.0
+dS_1_11_2(0) = 0.0
+dS_2_11_2(0) = 0.0
+dS_3_11_2(0) = 0.0
+dS_4_11_2(0) = 0.0
+dS_5_11_2(0) = 0.0
+dS_6_11_2(0) = 0.0
+dS_1_12_2(0) = 0.0
+dS_2_12_2(0) = 0.0
+dS_3_12_2(0) = 0.0
+dS_4_12_2(0) = 0.0
+dS_5_12_2(0) = 0.0
+dS_6_12_2(0) = 0.0
+dS_1_13_2(0) = 0.0
+dS_2_13_2(0) = 0.0
+dS_3_13_2(0) = 0.0
+dS_4_13_2(0) = 0.0
+dS_5_13_2(0) = 0.0
+dS_6_13_2(0) = 0.0
+dS_1_14_2(0) = 0.0
+dS_2_14_2(0) = 0.0
+dS_3_14_2(0) = 0.0
+dS_4_14_2(0) = 0.0
+dS_5_14_2(0) = 0.0
+dS_6_14_2(0) = 0.0
+dS_1_1_3(0) = 0.0
+dS_2_1_3(0) = 0.0
+dS_3_1_3(0) = 0.0
+dS_4_1_3(0) = 0.0
+dS_5_1_3(0) = 0.0
+dS_6_1_3(0) = 0.0
+dS_1_2_3(0) = 0.0
+dS_2_2_3(0) = 0.0
+dS_3_2_3(0) = 0.0
+dS_4_2_3(0) = 0.0
+dS_5_2_3(0) = 0.0
+dS_6_2_3(0) = 0.0
+dS_1_3_3(0) = 0.0
+dS_2_3_3(0) = 0.0
+dS_3_3_3(0) = 0.0
+dS_4_3_3(0) = 0.0
+dS_5_3_3(0) = 0.0
+dS_6_3_3(0) = 0.0
+dS_1_4_3(0) = 0.0
+dS_2_4_3(0) = 0.0
+dS_3_4_3(0) = 0.0
+dS_4_4_3(0) = 0.0
+dS_5_4_3(0) = 0.0
+dS_6_4_3(0) = 0.0
+dS_1_5_3(0) = 0.0
+dS_2_5_3(0) = 0.0
+dS_3_5_3(0) = 0.0
+dS_4_5_3(0) = 0.0
+dS_5_5_3(0) = 0.0
+dS_6_5_3(0) = 0.0
+dS_1_6_3(0) = 0.0
+dS_2_6_3(0) = 0.0
+dS_3_6_3(0) = 0.0
+dS_4_6_3(0) = 0.0
+dS_5_6_3(0) = 0.0
+dS_6_6_3(0) = 0.0
+dS_1_7_3(0) = 0.0
+dS_2_7_3(0) = 0.0
+dS_3_7_3(0) = 0.0
+dS_4_7_3(0) = 0.0
+dS_5_7_3(0) = 0.0
+dS_6_7_3(0) = 0.0
+dS_1_8_3(0) = 0.0
+dS_2_8_3(0) = 0.0
+dS_3_8_3(0) = 0.0
+dS_4_8_3(0) = 0.0
+dS_5_8_3(0) = 0.0
+dS_6_8_3(0) = 0.0
+dS_1_9_3(0) = 0.0
+dS_2_9_3(0) = 0.0
+dS_3_9_3(0) = 0.0
+dS_4_9_3(0) = 0.0
+dS_5_9_3(0) = 0.0
+dS_6_9_3(0) = 0.0
+dS_1_10_3(0) = 0.0
+dS_2_10_3(0) = 0.0
+dS_3_10_3(0) = 0.0
+dS_4_10_3(0) = 0.0
+dS_5_10_3(0) = 0.0
+dS_6_10_3(0) = 0.0
+dS_1_11_3(0) = 0.0
+dS_2_11_3(0) = 0.0
+dS_3_11_3(0) = 0.0
+dS_4_11_3(0) = 0.0
+dS_5_11_3(0) = 0.0
+dS_6_11_3(0) = 0.0
+dS_1_12_3(0) = 0.0
+dS_2_12_3(0) = 0.0
+dS_3_12_3(0) = 0.0
+dS_4_12_3(0) = 0.0
+dS_5_12_3(0) = 0.0
+dS_6_12_3(0) = 0.0
+dS_1_13_3(0) = 0.0
+dS_2_13_3(0) = 0.0
+dS_3_13_3(0) = 0.0
+dS_4_13_3(0) = 0.0
+dS_5_13_3(0) = 0.0
+dS_6_13_3(0) = 0.0
+dS_1_14_3(0) = 0.0
+dS_2_14_3(0) = 0.0
+dS_3_14_3(0) = 0.0
+dS_4_14_3(0) = 0.0
+dS_5_14_3(0) = 0.0
+dS_6_14_3(0) = 0.0
+dS_1_1_4(0) = 0.0
+dS_2_1_4(0) = 0.0
+dS_3_1_4(0) = 0.0
+dS_4_1_4(0) = 0.0
+dS_5_1_4(0) = 0.0
+dS_6_1_4(0) = 0.0
+dS_1_2_4(0) = 0.0
+dS_2_2_4(0) = 0.0
+dS_3_2_4(0) = 0.0
+dS_4_2_4(0) = 0.0
+dS_5_2_4(0) = 0.0
+dS_6_2_4(0) = 0.0
+dS_1_3_4(0) = 0.0
+dS_2_3_4(0) = 0.0
+dS_3_3_4(0) = 0.0
+dS_4_3_4(0) = 0.0
+dS_5_3_4(0) = 0.0
+dS_6_3_4(0) = 0.0
+dS_1_4_4(0) = 0.0
+dS_2_4_4(0) = 0.0
+dS_3_4_4(0) = 0.0
+dS_4_4_4(0) = 0.0
+dS_5_4_4(0) = 0.0
+dS_6_4_4(0) = 0.0
+dS_1_5_4(0) = 0.0
+dS_2_5_4(0) = 0.0
+dS_3_5_4(0) = 0.0
+dS_4_5_4(0) = 0.0
+dS_5_5_4(0) = 0.0
+dS_6_5_4(0) = 0.0
+dS_1_6_4(0) = 0.0
+dS_2_6_4(0) = 0.0
+dS_3_6_4(0) = 0.0
+dS_4_6_4(0) = 0.0
+dS_5_6_4(0) = 0.0
+dS_6_6_4(0) = 0.0
+dS_1_7_4(0) = 0.0
+dS_2_7_4(0) = 0.0
+dS_3_7_4(0) = 0.0
+dS_4_7_4(0) = 0.0
+dS_5_7_4(0) = 0.0
+dS_6_7_4(0) = 0.0
+dS_1_8_4(0) = 0.0
+dS_2_8_4(0) = 0.0
+dS_3_8_4(0) = 0.0
+dS_4_8_4(0) = 0.0
+dS_5_8_4(0) = 0.0
+dS_6_8_4(0) = 0.0
+dS_1_9_4(0) = 0.0
+dS_2_9_4(0) = 0.0
+dS_3_9_4(0) = 0.0
+dS_4_9_4(0) = 0.0
+dS_5_9_4(0) = 0.0
+dS_6_9_4(0) = 0.0
+dS_1_10_4(0) = 0.0
+dS_2_10_4(0) = 0.0
+dS_3_10_4(0) = 0.0
+dS_4_10_4(0) = 0.0
+dS_5_10_4(0) = 0.0
+dS_6_10_4(0) = 0.0
+dS_1_11_4(0) = 0.0
+dS_2_11_4(0) = 0.0
+dS_3_11_4(0) = 0.0
+dS_4_11_4(0) = 0.0
+dS_5_11_4(0) = 0.0
+dS_6_11_4(0) = 0.0
+dS_1_12_4(0) = 0.0
+dS_2_12_4(0) = 0.0
+dS_3_12_4(0) = 0.0
+dS_4_12_4(0) = 0.0
+dS_5_12_4(0) = 0.0
+dS_6_12_4(0) = 0.0
+dS_1_13_4(0) = 0.0
+dS_2_13_4(0) = 0.0
+dS_3_13_4(0) = 0.0
+dS_4_13_4(0) = 0.0
+dS_5_13_4(0) = 0.0
+dS_6_13_4(0) = 0.0
+dS_1_14_4(0) = 0.0
+dS_2_14_4(0) = 0.0
+dS_3_14_4(0) = 0.0
+dS_4_14_4(0) = 0.0
+dS_5_14_4(0) = 0.0
+dS_6_14_4(0) = 0.0
+dS_1_1_5(0) = 0.0
+dS_2_1_5(0) = 0.0
+dS_3_1_5(0) = 0.0
+dS_4_1_5(0) = 0.0
+dS_5_1_5(0) = 0.0
+dS_6_1_5(0) = 0.0
+dS_1_2_5(0) = 0.0
+dS_2_2_5(0) = 0.0
+dS_3_2_5(0) = 0.0
+dS_4_2_5(0) = 0.0
+dS_5_2_5(0) = 0.0
+dS_6_2_5(0) = 0.0
+dS_1_3_5(0) = 0.0
+dS_2_3_5(0) = 0.0
+dS_3_3_5(0) = 0.0
+dS_4_3_5(0) = 0.0
+dS_5_3_5(0) = 0.0
+dS_6_3_5(0) = 0.0
+dS_1_4_5(0) = 0.0
+dS_2_4_5(0) = 0.0
+dS_3_4_5(0) = 0.0
+dS_4_4_5(0) = 0.0
+dS_5_4_5(0) = 0.0
+dS_6_4_5(0) = 0.0
+dS_1_5_5(0) = 0.0
+dS_2_5_5(0) = 0.0
+dS_3_5_5(0) = 0.0
+dS_4_5_5(0) = 0.0
+dS_5_5_5(0) = 0.0
+dS_6_5_5(0) = 0.0
+dS_1_6_5(0) = 0.0
+dS_2_6_5(0) = 0.0
+dS_3_6_5(0) = 0.0
+dS_4_6_5(0) = 0.0
+dS_5_6_5(0) = 0.0
+dS_6_6_5(0) = 0.0
+dS_1_7_5(0) = 0.0
+dS_2_7_5(0) = 0.0
+dS_3_7_5(0) = 0.0
+dS_4_7_5(0) = 0.0
+dS_5_7_5(0) = 0.0
+dS_6_7_5(0) = 0.0
+dS_1_8_5(0) = 0.0
+dS_2_8_5(0) = 0.0
+dS_3_8_5(0) = 0.0
+dS_4_8_5(0) = 0.0
+dS_5_8_5(0) = 0.0
+dS_6_8_5(0) = 0.0
+dS_1_9_5(0) = 0.0
+dS_2_9_5(0) = 0.0
+dS_3_9_5(0) = 0.0
+dS_4_9_5(0) = 0.0
+dS_5_9_5(0) = 0.0
+dS_6_9_5(0) = 0.0
+dS_1_10_5(0) = 0.0
+dS_2_10_5(0) = 0.0
+dS_3_10_5(0) = 0.0
+dS_4_10_5(0) = 0.0
+dS_5_10_5(0) = 0.0
+dS_6_10_5(0) = 0.0
+dS_1_11_5(0) = 0.0
+dS_2_11_5(0) = 0.0
+dS_3_11_5(0) = 0.0
+dS_4_11_5(0) = 0.0
+dS_5_11_5(0) = 0.0
+dS_6_11_5(0) = 0.0
+dS_1_12_5(0) = 0.0
+dS_2_12_5(0) = 0.0
+dS_3_12_5(0) = 0.0
+dS_4_12_5(0) = 0.0
+dS_5_12_5(0) = 0.0
+dS_6_12_5(0) = 0.0
+dS_1_13_5(0) = 0.0
+dS_2_13_5(0) = 0.0
+dS_3_13_5(0) = 0.0
+dS_4_13_5(0) = 0.0
+dS_5_13_5(0) = 0.0
+dS_6_13_5(0) = 0.0
+dS_1_14_5(0) = 0.0
+dS_2_14_5(0) = 0.0
+dS_3_14_5(0) = 0.0
+dS_4_14_5(0) = 0.0
+dS_5_14_5(0) = 0.0
+dS_6_14_5(0) = 0.0
+dS_1_1_6(0) = 0.0
+dS_2_1_6(0) = 0.0
+dS_3_1_6(0) = 0.0
+dS_4_1_6(0) = 0.0
+dS_5_1_6(0) = 0.0
+dS_6_1_6(0) = 0.0
+dS_1_2_6(0) = 0.0
+dS_2_2_6(0) = 0.0
+dS_3_2_6(0) = 0.0
+dS_4_2_6(0) = 0.0
+dS_5_2_6(0) = 0.0
+dS_6_2_6(0) = 0.0
+dS_1_3_6(0) = 0.0
+dS_2_3_6(0) = 0.0
+dS_3_3_6(0) = 0.0
+dS_4_3_6(0) = 0.0
+dS_5_3_6(0) = 0.0
+dS_6_3_6(0) = 0.0
+dS_1_4_6(0) = 0.0
+dS_2_4_6(0) = 0.0
+dS_3_4_6(0) = 0.0
+dS_4_4_6(0) = 0.0
+dS_5_4_6(0) = 0.0
+dS_6_4_6(0) = 0.0
+dS_1_5_6(0) = 0.0
+dS_2_5_6(0) = 0.0
+dS_3_5_6(0) = 0.0
+dS_4_5_6(0) = 0.0
+dS_5_5_6(0) = 0.0
+dS_6_5_6(0) = 0.0
+dS_1_6_6(0) = 0.0
+dS_2_6_6(0) = 0.0
+dS_3_6_6(0) = 0.0
+dS_4_6_6(0) = 0.0
+dS_5_6_6(0) = 0.0
+dS_6_6_6(0) = 0.0
+dS_1_7_6(0) = 0.0
+dS_2_7_6(0) = 0.0
+dS_3_7_6(0) = 0.0
+dS_4_7_6(0) = 0.0
+dS_5_7_6(0) = 0.0
+dS_6_7_6(0) = 0.0
+dS_1_8_6(0) = 0.0
+dS_2_8_6(0) = 0.0
+dS_3_8_6(0) = 0.0
+dS_4_8_6(0) = 0.0
+dS_5_8_6(0) = 0.0
+dS_6_8_6(0) = 0.0
+dS_1_9_6(0) = 0.0
+dS_2_9_6(0) = 0.0
+dS_3_9_6(0) = 0.0
+dS_4_9_6(0) = 0.0
+dS_5_9_6(0) = 0.0
+dS_6_9_6(0) = 0.0
+dS_1_10_6(0) = 0.0
+dS_2_10_6(0) = 0.0
+dS_3_10_6(0) = 0.0
+dS_4_10_6(0) = 0.0
+dS_5_10_6(0) = 0.0
+dS_6_10_6(0) = 0.0
+dS_1_11_6(0) = 0.0
+dS_2_11_6(0) = 0.0
+dS_3_11_6(0) = 0.0
+dS_4_11_6(0) = 0.0
+dS_5_11_6(0) = 0.0
+dS_6_11_6(0) = 0.0
+dS_1_12_6(0) = 0.0
+dS_2_12_6(0) = 0.0
+dS_3_12_6(0) = 0.0
+dS_4_12_6(0) = 0.0
+dS_5_12_6(0) = 0.0
+dS_6_12_6(0) = 0.0
+dS_1_13_6(0) = 0.0
+dS_2_13_6(0) = 0.0
+dS_3_13_6(0) = 0.0
+dS_4_13_6(0) = 0.0
+dS_5_13_6(0) = 0.0
+dS_6_13_6(0) = 0.0
+dS_1_14_6(0) = 0.0
+dS_2_14_6(0) = 0.0
+dS_3_14_6(0) = 0.0
+dS_4_14_6(0) = 0.0
+dS_5_14_6(0) = 0.0
+dS_6_14_6(0) = 0.0
+dS_1_1_7(0) = 0.0
+dS_2_1_7(0) = 0.0
+dS_3_1_7(0) = 0.0
+dS_4_1_7(0) = 0.0
+dS_5_1_7(0) = 0.0
+dS_6_1_7(0) = 0.0
+dS_1_2_7(0) = 0.0
+dS_2_2_7(0) = 0.0
+dS_3_2_7(0) = 0.0
+dS_4_2_7(0) = 0.0
+dS_5_2_7(0) = 0.0
+dS_6_2_7(0) = 0.0
+dS_1_3_7(0) = 0.0
+dS_2_3_7(0) = 0.0
+dS_3_3_7(0) = 0.0
+dS_4_3_7(0) = 0.0
+dS_5_3_7(0) = 0.0
+dS_6_3_7(0) = 0.0
+dS_1_4_7(0) = 0.0
+dS_2_4_7(0) = 0.0
+dS_3_4_7(0) = 0.0
+dS_4_4_7(0) = 0.0
+dS_5_4_7(0) = 0.0
+dS_6_4_7(0) = 0.0
+dS_1_5_7(0) = 0.0
+dS_2_5_7(0) = 0.0
+dS_3_5_7(0) = 0.0
+dS_4_5_7(0) = 0.0
+dS_5_5_7(0) = 0.0
+dS_6_5_7(0) = 0.0
+dS_1_6_7(0) = 0.0
+dS_2_6_7(0) = 0.0
+dS_3_6_7(0) = 0.0
+dS_4_6_7(0) = 0.0
+dS_5_6_7(0) = 0.0
+dS_6_6_7(0) = 0.0
+dS_1_7_7(0) = 0.0
+dS_2_7_7(0) = 0.0
+dS_3_7_7(0) = 0.0
+dS_4_7_7(0) = 0.0
+dS_5_7_7(0) = 0.0
+dS_6_7_7(0) = 0.0
+dS_1_8_7(0) = 0.0
+dS_2_8_7(0) = 0.0
+dS_3_8_7(0) = 0.0
+dS_4_8_7(0) = 0.0
+dS_5_8_7(0) = 0.0
+dS_6_8_7(0) = 0.0
+dS_1_9_7(0) = 0.0
+dS_2_9_7(0) = 0.0
+dS_3_9_7(0) = 0.0
+dS_4_9_7(0) = 0.0
+dS_5_9_7(0) = 0.0
+dS_6_9_7(0) = 0.0
+dS_1_10_7(0) = 0.0
+dS_2_10_7(0) = 0.0
+dS_3_10_7(0) = 0.0
+dS_4_10_7(0) = 0.0
+dS_5_10_7(0) = 0.0
+dS_6_10_7(0) = 0.0
+dS_1_11_7(0) = 0.0
+dS_2_11_7(0) = 0.0
+dS_3_11_7(0) = 0.0
+dS_4_11_7(0) = 0.0
+dS_5_11_7(0) = 0.0
+dS_6_11_7(0) = 0.0
+dS_1_12_7(0) = 0.0
+dS_2_12_7(0) = 0.0
+dS_3_12_7(0) = 0.0
+dS_4_12_7(0) = 0.0
+dS_5_12_7(0) = 0.0
+dS_6_12_7(0) = 0.0
+dS_1_13_7(0) = 0.0
+dS_2_13_7(0) = 0.0
+dS_3_13_7(0) = 0.0
+dS_4_13_7(0) = 0.0
+dS_5_13_7(0) = 0.0
+dS_6_13_7(0) = 0.0
+dS_1_14_7(0) = 0.0
+dS_2_14_7(0) = 0.0
+dS_3_14_7(0) = 0.0
+dS_4_14_7(0) = 0.0
+dS_5_14_7(0) = 0.0
+dS_6_14_7(0) = 0.0
+dS_1_1_8(0) = 0.0
+dS_2_1_8(0) = 0.0
+dS_3_1_8(0) = 0.0
+dS_4_1_8(0) = 0.0
+dS_5_1_8(0) = 0.0
+dS_6_1_8(0) = 0.0
+dS_1_2_8(0) = 0.0
+dS_2_2_8(0) = 0.0
+dS_3_2_8(0) = 0.0
+dS_4_2_8(0) = 0.0
+dS_5_2_8(0) = 0.0
+dS_6_2_8(0) = 0.0
+dS_1_3_8(0) = 0.0
+dS_2_3_8(0) = 0.0
+dS_3_3_8(0) = 0.0
+dS_4_3_8(0) = 0.0
+dS_5_3_8(0) = 0.0
+dS_6_3_8(0) = 0.0
+dS_1_4_8(0) = 0.0
+dS_2_4_8(0) = 0.0
+dS_3_4_8(0) = 0.0
+dS_4_4_8(0) = 0.0
+dS_5_4_8(0) = 0.0
+dS_6_4_8(0) = 0.0
+dS_1_5_8(0) = 0.0
+dS_2_5_8(0) = 0.0
+dS_3_5_8(0) = 0.0
+dS_4_5_8(0) = 0.0
+dS_5_5_8(0) = 0.0
+dS_6_5_8(0) = 0.0
+dS_1_6_8(0) = 0.0
+dS_2_6_8(0) = 0.0
+dS_3_6_8(0) = 0.0
+dS_4_6_8(0) = 0.0
+dS_5_6_8(0) = 0.0
+dS_6_6_8(0) = 0.0
+dS_1_7_8(0) = 0.0
+dS_2_7_8(0) = 0.0
+dS_3_7_8(0) = 0.0
+dS_4_7_8(0) = 0.0
+dS_5_7_8(0) = 0.0
+dS_6_7_8(0) = 0.0
+dS_1_8_8(0) = 0.0
+dS_2_8_8(0) = 0.0
+dS_3_8_8(0) = 0.0
+dS_4_8_8(0) = 0.0
+dS_5_8_8(0) = 0.0
+dS_6_8_8(0) = 0.0
+dS_1_9_8(0) = 0.0
+dS_2_9_8(0) = 0.0
+dS_3_9_8(0) = 0.0
+dS_4_9_8(0) = 0.0
+dS_5_9_8(0) = 0.0
+dS_6_9_8(0) = 0.0
+dS_1_10_8(0) = 0.0
+dS_2_10_8(0) = 0.0
+dS_3_10_8(0) = 0.0
+dS_4_10_8(0) = 0.0
+dS_5_10_8(0) = 0.0
+dS_6_10_8(0) = 0.0
+dS_1_11_8(0) = 0.0
+dS_2_11_8(0) = 0.0
+dS_3_11_8(0) = 0.0
+dS_4_11_8(0) = 0.0
+dS_5_11_8(0) = 0.0
+dS_6_11_8(0) = 0.0
+dS_1_12_8(0) = 0.0
+dS_2_12_8(0) = 0.0
+dS_3_12_8(0) = 0.0
+dS_4_12_8(0) = 0.0
+dS_5_12_8(0) = 0.0
+dS_6_12_8(0) = 0.0
+dS_1_13_8(0) = 0.0
+dS_2_13_8(0) = 0.0
+dS_3_13_8(0) = 0.0
+dS_4_13_8(0) = 0.0
+dS_5_13_8(0) = 0.0
+dS_6_13_8(0) = 0.0
+dS_1_14_8(0) = 0.0
+dS_2_14_8(0) = 0.0
+dS_3_14_8(0) = 0.0
+dS_4_14_8(0) = 0.0
+dS_5_14_8(0) = 0.0
+dS_6_14_8(0) = 0.0
+dS_1_1_9(0) = 0.0
+dS_2_1_9(0) = 0.0
+dS_3_1_9(0) = 0.0
+dS_4_1_9(0) = 0.0
+dS_5_1_9(0) = 0.0
+dS_6_1_9(0) = 0.0
+dS_1_2_9(0) = 0.0
+dS_2_2_9(0) = 0.0
+dS_3_2_9(0) = 0.0
+dS_4_2_9(0) = 0.0
+dS_5_2_9(0) = 0.0
+dS_6_2_9(0) = 0.0
+dS_1_3_9(0) = 0.0
+dS_2_3_9(0) = 0.0
+dS_3_3_9(0) = 0.0
+dS_4_3_9(0) = 0.0
+dS_5_3_9(0) = 0.0
+dS_6_3_9(0) = 0.0
+dS_1_4_9(0) = 0.0
+dS_2_4_9(0) = 0.0
+dS_3_4_9(0) = 0.0
+dS_4_4_9(0) = 0.0
+dS_5_4_9(0) = 0.0
+dS_6_4_9(0) = 0.0
+dS_1_5_9(0) = 0.0
+dS_2_5_9(0) = 0.0
+dS_3_5_9(0) = 0.0
+dS_4_5_9(0) = 0.0
+dS_5_5_9(0) = 0.0
+dS_6_5_9(0) = 0.0
+dS_1_6_9(0) = 0.0
+dS_2_6_9(0) = 0.0
+dS_3_6_9(0) = 0.0
+dS_4_6_9(0) = 0.0
+dS_5_6_9(0) = 0.0
+dS_6_6_9(0) = 0.0
+dS_1_7_9(0) = 0.0
+dS_2_7_9(0) = 0.0
+dS_3_7_9(0) = 0.0
+dS_4_7_9(0) = 0.0
+dS_5_7_9(0) = 0.0
+dS_6_7_9(0) = 0.0
+dS_1_8_9(0) = 0.0
+dS_2_8_9(0) = 0.0
+dS_3_8_9(0) = 0.0
+dS_4_8_9(0) = 0.0
+dS_5_8_9(0) = 0.0
+dS_6_8_9(0) = 0.0
+dS_1_9_9(0) = 0.0
+dS_2_9_9(0) = 0.0
+dS_3_9_9(0) = 0.0
+dS_4_9_9(0) = 0.0
+dS_5_9_9(0) = 0.0
+dS_6_9_9(0) = 0.0
+dS_1_10_9(0) = 0.0
+dS_2_10_9(0) = 0.0
+dS_3_10_9(0) = 0.0
+dS_4_10_9(0) = 0.0
+dS_5_10_9(0) = 0.0
+dS_6_10_9(0) = 0.0
+dS_1_11_9(0) = 0.0
+dS_2_11_9(0) = 0.0
+dS_3_11_9(0) = 0.0
+dS_4_11_9(0) = 0.0
+dS_5_11_9(0) = 0.0
+dS_6_11_9(0) = 0.0
+dS_1_12_9(0) = 0.0
+dS_2_12_9(0) = 0.0
+dS_3_12_9(0) = 0.0
+dS_4_12_9(0) = 0.0
+dS_5_12_9(0) = 0.0
+dS_6_12_9(0) = 0.0
+dS_1_13_9(0) = 0.0
+dS_2_13_9(0) = 0.0
+dS_3_13_9(0) = 0.0
+dS_4_13_9(0) = 0.0
+dS_5_13_9(0) = 0.0
+dS_6_13_9(0) = 0.0
+dS_1_14_9(0) = 0.0
+dS_2_14_9(0) = 0.0
+dS_3_14_9(0) = 0.0
+dS_4_14_9(0) = 0.0
+dS_5_14_9(0) = 0.0
+dS_6_14_9(0) = 0.0
+dS_1_1_10(0) = 0.0
+dS_2_1_10(0) = 0.0
+dS_3_1_10(0) = 0.0
+dS_4_1_10(0) = 0.0
+dS_5_1_10(0) = 0.0
+dS_6_1_10(0) = 0.0
+dS_1_2_10(0) = 0.0
+dS_2_2_10(0) = 0.0
+dS_3_2_10(0) = 0.0
+dS_4_2_10(0) = 0.0
+dS_5_2_10(0) = 0.0
+dS_6_2_10(0) = 0.0
+dS_1_3_10(0) = 0.0
+dS_2_3_10(0) = 0.0
+dS_3_3_10(0) = 0.0
+dS_4_3_10(0) = 0.0
+dS_5_3_10(0) = 0.0
+dS_6_3_10(0) = 0.0
+dS_1_4_10(0) = 0.0
+dS_2_4_10(0) = 0.0
+dS_3_4_10(0) = 0.0
+dS_4_4_10(0) = 0.0
+dS_5_4_10(0) = 0.0
+dS_6_4_10(0) = 0.0
+dS_1_5_10(0) = 0.0
+dS_2_5_10(0) = 0.0
+dS_3_5_10(0) = 0.0
+dS_4_5_10(0) = 0.0
+dS_5_5_10(0) = 0.0
+dS_6_5_10(0) = 0.0
+dS_1_6_10(0) = 0.0
+dS_2_6_10(0) = 0.0
+dS_3_6_10(0) = 0.0
+dS_4_6_10(0) = 0.0
+dS_5_6_10(0) = 0.0
+dS_6_6_10(0) = 0.0
+dS_1_7_10(0) = 0.0
+dS_2_7_10(0) = 0.0
+dS_3_7_10(0) = 0.0
+dS_4_7_10(0) = 0.0
+dS_5_7_10(0) = 0.0
+dS_6_7_10(0) = 0.0
+dS_1_8_10(0) = 0.0
+dS_2_8_10(0) = 0.0
+dS_3_8_10(0) = 0.0
+dS_4_8_10(0) = 0.0
+dS_5_8_10(0) = 0.0
+dS_6_8_10(0) = 0.0
+dS_1_9_10(0) = 0.0
+dS_2_9_10(0) = 0.0
+dS_3_9_10(0) = 0.0
+dS_4_9_10(0) = 0.0
+dS_5_9_10(0) = 0.0
+dS_6_9_10(0) = 0.0
+dS_1_10_10(0) = 0.0
+dS_2_10_10(0) = 0.0
+dS_3_10_10(0) = 0.0
+dS_4_10_10(0) = 0.0
+dS_5_10_10(0) = 0.0
+dS_6_10_10(0) = 0.0
+dS_1_11_10(0) = 0.0
+dS_2_11_10(0) = 0.0
+dS_3_11_10(0) = 0.0
+dS_4_11_10(0) = 0.0
+dS_5_11_10(0) = 0.0
+dS_6_11_10(0) = 0.0
+dS_1_12_10(0) = 0.0
+dS_2_12_10(0) = 0.0
+dS_3_12_10(0) = 0.0
+dS_4_12_10(0) = 0.0
+dS_5_12_10(0) = 0.0
+dS_6_12_10(0) = 0.0
+dS_1_13_10(0) = 0.0
+dS_2_13_10(0) = 0.0
+dS_3_13_10(0) = 0.0
+dS_4_13_10(0) = 0.0
+dS_5_13_10(0) = 0.0
+dS_6_13_10(0) = 0.0
+dS_1_14_10(0) = 0.0
+dS_2_14_10(0) = 0.0
+dS_3_14_10(0) = 0.0
+dS_4_14_10(0) = 0.0
+dS_5_14_10(0) = 0.0
+dS_6_14_10(0) = 0.0
+dS_1_1_11(0) = 0.0
+dS_2_1_11(0) = 0.0
+dS_3_1_11(0) = 0.0
+dS_4_1_11(0) = 0.0
+dS_5_1_11(0) = 0.0
+dS_6_1_11(0) = 0.0
+dS_1_2_11(0) = 0.0
+dS_2_2_11(0) = 0.0
+dS_3_2_11(0) = 0.0
+dS_4_2_11(0) = 0.0
+dS_5_2_11(0) = 0.0
+dS_6_2_11(0) = 0.0
+dS_1_3_11(0) = 0.0
+dS_2_3_11(0) = 0.0
+dS_3_3_11(0) = 0.0
+dS_4_3_11(0) = 0.0
+dS_5_3_11(0) = 0.0
+dS_6_3_11(0) = 0.0
+dS_1_4_11(0) = 0.0
+dS_2_4_11(0) = 0.0
+dS_3_4_11(0) = 0.0
+dS_4_4_11(0) = 0.0
+dS_5_4_11(0) = 0.0
+dS_6_4_11(0) = 0.0
+dS_1_5_11(0) = 0.0
+dS_2_5_11(0) = 0.0
+dS_3_5_11(0) = 0.0
+dS_4_5_11(0) = 0.0
+dS_5_5_11(0) = 0.0
+dS_6_5_11(0) = 0.0
+dS_1_6_11(0) = 0.0
+dS_2_6_11(0) = 0.0
+dS_3_6_11(0) = 0.0
+dS_4_6_11(0) = 0.0
+dS_5_6_11(0) = 0.0
+dS_6_6_11(0) = 0.0
+dS_1_7_11(0) = 0.0
+dS_2_7_11(0) = 0.0
+dS_3_7_11(0) = 0.0
+dS_4_7_11(0) = 0.0
+dS_5_7_11(0) = 0.0
+dS_6_7_11(0) = 0.0
+dS_1_8_11(0) = 0.0
+dS_2_8_11(0) = 0.0
+dS_3_8_11(0) = 0.0
+dS_4_8_11(0) = 0.0
+dS_5_8_11(0) = 0.0
+dS_6_8_11(0) = 0.0
+dS_1_9_11(0) = 0.0
+dS_2_9_11(0) = 0.0
+dS_3_9_11(0) = 0.0
+dS_4_9_11(0) = 0.0
+dS_5_9_11(0) = 0.0
+dS_6_9_11(0) = 0.0
+dS_1_10_11(0) = 0.0
+dS_2_10_11(0) = 0.0
+dS_3_10_11(0) = 0.0
+dS_4_10_11(0) = 0.0
+dS_5_10_11(0) = 0.0
+dS_6_10_11(0) = 0.0
+dS_1_11_11(0) = 0.0
+dS_2_11_11(0) = 0.0
+dS_3_11_11(0) = 0.0
+dS_4_11_11(0) = 0.0
+dS_5_11_11(0) = 0.0
+dS_6_11_11(0) = 0.0
+dS_1_12_11(0) = 0.0
+dS_2_12_11(0) = 0.0
+dS_3_12_11(0) = 0.0
+dS_4_12_11(0) = 0.0
+dS_5_12_11(0) = 0.0
+dS_6_12_11(0) = 0.0
+dS_1_13_11(0) = 0.0
+dS_2_13_11(0) = 0.0
+dS_3_13_11(0) = 0.0
+dS_4_13_11(0) = 0.0
+dS_5_13_11(0) = 0.0
+dS_6_13_11(0) = 0.0
+dS_1_14_11(0) = 0.0
+dS_2_14_11(0) = 0.0
+dS_3_14_11(0) = 0.0
+dS_4_14_11(0) = 0.0
+dS_5_14_11(0) = 0.0
+dS_6_14_11(0) = 0.0
+dS_1_1_12(0) = 0.0
+dS_2_1_12(0) = 0.0
+dS_3_1_12(0) = 0.0
+dS_4_1_12(0) = 0.0
+dS_5_1_12(0) = 0.0
+dS_6_1_12(0) = 0.0
+dS_1_2_12(0) = 0.0
+dS_2_2_12(0) = 0.0
+dS_3_2_12(0) = 0.0
+dS_4_2_12(0) = 0.0
+dS_5_2_12(0) = 0.0
+dS_6_2_12(0) = 0.0
+dS_1_3_12(0) = 0.0
+dS_2_3_12(0) = 0.0
+dS_3_3_12(0) = 0.0
+dS_4_3_12(0) = 0.0
+dS_5_3_12(0) = 0.0
+dS_6_3_12(0) = 0.0
+dS_1_4_12(0) = 0.0
+dS_2_4_12(0) = 0.0
+dS_3_4_12(0) = 0.0
+dS_4_4_12(0) = 0.0
+dS_5_4_12(0) = 0.0
+dS_6_4_12(0) = 0.0
+dS_1_5_12(0) = 0.0
+dS_2_5_12(0) = 0.0
+dS_3_5_12(0) = 0.0
+dS_4_5_12(0) = 0.0
+dS_5_5_12(0) = 0.0
+dS_6_5_12(0) = 0.0
+dS_1_6_12(0) = 0.0
+dS_2_6_12(0) = 0.0
+dS_3_6_12(0) = 0.0
+dS_4_6_12(0) = 0.0
+dS_5_6_12(0) = 0.0
+dS_6_6_12(0) = 0.0
+dS_1_7_12(0) = 0.0
+dS_2_7_12(0) = 0.0
+dS_3_7_12(0) = 0.0
+dS_4_7_12(0) = 0.0
+dS_5_7_12(0) = 0.0
+dS_6_7_12(0) = 0.0
+dS_1_8_12(0) = 0.0
+dS_2_8_12(0) = 0.0
+dS_3_8_12(0) = 0.0
+dS_4_8_12(0) = 0.0
+dS_5_8_12(0) = 0.0
+dS_6_8_12(0) = 0.0
+dS_1_9_12(0) = 0.0
+dS_2_9_12(0) = 0.0
+dS_3_9_12(0) = 0.0
+dS_4_9_12(0) = 0.0
+dS_5_9_12(0) = 0.0
+dS_6_9_12(0) = 0.0
+dS_1_10_12(0) = 0.0
+dS_2_10_12(0) = 0.0
+dS_3_10_12(0) = 0.0
+dS_4_10_12(0) = 0.0
+dS_5_10_12(0) = 0.0
+dS_6_10_12(0) = 0.0
+dS_1_11_12(0) = 0.0
+dS_2_11_12(0) = 0.0
+dS_3_11_12(0) = 0.0
+dS_4_11_12(0) = 0.0
+dS_5_11_12(0) = 0.0
+dS_6_11_12(0) = 0.0
+dS_1_12_12(0) = 0.0
+dS_2_12_12(0) = 0.0
+dS_3_12_12(0) = 0.0
+dS_4_12_12(0) = 0.0
+dS_5_12_12(0) = 0.0
+dS_6_12_12(0) = 0.0
+dS_1_13_12(0) = 0.0
+dS_2_13_12(0) = 0.0
+dS_3_13_12(0) = 0.0
+dS_4_13_12(0) = 0.0
+dS_5_13_12(0) = 0.0
+dS_6_13_12(0) = 0.0
+dS_1_14_12(0) = 0.0
+dS_2_14_12(0) = 0.0
+dS_3_14_12(0) = 0.0
+dS_4_14_12(0) = 0.0
+dS_5_14_12(0) = 0.0
+dS_6_14_12(0) = 0.0
+dS_1_1_13(0) = 0.0
+dS_2_1_13(0) = 0.0
+dS_3_1_13(0) = 0.0
+dS_4_1_13(0) = 0.0
+dS_5_1_13(0) = 0.0
+dS_6_1_13(0) = 0.0
+dS_1_2_13(0) = 0.0
+dS_2_2_13(0) = 0.0
+dS_3_2_13(0) = 0.0
+dS_4_2_13(0) = 0.0
+dS_5_2_13(0) = 0.0
+dS_6_2_13(0) = 0.0
+dS_1_3_13(0) = 0.0
+dS_2_3_13(0) = 0.0
+dS_3_3_13(0) = 0.0
+dS_4_3_13(0) = 0.0
+dS_5_3_13(0) = 0.0
+dS_6_3_13(0) = 0.0
+dS_1_4_13(0) = 0.0
+dS_2_4_13(0) = 0.0
+dS_3_4_13(0) = 0.0
+dS_4_4_13(0) = 0.0
+dS_5_4_13(0) = 0.0
+dS_6_4_13(0) = 0.0
+dS_1_5_13(0) = 0.0
+dS_2_5_13(0) = 0.0
+dS_3_5_13(0) = 0.0
+dS_4_5_13(0) = 0.0
+dS_5_5_13(0) = 0.0
+dS_6_5_13(0) = 0.0
+dS_1_6_13(0) = 0.0
+dS_2_6_13(0) = 0.0
+dS_3_6_13(0) = 0.0
+dS_4_6_13(0) = 0.0
+dS_5_6_13(0) = 0.0
+dS_6_6_13(0) = 0.0
+dS_1_7_13(0) = 0.0
+dS_2_7_13(0) = 0.0
+dS_3_7_13(0) = 0.0
+dS_4_7_13(0) = 0.0
+dS_5_7_13(0) = 0.0
+dS_6_7_13(0) = 0.0
+dS_1_8_13(0) = 0.0
+dS_2_8_13(0) = 0.0
+dS_3_8_13(0) = 0.0
+dS_4_8_13(0) = 0.0
+dS_5_8_13(0) = 0.0
+dS_6_8_13(0) = 0.0
+dS_1_9_13(0) = 0.0
+dS_2_9_13(0) = 0.0
+dS_3_9_13(0) = 0.0
+dS_4_9_13(0) = 0.0
+dS_5_9_13(0) = 0.0
+dS_6_9_13(0) = 0.0
+dS_1_10_13(0) = 0.0
+dS_2_10_13(0) = 0.0
+dS_3_10_13(0) = 0.0
+dS_4_10_13(0) = 0.0
+dS_5_10_13(0) = 0.0
+dS_6_10_13(0) = 0.0
+dS_1_11_13(0) = 0.0
+dS_2_11_13(0) = 0.0
+dS_3_11_13(0) = 0.0
+dS_4_11_13(0) = 0.0
+dS_5_11_13(0) = 0.0
+dS_6_11_13(0) = 0.0
+dS_1_12_13(0) = 0.0
+dS_2_12_13(0) = 0.0
+dS_3_12_13(0) = 0.0
+dS_4_12_13(0) = 0.0
+dS_5_12_13(0) = 0.0
+dS_6_12_13(0) = 0.0
+dS_1_13_13(0) = 0.0
+dS_2_13_13(0) = 0.0
+dS_3_13_13(0) = 0.0
+dS_4_13_13(0) = 0.0
+dS_5_13_13(0) = 0.0
+dS_6_13_13(0) = 0.0
+dS_1_14_13(0) = 0.0
+dS_2_14_13(0) = 0.0
+dS_3_14_13(0) = 0.0
+dS_4_14_13(0) = 0.0
+dS_5_14_13(0) = 0.0
+dS_6_14_13(0) = 0.0
+dS_1_1_14(0) = 0.0
+dS_2_1_14(0) = 0.0
+dS_3_1_14(0) = 0.0
+dS_4_1_14(0) = 0.0
+dS_5_1_14(0) = 0.0
+dS_6_1_14(0) = 0.0
+dS_1_2_14(0) = 0.0
+dS_2_2_14(0) = 0.0
+dS_3_2_14(0) = 0.0
+dS_4_2_14(0) = 0.0
+dS_5_2_14(0) = 0.0
+dS_6_2_14(0) = 0.0
+dS_1_3_14(0) = 0.0
+dS_2_3_14(0) = 0.0
+dS_3_3_14(0) = 0.0
+dS_4_3_14(0) = 0.0
+dS_5_3_14(0) = 0.0
+dS_6_3_14(0) = 0.0
+dS_1_4_14(0) = 0.0
+dS_2_4_14(0) = 0.0
+dS_3_4_14(0) = 0.0
+dS_4_4_14(0) = 0.0
+dS_5_4_14(0) = 0.0
+dS_6_4_14(0) = 0.0
+dS_1_5_14(0) = 0.0
+dS_2_5_14(0) = 0.0
+dS_3_5_14(0) = 0.0
+dS_4_5_14(0) = 0.0
+dS_5_5_14(0) = 0.0
+dS_6_5_14(0) = 0.0
+dS_1_6_14(0) = 0.0
+dS_2_6_14(0) = 0.0
+dS_3_6_14(0) = 0.0
+dS_4_6_14(0) = 0.0
+dS_5_6_14(0) = 0.0
+dS_6_6_14(0) = 0.0
+dS_1_7_14(0) = 0.0
+dS_2_7_14(0) = 0.0
+dS_3_7_14(0) = 0.0
+dS_4_7_14(0) = 0.0
+dS_5_7_14(0) = 0.0
+dS_6_7_14(0) = 0.0
+dS_1_8_14(0) = 0.0
+dS_2_8_14(0) = 0.0
+dS_3_8_14(0) = 0.0
+dS_4_8_14(0) = 0.0
+dS_5_8_14(0) = 0.0
+dS_6_8_14(0) = 0.0
+dS_1_9_14(0) = 0.0
+dS_2_9_14(0) = 0.0
+dS_3_9_14(0) = 0.0
+dS_4_9_14(0) = 0.0
+dS_5_9_14(0) = 0.0
+dS_6_9_14(0) = 0.0
+dS_1_10_14(0) = 0.0
+dS_2_10_14(0) = 0.0
+dS_3_10_14(0) = 0.0
+dS_4_10_14(0) = 0.0
+dS_5_10_14(0) = 0.0
+dS_6_10_14(0) = 0.0
+dS_1_11_14(0) = 0.0
+dS_2_11_14(0) = 0.0
+dS_3_11_14(0) = 0.0
+dS_4_11_14(0) = 0.0
+dS_5_11_14(0) = 0.0
+dS_6_11_14(0) = 0.0
+dS_1_12_14(0) = 0.0
+dS_2_12_14(0) = 0.0
+dS_3_12_14(0) = 0.0
+dS_4_12_14(0) = 0.0
+dS_5_12_14(0) = 0.0
+dS_6_12_14(0) = 0.0
+dS_1_13_14(0) = 0.0
+dS_2_13_14(0) = 0.0
+dS_3_13_14(0) = 0.0
+dS_4_13_14(0) = 0.0
+dS_5_13_14(0) = 0.0
+dS_6_13_14(0) = 0.0
+dS_1_14_14(0) = 0.0
+dS_2_14_14(0) = 0.0
+dS_3_14_14(0) = 0.0
+dS_4_14_14(0) = 0.0
+dS_5_14_14(0) = 0.0
+dS_6_14_14(0) = 0.0
+
+
+********** MODEL PARAMETERS
+theta_01 = 0.0
+theta_02 = 0.0
+theta_03 = 0.0
+theta_04 = 0.0
+theta_05 = 0.0
+theta_06 = 0.0
+theta_07 = 0.0
+theta_08 = 0.0
+theta_09 = 0.0
+theta_10 = 0.0
+theta_11 = 0.0
+theta_12 = 0.0
+theta_13 = 0.0
+theta_14 = 0.0
+u_1 = 0.0
+********** MODEL VARIABLES
+
+rho_01 = exp(theta_01)
+rho_02 = exp(theta_02)
+rho_03 = exp(theta_03)
+rho_04 = exp(theta_04)
+rho_05 = exp(theta_05)
+rho_06 = exp(theta_06)
+rho_07 = exp(theta_07)
+rho_08 = exp(theta_08)
+rho_09 = exp(theta_09)
+rho_10 = exp(theta_10)
+rho_11 = exp(theta_11)
+rho_12 = exp(theta_12)
+rho_13 = exp(theta_13)
+rho_14 = exp(theta_14)
+********** MODEL REACTIONS
+
+flux_01=x_01*rho_02+u_1*x_01*rho_01
+flux_02=rho_03*x_02
+flux_03=rho_13*x_02
+flux_04=x_03*rho_14
+flux_05=x_04*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))
+flux_06=x_03*rho_06
+flux_07=-(-10.0+x_04+x_01+x_03+x_02)*rho_07
+flux_08=-rho_08*(x_03+x_04*rho_09)*(-10.0+x_05)
+flux_09=x_05*rho_10
+flux_10=-rho_11*(-10.0+x_06)*x_05
+flux_11=x_06*rho_12
+dSFlux_01_01_01 = -2*u_1*S_1_1*rho_01+(rho_03-rho_07)*dS_2_1_1-dS_1_1_1*(u_1*rho_01+rho_02+rho_07)-dS_4_1_1*rho_07+(rho_06-rho_07)*dS_3_1_1-u_1*x_01*rho_01
+dSFlux_01_01_02 = dS_3_1_2*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_1_2-S_1_1*rho_02-u_1*rho_01*S_1_2+dS_2_1_2*(rho_03-rho_07)-dS_4_1_2*rho_07
+dSFlux_01_01_03 = -u_1*rho_01*S_1_3+(rho_06-rho_07)*dS_3_1_3-dS_4_1_3*rho_07+S_2_1*rho_03+dS_2_1_3*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_1_3
+dSFlux_01_01_04 = (rho_06-rho_07)*dS_3_1_4-u_1*S_1_4*rho_01-dS_4_1_4*rho_07+(rho_03-rho_07)*dS_2_1_4-(u_1*rho_01+rho_02+rho_07)*dS_1_1_4
+dSFlux_01_01_05 = -rho_07*dS_4_1_5-(u_1*rho_01+rho_02+rho_07)*dS_1_1_5+dS_2_1_5*(rho_03-rho_07)-u_1*rho_01*S_1_5+dS_3_1_5*(rho_06-rho_07)
+dSFlux_01_01_06 = (rho_03-rho_07)*dS_2_1_6-(u_1*rho_01+rho_02+rho_07)*dS_1_1_6-u_1*S_1_6*rho_01+(rho_06-rho_07)*dS_3_1_6+rho_06*S_3_1-dS_4_1_6*rho_07
+dSFlux_01_01_07 = dS_2_1_7*(rho_03-rho_07)-dS_4_1_7*rho_07-S_3_1*rho_07-S_1_7*u_1*rho_01+dS_3_1_7*(rho_06-rho_07)-S_2_1*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_1_7-S_4_1*rho_07-S_1_1*rho_07
+dSFlux_01_01_08 = (rho_06-rho_07)*dS_3_1_8-u_1*rho_01*S_1_8+dS_2_1_8*(rho_03-rho_07)-dS_4_1_8*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_1_8
+dSFlux_01_01_09 = (rho_03-rho_07)*dS_2_1_9-u_1*S_1_9*rho_01+(rho_06-rho_07)*dS_3_1_9-dS_4_1_9*rho_07-dS_1_1_9*(u_1*rho_01+rho_02+rho_07)
+dSFlux_01_01_10 = -(u_1*rho_01+rho_02+rho_07)*dS_1_1_10+dS_2_1_10*(rho_03-rho_07)-dS_4_1_10*rho_07-u_1*rho_01*S_1_10+dS_3_1_10*(rho_06-rho_07)
+dSFlux_01_01_11 = dS_2_1_11*(rho_03-rho_07)-dS_4_1_11*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_1_11-u_1*S_1_11*rho_01+(rho_06-rho_07)*dS_3_1_11
+dSFlux_01_01_12 = -dS_4_1_12*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_1_12+dS_2_1_12*(rho_03-rho_07)+dS_3_1_12*(rho_06-rho_07)-u_1*S_1_12*rho_01
+dSFlux_01_01_13 = -dS_4_1_13*rho_07+(rho_06-rho_07)*dS_3_1_13+dS_2_1_13*(rho_03-rho_07)-u_1*rho_01*S_1_13-(u_1*rho_01+rho_02+rho_07)*dS_1_1_13
+dSFlux_01_01_14 = -(u_1*rho_01+rho_02+rho_07)*dS_1_1_14+(rho_03-rho_07)*dS_2_1_14-dS_4_1_14*rho_07-u_1*S_1_14*rho_01+(rho_06-rho_07)*dS_3_1_14
+dSFlux_01_02_02 = -x_01*rho_02+dS_2_2_2*(rho_03-rho_07)-dS_4_2_2*rho_07+(rho_06-rho_07)*dS_3_2_2-(u_1*rho_01+rho_02+rho_07)*dS_1_2_2-2*rho_02*S_1_2
+dSFlux_01_02_03 = (rho_06-rho_07)*dS_3_2_3+rho_03*S_2_2-S_1_3*rho_02-(u_1*rho_01+rho_02+rho_07)*dS_1_2_3-dS_4_2_3*rho_07+(rho_03-rho_07)*dS_2_2_3
+dSFlux_01_02_04 = -S_1_4*rho_02-(u_1*rho_01+rho_02+rho_07)*dS_1_2_4-rho_07*dS_4_2_4+dS_2_2_4*(rho_03-rho_07)+dS_3_2_4*(rho_06-rho_07)
+dSFlux_01_02_05 = -(u_1*rho_01+rho_02+rho_07)*dS_1_2_5+(rho_03-rho_07)*dS_2_2_5+(rho_06-rho_07)*dS_3_2_5-rho_02*S_1_5-dS_4_2_5*rho_07
+dSFlux_01_02_06 = S_3_2*rho_06-S_1_6*rho_02+dS_2_2_6*(rho_03-rho_07)-dS_4_2_6*rho_07+dS_3_2_6*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_2_6
+dSFlux_01_02_07 = (rho_06-rho_07)*dS_3_2_7-S_2_2*rho_07-rho_07*S_1_2-rho_07*S_4_2-S_3_2*rho_07-S_1_7*rho_02-dS_4_2_7*rho_07+dS_2_2_7*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_2_7
+dSFlux_01_02_08 = -S_1_8*rho_02+(rho_03-rho_07)*dS_2_2_8-dS_4_2_8*rho_07-dS_1_2_8*(u_1*rho_01+rho_02+rho_07)+(rho_06-rho_07)*dS_3_2_8
+dSFlux_01_02_09 = dS_3_2_9*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_2_9-S_1_9*rho_02-dS_4_2_9*rho_07+dS_2_2_9*(rho_03-rho_07)
+dSFlux_01_02_10 = -dS_4_2_10*rho_07+(rho_06-rho_07)*dS_3_2_10+dS_2_2_10*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_2_10-rho_02*S_1_10
+dSFlux_01_02_11 = dS_3_2_11*(rho_06-rho_07)+dS_2_2_11*(rho_03-rho_07)-dS_4_2_11*rho_07-S_1_11*rho_02-(u_1*rho_01+rho_02+rho_07)*dS_1_2_11
+dSFlux_01_02_12 = -rho_07*dS_4_2_12+dS_2_2_12*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_2_12-S_1_12*rho_02+dS_3_2_12*(rho_06-rho_07)
+dSFlux_01_02_13 = (rho_03-rho_07)*dS_2_2_13-(u_1*rho_01+rho_02+rho_07)*dS_1_2_13-dS_4_2_13*rho_07-S_1_13*rho_02+(rho_06-rho_07)*dS_3_2_13
+dSFlux_01_02_14 = dS_2_2_14*(rho_03-rho_07)-dS_4_2_14*rho_07+dS_3_2_14*(rho_06-rho_07)-S_1_14*rho_02-(u_1*rho_01+rho_02+rho_07)*dS_1_2_14
+dSFlux_01_03_03 = -(u_1*rho_01+rho_02+rho_07)*dS_1_3_3-dS_4_3_3*rho_07+rho_03*x_02+2*rho_03*S_2_3+dS_2_3_3*(rho_03-rho_07)+dS_3_3_3*(rho_06-rho_07)
+dSFlux_01_03_04 = dS_2_3_4*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_3_4+(rho_06-rho_07)*dS_3_3_4+rho_03*S_2_4-dS_4_3_4*rho_07
+dSFlux_01_03_05 = -dS_4_3_5*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_3_5+dS_2_3_5*(rho_03-rho_07)+dS_3_3_5*(rho_06-rho_07)+rho_03*S_2_5
+dSFlux_01_03_06 = rho_06*S_3_3+rho_03*S_2_6+(rho_06-rho_07)*dS_3_3_6-(u_1*rho_01+rho_02+rho_07)*dS_1_3_6-dS_4_3_6*rho_07+dS_2_3_6*(rho_03-rho_07)
+dSFlux_01_03_07 = -rho_07*S_3_3-rho_07*dS_4_3_7-dS_1_3_7*(u_1*rho_01+rho_02+rho_07)+(rho_03-rho_07)*dS_2_3_7+rho_03*S_2_7-S_2_3*rho_07-S_4_3*rho_07-S_1_3*rho_07+(rho_06-rho_07)*dS_3_3_7
+dSFlux_01_03_08 = dS_3_3_8*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_3_8+rho_03*S_2_8-dS_4_3_8*rho_07+dS_2_3_8*(rho_03-rho_07)
+dSFlux_01_03_09 = -dS_4_3_9*rho_07+(rho_06-rho_07)*dS_3_3_9+dS_2_3_9*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_3_9+rho_03*S_2_9
+dSFlux_01_03_10 = (rho_06-rho_07)*dS_3_3_10+dS_2_3_10*(rho_03-rho_07)+rho_03*S_2_10-dS_4_3_10*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_3_10
+dSFlux_01_03_11 = -dS_4_3_11*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_3_11+dS_2_3_11*(rho_03-rho_07)+rho_03*S_2_11+dS_3_3_11*(rho_06-rho_07)
+dSFlux_01_03_12 = -(u_1*rho_01+rho_02+rho_07)*dS_1_3_12-dS_4_3_12*rho_07+(rho_06-rho_07)*dS_3_3_12+rho_03*S_2_12+(rho_03-rho_07)*dS_2_3_12
+dSFlux_01_03_13 = -dS_4_3_13*rho_07+dS_2_3_13*(rho_03-rho_07)+dS_3_3_13*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_3_13+rho_03*S_2_13
+dSFlux_01_03_14 = (rho_06-rho_07)*dS_3_3_14+S_2_14*rho_03+(rho_03-rho_07)*dS_2_3_14-dS_4_3_14*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_3_14
+dSFlux_01_04_04 = -dS_4_4_4*rho_07+dS_2_4_4*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_4_4+dS_3_4_4*(rho_06-rho_07)
+dSFlux_01_04_05 = (rho_06-rho_07)*dS_3_4_5+dS_2_4_5*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_4_5-dS_4_4_5*rho_07
+dSFlux_01_04_06 = S_3_4*rho_06-(u_1*rho_01+rho_02+rho_07)*dS_1_4_6-rho_07*dS_4_4_6+dS_2_4_6*(rho_03-rho_07)+(rho_06-rho_07)*dS_3_4_6
+dSFlux_01_04_07 = -S_2_4*rho_07+dS_2_4_7*(rho_03-rho_07)-S_4_4*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_4_7+dS_3_4_7*(rho_06-rho_07)-S_1_4*rho_07-S_3_4*rho_07-dS_4_4_7*rho_07
+dSFlux_01_04_08 = (rho_03-rho_07)*dS_2_4_8-dS_4_4_8*rho_07+(rho_06-rho_07)*dS_3_4_8-(u_1*rho_01+rho_02+rho_07)*dS_1_4_8
+dSFlux_01_04_09 = dS_2_4_9*(rho_03-rho_07)+(rho_06-rho_07)*dS_3_4_9-(u_1*rho_01+rho_02+rho_07)*dS_1_4_9-dS_4_4_9*rho_07
+dSFlux_01_04_10 = -(u_1*rho_01+rho_02+rho_07)*dS_1_4_10-dS_4_4_10*rho_07+dS_2_4_10*(rho_03-rho_07)+dS_3_4_10*(rho_06-rho_07)
+dSFlux_01_04_11 = (rho_03-rho_07)*dS_2_4_11-(u_1*rho_01+rho_02+rho_07)*dS_1_4_11+(rho_06-rho_07)*dS_3_4_11-dS_4_4_11*rho_07
+dSFlux_01_04_12 = -dS_4_4_12*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_4_12+dS_2_4_12*(rho_03-rho_07)+dS_3_4_12*(rho_06-rho_07)
+dSFlux_01_04_13 = (rho_06-rho_07)*dS_3_4_13+dS_2_4_13*(rho_03-rho_07)-dS_4_4_13*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_4_13
+dSFlux_01_04_14 = -rho_07*dS_4_4_14-dS_1_4_14*(u_1*rho_01+rho_02+rho_07)+dS_2_4_14*(rho_03-rho_07)+(rho_06-rho_07)*dS_3_4_14
+dSFlux_01_05_05 = -(u_1*rho_01+rho_02+rho_07)*dS_1_5_5-dS_4_5_5*rho_07+(rho_06-rho_07)*dS_3_5_5+(rho_03-rho_07)*dS_2_5_5
+dSFlux_01_05_06 = dS_2_5_6*(rho_03-rho_07)+dS_3_5_6*(rho_06-rho_07)+S_3_5*rho_06-(u_1*rho_01+rho_02+rho_07)*dS_1_5_6-dS_4_5_6*rho_07
+dSFlux_01_05_07 = -S_3_5*rho_07+(rho_06-rho_07)*dS_3_5_7+(rho_03-rho_07)*dS_2_5_7-dS_4_5_7*rho_07-S_2_5*rho_07-S_4_5*rho_07-S_1_5*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_5_7
+dSFlux_01_05_08 = (rho_06-rho_07)*dS_3_5_8+dS_2_5_8*(rho_03-rho_07)-dS_1_5_8*(u_1*rho_01+rho_02+rho_07)-dS_4_5_8*rho_07
+dSFlux_01_05_09 = -(u_1*rho_01+rho_02+rho_07)*dS_1_5_9-dS_4_5_9*rho_07+dS_2_5_9*(rho_03-rho_07)+dS_3_5_9*(rho_06-rho_07)
+dSFlux_01_05_10 = (rho_03-rho_07)*dS_2_5_10-(u_1*rho_01+rho_02+rho_07)*dS_1_5_10+(rho_06-rho_07)*dS_3_5_10-dS_4_5_10*rho_07
+dSFlux_01_05_11 = -dS_4_5_11*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_5_11+dS_2_5_11*(rho_03-rho_07)+dS_3_5_11*(rho_06-rho_07)
+dSFlux_01_05_12 = dS_2_5_12*(rho_03-rho_07)+(rho_06-rho_07)*dS_3_5_12-dS_4_5_12*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_5_12
+dSFlux_01_05_13 = -dS_1_5_13*(u_1*rho_01+rho_02+rho_07)-rho_07*dS_4_5_13+dS_2_5_13*(rho_03-rho_07)+(rho_06-rho_07)*dS_3_5_13
+dSFlux_01_05_14 = dS_2_5_14*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_5_14+dS_3_5_14*(rho_06-rho_07)-dS_4_5_14*rho_07
+dSFlux_01_06_06 = (rho_06-rho_07)*dS_3_6_6+2*rho_06*S_3_6+(rho_03-rho_07)*dS_2_6_6-dS_4_6_6*rho_07+x_03*rho_06-(u_1*rho_01+rho_02+rho_07)*dS_1_6_6
+dSFlux_01_06_07 = -dS_4_6_7*rho_07-S_4_6*rho_07+dS_2_6_7*(rho_03-rho_07)-S_1_6*rho_07-dS_1_6_7*(u_1*rho_01+rho_02+rho_07)-S_3_6*rho_07+S_3_7*rho_06+(rho_06-rho_07)*dS_3_6_7-S_2_6*rho_07
+dSFlux_01_06_08 = dS_3_6_8*(rho_06-rho_07)+rho_06*S_3_8-(u_1*rho_01+rho_02+rho_07)*dS_1_6_8-dS_4_6_8*rho_07+dS_2_6_8*(rho_03-rho_07)
+dSFlux_01_06_09 = -dS_4_6_9*rho_07+(rho_03-rho_07)*dS_2_6_9+(rho_06-rho_07)*dS_3_6_9+S_3_9*rho_06-(u_1*rho_01+rho_02+rho_07)*dS_1_6_9
+dSFlux_01_06_10 = dS_3_6_10*(rho_06-rho_07)-dS_4_6_10*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_6_10+dS_2_6_10*(rho_03-rho_07)+S_3_10*rho_06
+dSFlux_01_06_11 = (rho_06-rho_07)*dS_3_6_11-(u_1*rho_01+rho_02+rho_07)*dS_1_6_11+dS_2_6_11*(rho_03-rho_07)+rho_06*S_3_11-dS_4_6_11*rho_07
+dSFlux_01_06_12 = -rho_07*dS_4_6_12-(u_1*rho_01+rho_02+rho_07)*dS_1_6_12+(rho_06-rho_07)*dS_3_6_12+dS_2_6_12*(rho_03-rho_07)+S_3_12*rho_06
+dSFlux_01_06_13 = -(u_1*rho_01+rho_02+rho_07)*dS_1_6_13+S_3_13*rho_06+dS_2_6_13*(rho_03-rho_07)+dS_3_6_13*(rho_06-rho_07)-dS_4_6_13*rho_07
+dSFlux_01_06_14 = -dS_4_6_14*rho_07+(rho_03-rho_07)*dS_2_6_14+(rho_06-rho_07)*dS_3_6_14-(u_1*rho_01+rho_02+rho_07)*dS_1_6_14+rho_06*S_3_14
+dSFlux_01_07_07 = -2*S_3_7*rho_07+dS_2_7_7*(rho_03-rho_07)+dS_3_7_7*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_7_7-2*S_2_7*rho_07-(-10.0+x_04+x_01+x_03+x_02)*rho_07-2*S_4_7*rho_07-dS_4_7_7*rho_07-2*S_1_7*rho_07
+dSFlux_01_07_08 = -S_4_8*rho_07-dS_4_7_8*rho_07-rho_07*S_3_8-S_1_8*rho_07+(rho_03-rho_07)*dS_2_7_8+(rho_06-rho_07)*dS_3_7_8-(u_1*rho_01+rho_02+rho_07)*dS_1_7_8-S_2_8*rho_07
+dSFlux_01_07_09 = (rho_06-rho_07)*dS_3_7_9-rho_07*S_2_9-S_4_9*rho_07-dS_4_7_9*rho_07-S_1_9*rho_07+dS_2_7_9*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_7_9-S_3_9*rho_07
+dSFlux_01_07_10 = -S_4_10*rho_07-rho_07*S_1_10-dS_4_7_10*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_7_10+dS_2_7_10*(rho_03-rho_07)-S_3_10*rho_07+dS_3_7_10*(rho_06-rho_07)-S_2_10*rho_07
+dSFlux_01_07_11 = -S_2_11*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_7_11-S_4_11*rho_07-dS_4_7_11*rho_07+(rho_06-rho_07)*dS_3_7_11-S_1_11*rho_07-S_3_11*rho_07+(rho_03-rho_07)*dS_2_7_11
+dSFlux_01_07_12 = -dS_4_7_12*rho_07-S_1_12*rho_07+dS_2_7_12*(rho_03-rho_07)-S_3_12*rho_07+dS_3_7_12*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_7_12-S_2_12*rho_07-S_4_12*rho_07
+dSFlux_01_07_13 = (rho_06-rho_07)*dS_3_7_13-S_2_13*rho_07+(rho_03-rho_07)*dS_2_7_13-S_4_13*rho_07-dS_4_7_13*rho_07-S_1_13*rho_07-S_3_13*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_7_13
+dSFlux_01_07_14 = -S_1_14*rho_07-S_3_14*rho_07-dS_1_7_14*(u_1*rho_01+rho_02+rho_07)+dS_2_7_14*(rho_03-rho_07)+dS_3_7_14*(rho_06-rho_07)-S_2_14*rho_07-S_4_14*rho_07-dS_4_7_14*rho_07
+dSFlux_01_08_08 = -(u_1*rho_01+rho_02+rho_07)*dS_1_8_8+dS_2_8_8*(rho_03-rho_07)+dS_3_8_8*(rho_06-rho_07)-dS_4_8_8*rho_07
+dSFlux_01_08_09 = -dS_4_8_9*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_8_9+(rho_06-rho_07)*dS_3_8_9+dS_2_8_9*(rho_03-rho_07)
+dSFlux_01_08_10 = (rho_03-rho_07)*dS_2_8_10+(rho_06-rho_07)*dS_3_8_10-(u_1*rho_01+rho_02+rho_07)*dS_1_8_10-dS_4_8_10*rho_07
+dSFlux_01_08_11 = -dS_4_8_11*rho_07+dS_2_8_11*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_8_11+dS_3_8_11*(rho_06-rho_07)
+dSFlux_01_08_12 = -dS_1_8_12*(u_1*rho_01+rho_02+rho_07)+dS_2_8_12*(rho_03-rho_07)-dS_4_8_12*rho_07+(rho_06-rho_07)*dS_3_8_12
+dSFlux_01_08_13 = -rho_07*dS_4_8_13-(u_1*rho_01+rho_02+rho_07)*dS_1_8_13+dS_2_8_13*(rho_03-rho_07)+dS_3_8_13*(rho_06-rho_07)
+dSFlux_01_08_14 = (rho_06-rho_07)*dS_3_8_14-(u_1*rho_01+rho_02+rho_07)*dS_1_8_14-dS_4_8_14*rho_07+dS_2_8_14*(rho_03-rho_07)
+dSFlux_01_09_09 = (rho_03-rho_07)*dS_2_9_9-dS_4_9_9*rho_07+(rho_06-rho_07)*dS_3_9_9-(u_1*rho_01+rho_02+rho_07)*dS_1_9_9
+dSFlux_01_09_10 = -dS_4_9_10*rho_07+dS_2_9_10*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_9_10+dS_3_9_10*(rho_06-rho_07)
+dSFlux_01_09_11 = dS_2_9_11*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_9_11+(rho_06-rho_07)*dS_3_9_11-dS_4_9_11*rho_07
+dSFlux_01_09_12 = -rho_07*dS_4_9_12-(u_1*rho_01+rho_02+rho_07)*dS_1_9_12+dS_2_9_12*(rho_03-rho_07)+dS_3_9_12*(rho_06-rho_07)
+dSFlux_01_09_13 = (rho_06-rho_07)*dS_3_9_13+dS_2_9_13*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_9_13-dS_4_9_13*rho_07
+dSFlux_01_09_14 = -dS_4_9_14*rho_07+(rho_03-rho_07)*dS_2_9_14-(u_1*rho_01+rho_02+rho_07)*dS_1_9_14+(rho_06-rho_07)*dS_3_9_14
+dSFlux_01_10_10 = (rho_06-rho_07)*dS_3_10_10-(u_1*rho_01+rho_02+rho_07)*dS_1_10_10+dS_2_10_10*(rho_03-rho_07)-dS_4_10_10*rho_07
+dSFlux_01_10_11 = dS_3_10_11*(rho_06-rho_07)-rho_07*dS_4_10_11+dS_2_10_11*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_10_11
+dSFlux_01_10_12 = dS_2_10_12*(rho_03-rho_07)+dS_3_10_12*(rho_06-rho_07)-dS_4_10_12*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_10_12
+dSFlux_01_10_13 = -dS_4_10_13*rho_07+(rho_03-rho_07)*dS_2_10_13-dS_1_10_13*(u_1*rho_01+rho_02+rho_07)+(rho_06-rho_07)*dS_3_10_13
+dSFlux_01_10_14 = dS_2_10_14*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_10_14+dS_3_10_14*(rho_06-rho_07)-dS_4_10_14*rho_07
+dSFlux_01_11_11 = -dS_4_11_11*rho_07+dS_2_11_11*(rho_03-rho_07)+dS_3_11_11*(rho_06-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_11_11
+dSFlux_01_11_12 = -dS_1_11_12*(u_1*rho_01+rho_02+rho_07)+(rho_03-rho_07)*dS_2_11_12-dS_4_11_12*rho_07+(rho_06-rho_07)*dS_3_11_12
+dSFlux_01_11_13 = dS_2_11_13*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_11_13+dS_3_11_13*(rho_06-rho_07)-dS_4_11_13*rho_07
+dSFlux_01_11_14 = (rho_06-rho_07)*dS_3_11_14-dS_4_11_14*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_11_14+dS_2_11_14*(rho_03-rho_07)
+dSFlux_01_12_12 = -dS_4_12_12*rho_07-(u_1*rho_01+rho_02+rho_07)*dS_1_12_12+dS_2_12_12*(rho_03-rho_07)+dS_3_12_12*(rho_06-rho_07)
+dSFlux_01_12_13 = (rho_06-rho_07)*dS_3_12_13+dS_2_12_13*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_12_13-dS_4_12_13*rho_07
+dSFlux_01_12_14 = -rho_07*dS_4_12_14+dS_2_12_14*(rho_03-rho_07)+(rho_06-rho_07)*dS_3_12_14-(u_1*rho_01+rho_02+rho_07)*dS_1_12_14
+dSFlux_01_13_13 = -rho_07*dS_4_13_13+dS_2_13_13*(rho_03-rho_07)-(u_1*rho_01+rho_02+rho_07)*dS_1_13_13+(rho_06-rho_07)*dS_3_13_13
+dSFlux_01_13_14 = -(u_1*rho_01+rho_02+rho_07)*dS_1_13_14+dS_2_13_14*(rho_03-rho_07)+dS_3_13_14*(rho_06-rho_07)-dS_4_13_14*rho_07
+dSFlux_01_14_14 = -(u_1*rho_01+rho_02+rho_07)*dS_1_14_14+(rho_03-rho_07)*dS_2_14_14-dS_4_14_14*rho_07+(rho_06-rho_07)*dS_3_14_14
+dSFlux_02_01_01 = -(rho_03+rho_13)*dS_2_1_1+2*u_1*S_1_1*rho_01+dS_1_1_1*(u_1*rho_01+rho_02)+u_1*x_01*rho_01
+dSFlux_02_01_02 = (u_1*rho_01+rho_02)*dS_1_1_2+S_1_1*rho_02+u_1*rho_01*S_1_2-dS_2_1_2*(rho_03+rho_13)
+dSFlux_02_01_03 = u_1*rho_01*S_1_3-dS_2_1_3*(rho_03+rho_13)-S_2_1*rho_03+dS_1_1_3*(u_1*rho_01+rho_02)
+dSFlux_02_01_04 = (u_1*rho_01+rho_02)*dS_1_1_4+u_1*S_1_4*rho_01-dS_2_1_4*(rho_03+rho_13)
+dSFlux_02_01_05 = -dS_2_1_5*(rho_03+rho_13)+u_1*rho_01*S_1_5+(u_1*rho_01+rho_02)*dS_1_1_5
+dSFlux_02_01_06 = dS_1_1_6*(u_1*rho_01+rho_02)-(rho_03+rho_13)*dS_2_1_6+u_1*S_1_6*rho_01
+dSFlux_02_01_07 = -dS_2_1_7*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_1_7+S_1_7*u_1*rho_01
+dSFlux_02_01_08 = (u_1*rho_01+rho_02)*dS_1_1_8+u_1*rho_01*S_1_8-dS_2_1_8*(rho_03+rho_13)
+dSFlux_02_01_09 = u_1*S_1_9*rho_01-(rho_03+rho_13)*dS_2_1_9+dS_1_1_9*(u_1*rho_01+rho_02)
+dSFlux_02_01_10 = (u_1*rho_01+rho_02)*dS_1_1_10-dS_2_1_10*(rho_03+rho_13)+u_1*rho_01*S_1_10
+dSFlux_02_01_11 = -dS_2_1_11*(rho_03+rho_13)+u_1*S_1_11*rho_01+dS_1_1_11*(u_1*rho_01+rho_02)
+dSFlux_02_01_12 = (u_1*rho_01+rho_02)*dS_1_1_12-dS_2_1_12*(rho_03+rho_13)+u_1*S_1_12*rho_01
+dSFlux_02_01_13 = -dS_2_1_13*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_1_13-S_2_1*rho_13+u_1*rho_01*S_1_13
+dSFlux_02_01_14 = -(rho_03+rho_13)*dS_2_1_14+u_1*S_1_14*rho_01+dS_1_1_14*(u_1*rho_01+rho_02)
+dSFlux_02_02_02 = -dS_2_2_2*(rho_03+rho_13)+x_01*rho_02+dS_1_2_2*(u_1*rho_01+rho_02)+2*rho_02*S_1_2
+dSFlux_02_02_03 = (u_1*rho_01+rho_02)*dS_1_2_3-rho_03*S_2_2+S_1_3*rho_02-dS_2_2_3*(rho_03+rho_13)
+dSFlux_02_02_04 = S_1_4*rho_02-dS_2_2_4*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_2_4
+dSFlux_02_02_05 = -(rho_03+rho_13)*dS_2_2_5+dS_1_2_5*(u_1*rho_01+rho_02)+rho_02*S_1_5
+dSFlux_02_02_06 = S_1_6*rho_02+(u_1*rho_01+rho_02)*dS_1_2_6-dS_2_2_6*(rho_03+rho_13)
+dSFlux_02_02_07 = (u_1*rho_01+rho_02)*dS_1_2_7+S_1_7*rho_02-dS_2_2_7*(rho_03+rho_13)
+dSFlux_02_02_08 = -(rho_03+rho_13)*dS_2_2_8+S_1_8*rho_02+dS_1_2_8*(u_1*rho_01+rho_02)
+dSFlux_02_02_09 = (u_1*rho_01+rho_02)*dS_1_2_9+S_1_9*rho_02-dS_2_2_9*(rho_03+rho_13)
+dSFlux_02_02_10 = -dS_2_2_10*(rho_03+rho_13)+dS_1_2_10*(u_1*rho_01+rho_02)+rho_02*S_1_10
+dSFlux_02_02_11 = (u_1*rho_01+rho_02)*dS_1_2_11-dS_2_2_11*(rho_03+rho_13)+S_1_11*rho_02
+dSFlux_02_02_12 = -dS_2_2_12*(rho_03+rho_13)+S_1_12*rho_02+(u_1*rho_01+rho_02)*dS_1_2_12
+dSFlux_02_02_13 = dS_1_2_13*(u_1*rho_01+rho_02)-rho_13*S_2_2-(rho_03+rho_13)*dS_2_2_13+S_1_13*rho_02
+dSFlux_02_02_14 = -dS_2_2_14*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_2_14+S_1_14*rho_02
+dSFlux_02_03_03 = -rho_03*x_02-2*rho_03*S_2_3-dS_2_3_3*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_3_3
+dSFlux_02_03_04 = -dS_2_3_4*(rho_03+rho_13)+dS_1_3_4*(u_1*rho_01+rho_02)-rho_03*S_2_4
+dSFlux_02_03_05 = (u_1*rho_01+rho_02)*dS_1_3_5-dS_2_3_5*(rho_03+rho_13)-rho_03*S_2_5
+dSFlux_02_03_06 = (u_1*rho_01+rho_02)*dS_1_3_6-rho_03*S_2_6-dS_2_3_6*(rho_03+rho_13)
+dSFlux_02_03_07 = -(rho_03+rho_13)*dS_2_3_7-rho_03*S_2_7+dS_1_3_7*(u_1*rho_01+rho_02)
+dSFlux_02_03_08 = -rho_03*S_2_8+(u_1*rho_01+rho_02)*dS_1_3_8-dS_2_3_8*(rho_03+rho_13)
+dSFlux_02_03_09 = -dS_2_3_9*(rho_03+rho_13)+dS_1_3_9*(u_1*rho_01+rho_02)-rho_03*S_2_9
+dSFlux_02_03_10 = (u_1*rho_01+rho_02)*dS_1_3_10-dS_2_3_10*(rho_03+rho_13)-rho_03*S_2_10
+dSFlux_02_03_11 = -dS_2_3_11*(rho_03+rho_13)-rho_03*S_2_11+(u_1*rho_01+rho_02)*dS_1_3_11
+dSFlux_02_03_12 = dS_1_3_12*(u_1*rho_01+rho_02)-rho_03*S_2_12-dS_2_3_12*(rho_03+rho_13)
+dSFlux_02_03_13 = -S_2_3*rho_13-dS_2_3_13*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_3_13-rho_03*S_2_13
+dSFlux_02_03_14 = (u_1*rho_01+rho_02)*dS_1_3_14-(rho_03+rho_13)*dS_2_3_14-S_2_14*rho_03
+dSFlux_02_04_04 = (u_1*rho_01+rho_02)*dS_1_4_4-dS_2_4_4*(rho_03+rho_13)
+dSFlux_02_04_05 = (u_1*rho_01+rho_02)*dS_1_4_5-dS_2_4_5*(rho_03+rho_13)
+dSFlux_02_04_06 = -dS_2_4_6*(rho_03+rho_13)+dS_1_4_6*(u_1*rho_01+rho_02)
+dSFlux_02_04_07 = -dS_2_4_7*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_4_7
+dSFlux_02_04_08 = -(rho_03+rho_13)*dS_2_4_8+dS_1_4_8*(u_1*rho_01+rho_02)
+dSFlux_02_04_09 = -dS_2_4_9*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_4_9
+dSFlux_02_04_10 = -dS_2_4_10*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_4_10
+dSFlux_02_04_11 = -(rho_03+rho_13)*dS_2_4_11+dS_1_4_11*(u_1*rho_01+rho_02)
+dSFlux_02_04_12 = (u_1*rho_01+rho_02)*dS_1_4_12-dS_2_4_12*(rho_03+rho_13)
+dSFlux_02_04_13 = (u_1*rho_01+rho_02)*dS_1_4_13-dS_2_4_13*(rho_03+rho_13)-rho_13*S_2_4
+dSFlux_02_04_14 = -dS_2_4_14*(rho_03+rho_13)+dS_1_4_14*(u_1*rho_01+rho_02)
+dSFlux_02_05_05 = dS_1_5_5*(u_1*rho_01+rho_02)-dS_2_5_5*(rho_03+rho_13)
+dSFlux_02_05_06 = (u_1*rho_01+rho_02)*dS_1_5_6-dS_2_5_6*(rho_03+rho_13)
+dSFlux_02_05_07 = (u_1*rho_01+rho_02)*dS_1_5_7-(rho_03+rho_13)*dS_2_5_7
+dSFlux_02_05_08 = -dS_2_5_8*(rho_03+rho_13)+dS_1_5_8*(u_1*rho_01+rho_02)
+dSFlux_02_05_09 = (u_1*rho_01+rho_02)*dS_1_5_9-dS_2_5_9*(rho_03+rho_13)
+dSFlux_02_05_10 = -(rho_03+rho_13)*dS_2_5_10+dS_1_5_10*(u_1*rho_01+rho_02)
+dSFlux_02_05_11 = (u_1*rho_01+rho_02)*dS_1_5_11-dS_2_5_11*(rho_03+rho_13)
+dSFlux_02_05_12 = -dS_2_5_12*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_5_12
+dSFlux_02_05_13 = -dS_2_5_13*(rho_03+rho_13)-S_2_5*rho_13+dS_1_5_13*(u_1*rho_01+rho_02)
+dSFlux_02_05_14 = -dS_2_5_14*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_5_14
+dSFlux_02_06_06 = (u_1*rho_01+rho_02)*dS_1_6_6-(rho_03+rho_13)*dS_2_6_6
+dSFlux_02_06_07 = -dS_2_6_7*(rho_03+rho_13)+dS_1_6_7*(u_1*rho_01+rho_02)
+dSFlux_02_06_08 = (u_1*rho_01+rho_02)*dS_1_6_8-dS_2_6_8*(rho_03+rho_13)
+dSFlux_02_06_09 = -(rho_03+rho_13)*dS_2_6_9+dS_1_6_9*(u_1*rho_01+rho_02)
+dSFlux_02_06_10 = (u_1*rho_01+rho_02)*dS_1_6_10-dS_2_6_10*(rho_03+rho_13)
+dSFlux_02_06_11 = -dS_2_6_11*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_6_11
+dSFlux_02_06_12 = dS_1_6_12*(u_1*rho_01+rho_02)-dS_2_6_12*(rho_03+rho_13)
+dSFlux_02_06_13 = -S_2_6*rho_13-dS_2_6_13*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_6_13
+dSFlux_02_06_14 = -(rho_03+rho_13)*dS_2_6_14+dS_1_6_14*(u_1*rho_01+rho_02)
+dSFlux_02_07_07 = -dS_2_7_7*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_7_7
+dSFlux_02_07_08 = -(rho_03+rho_13)*dS_2_7_8+dS_1_7_8*(u_1*rho_01+rho_02)
+dSFlux_02_07_09 = (u_1*rho_01+rho_02)*dS_1_7_9-dS_2_7_9*(rho_03+rho_13)
+dSFlux_02_07_10 = -dS_2_7_10*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_7_10
+dSFlux_02_07_11 = dS_1_7_11*(u_1*rho_01+rho_02)-dS_2_7_11*(rho_03+rho_13)
+dSFlux_02_07_12 = (u_1*rho_01+rho_02)*dS_1_7_12-dS_2_7_12*(rho_03+rho_13)
+dSFlux_02_07_13 = (u_1*rho_01+rho_02)*dS_1_7_13-rho_13*S_2_7-(rho_03+rho_13)*dS_2_7_13
+dSFlux_02_07_14 = -dS_2_7_14*(rho_03+rho_13)+dS_1_7_14*(u_1*rho_01+rho_02)
+dSFlux_02_08_08 = -dS_2_8_8*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_8_8
+dSFlux_02_08_09 = dS_1_8_9*(u_1*rho_01+rho_02)-dS_2_8_9*(rho_03+rho_13)
+dSFlux_02_08_10 = -(rho_03+rho_13)*dS_2_8_10+(u_1*rho_01+rho_02)*dS_1_8_10
+dSFlux_02_08_11 = (u_1*rho_01+rho_02)*dS_1_8_11-dS_2_8_11*(rho_03+rho_13)
+dSFlux_02_08_12 = -dS_2_8_12*(rho_03+rho_13)+dS_1_8_12*(u_1*rho_01+rho_02)
+dSFlux_02_08_13 = -S_2_8*rho_13-dS_2_8_13*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_8_13
+dSFlux_02_08_14 = -dS_2_8_14*(rho_03+rho_13)+dS_1_8_14*(u_1*rho_01+rho_02)
+dSFlux_02_09_09 = (u_1*rho_01+rho_02)*dS_1_9_9-(rho_03+rho_13)*dS_2_9_9
+dSFlux_02_09_10 = (u_1*rho_01+rho_02)*dS_1_9_10-dS_2_9_10*(rho_03+rho_13)
+dSFlux_02_09_11 = -dS_2_9_11*(rho_03+rho_13)+dS_1_9_11*(u_1*rho_01+rho_02)
+dSFlux_02_09_12 = -dS_2_9_12*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_9_12
+dSFlux_02_09_13 = -dS_2_9_13*(rho_03+rho_13)-rho_13*S_2_9+dS_1_9_13*(u_1*rho_01+rho_02)
+dSFlux_02_09_14 = (u_1*rho_01+rho_02)*dS_1_9_14-(rho_03+rho_13)*dS_2_9_14
+dSFlux_02_10_10 = dS_1_10_10*(u_1*rho_01+rho_02)-dS_2_10_10*(rho_03+rho_13)
+dSFlux_02_10_11 = (u_1*rho_01+rho_02)*dS_1_10_11-dS_2_10_11*(rho_03+rho_13)
+dSFlux_02_10_12 = (u_1*rho_01+rho_02)*dS_1_10_12-dS_2_10_12*(rho_03+rho_13)
+dSFlux_02_10_13 = -rho_13*S_2_10-(rho_03+rho_13)*dS_2_10_13+dS_1_10_13*(u_1*rho_01+rho_02)
+dSFlux_02_10_14 = -dS_2_10_14*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_10_14
+dSFlux_02_11_11 = (u_1*rho_01+rho_02)*dS_1_11_11-dS_2_11_11*(rho_03+rho_13)
+dSFlux_02_11_12 = -(rho_03+rho_13)*dS_2_11_12+dS_1_11_12*(u_1*rho_01+rho_02)
+dSFlux_02_11_13 = -dS_2_11_13*(rho_03+rho_13)-S_2_11*rho_13+(u_1*rho_01+rho_02)*dS_1_11_13
+dSFlux_02_11_14 = dS_1_11_14*(u_1*rho_01+rho_02)-dS_2_11_14*(rho_03+rho_13)
+dSFlux_02_12_12 = -dS_2_12_12*(rho_03+rho_13)+(u_1*rho_01+rho_02)*dS_1_12_12
+dSFlux_02_12_13 = -dS_2_12_13*(rho_03+rho_13)+dS_1_12_13*(u_1*rho_01+rho_02)-rho_13*S_2_12
+dSFlux_02_12_14 = (u_1*rho_01+rho_02)*dS_1_12_14-dS_2_12_14*(rho_03+rho_13)
+dSFlux_02_13_13 = (u_1*rho_01+rho_02)*dS_1_13_13-dS_2_13_13*(rho_03+rho_13)-rho_13*x_02-2*S_2_13*rho_13
+dSFlux_02_13_14 = -dS_2_13_14*(rho_03+rho_13)-S_2_14*rho_13+(u_1*rho_01+rho_02)*dS_1_13_14
+dSFlux_02_14_14 = dS_1_14_14*(u_1*rho_01+rho_02)-(rho_03+rho_13)*dS_2_14_14
+dSFlux_03_01_01 = -dS_3_1_1*(rho_06+rho_14)+rho_13*dS_2_1_1
+dSFlux_03_01_02 = -dS_3_1_2*(rho_06+rho_14)+dS_2_1_2*rho_13
+dSFlux_03_01_03 = dS_2_1_3*rho_13-dS_3_1_3*(rho_06+rho_14)
+dSFlux_03_01_04 = rho_13*dS_2_1_4-dS_3_1_4*(rho_06+rho_14)
+dSFlux_03_01_05 = dS_2_1_5*rho_13-dS_3_1_5*(rho_06+rho_14)
+dSFlux_03_01_06 = -dS_3_1_6*(rho_06+rho_14)-rho_06*S_3_1+rho_13*dS_2_1_6
+dSFlux_03_01_07 = rho_13*dS_2_1_7-dS_3_1_7*(rho_06+rho_14)
+dSFlux_03_01_08 = -(rho_06+rho_14)*dS_3_1_8+dS_2_1_8*rho_13
+dSFlux_03_01_09 = -dS_3_1_9*(rho_06+rho_14)+rho_13*dS_2_1_9
+dSFlux_03_01_10 = dS_2_1_10*rho_13-dS_3_1_10*(rho_06+rho_14)
+dSFlux_03_01_11 = -dS_3_1_11*(rho_06+rho_14)+dS_2_1_11*rho_13
+dSFlux_03_01_12 = rho_13*dS_2_1_12-dS_3_1_12*(rho_06+rho_14)
+dSFlux_03_01_13 = -(rho_06+rho_14)*dS_3_1_13+dS_2_1_13*rho_13+S_2_1*rho_13
+dSFlux_03_01_14 = -S_3_1*rho_14+rho_13*dS_2_1_14-dS_3_1_14*(rho_06+rho_14)
+dSFlux_03_02_02 = dS_2_2_2*rho_13-dS_3_2_2*(rho_06+rho_14)
+dSFlux_03_02_03 = rho_13*dS_2_2_3-dS_3_2_3*(rho_06+rho_14)
+dSFlux_03_02_04 = dS_2_2_4*rho_13-dS_3_2_4*(rho_06+rho_14)
+dSFlux_03_02_05 = -dS_3_2_5*(rho_06+rho_14)+rho_13*dS_2_2_5
+dSFlux_03_02_06 = -S_3_2*rho_06+rho_13*dS_2_2_6-dS_3_2_6*(rho_06+rho_14)
+dSFlux_03_02_07 = -(rho_06+rho_14)*dS_3_2_7+dS_2_2_7*rho_13
+dSFlux_03_02_08 = -dS_3_2_8*(rho_06+rho_14)+rho_13*dS_2_2_8
+dSFlux_03_02_09 = -dS_3_2_9*(rho_06+rho_14)+dS_2_2_9*rho_13
+dSFlux_03_02_10 = dS_2_2_10*rho_13-dS_3_2_10*(rho_06+rho_14)
+dSFlux_03_02_11 = -dS_3_2_11*(rho_06+rho_14)+rho_13*dS_2_2_11
+dSFlux_03_02_12 = dS_2_2_12*rho_13-dS_3_2_12*(rho_06+rho_14)
+dSFlux_03_02_13 = rho_13*S_2_2+rho_13*dS_2_2_13-dS_3_2_13*(rho_06+rho_14)
+dSFlux_03_02_14 = rho_13*dS_2_2_14-dS_3_2_14*(rho_06+rho_14)-S_3_2*rho_14
+dSFlux_03_03_03 = dS_2_3_3*rho_13-dS_3_3_3*(rho_06+rho_14)
+dSFlux_03_03_04 = dS_2_3_4*rho_13-dS_3_3_4*(rho_06+rho_14)
+dSFlux_03_03_05 = rho_13*dS_2_3_5-dS_3_3_5*(rho_06+rho_14)
+dSFlux_03_03_06 = -rho_06*S_3_3-(rho_06+rho_14)*dS_3_3_6+dS_2_3_6*rho_13
+dSFlux_03_03_07 = -dS_3_3_7*(rho_06+rho_14)+rho_13*dS_2_3_7
+dSFlux_03_03_08 = -dS_3_3_8*(rho_06+rho_14)+dS_2_3_8*rho_13
+dSFlux_03_03_09 = dS_2_3_9*rho_13-dS_3_3_9*(rho_06+rho_14)
+dSFlux_03_03_10 = -dS_3_3_10*(rho_06+rho_14)+rho_13*dS_2_3_10
+dSFlux_03_03_11 = dS_2_3_11*rho_13-dS_3_3_11*(rho_06+rho_14)
+dSFlux_03_03_12 = -dS_3_3_12*(rho_06+rho_14)+rho_13*dS_2_3_12
+dSFlux_03_03_13 = dS_2_3_13*rho_13+S_2_3*rho_13-dS_3_3_13*(rho_06+rho_14)
+dSFlux_03_03_14 = -(rho_06+rho_14)*dS_3_3_14-rho_14*S_3_3+rho_13*dS_2_3_14
+dSFlux_03_04_04 = dS_2_4_4*rho_13-dS_3_4_4*(rho_06+rho_14)
+dSFlux_03_04_05 = dS_2_4_5*rho_13-(rho_06+rho_14)*dS_3_4_5
+dSFlux_03_04_06 = -S_3_4*rho_06+rho_13*dS_2_4_6-dS_3_4_6*(rho_06+rho_14)
+dSFlux_03_04_07 = -dS_3_4_7*(rho_06+rho_14)+dS_2_4_7*rho_13
+dSFlux_03_04_08 = rho_13*dS_2_4_8-dS_3_4_8*(rho_06+rho_14)
+dSFlux_03_04_09 = rho_13*dS_2_4_9-dS_3_4_9*(rho_06+rho_14)
+dSFlux_03_04_10 = -dS_3_4_10*(rho_06+rho_14)+dS_2_4_10*rho_13
+dSFlux_03_04_11 = -dS_3_4_11*(rho_06+rho_14)+rho_13*dS_2_4_11
+dSFlux_03_04_12 = -dS_3_4_12*(rho_06+rho_14)+dS_2_4_12*rho_13
+dSFlux_03_04_13 = -(rho_06+rho_14)*dS_3_4_13+dS_2_4_13*rho_13+rho_13*S_2_4
+dSFlux_03_04_14 = rho_13*dS_2_4_14-dS_3_4_14*(rho_06+rho_14)-S_3_4*rho_14
+dSFlux_03_05_05 = -dS_3_5_5*(rho_06+rho_14)+rho_13*dS_2_5_5
+dSFlux_03_05_06 = dS_2_5_6*rho_13-dS_3_5_6*(rho_06+rho_14)-S_3_5*rho_06
+dSFlux_03_05_07 = rho_13*dS_2_5_7-dS_3_5_7*(rho_06+rho_14)
+dSFlux_03_05_08 = rho_13*dS_2_5_8-dS_3_5_8*(rho_06+rho_14)
+dSFlux_03_05_09 = dS_2_5_9*rho_13-dS_3_5_9*(rho_06+rho_14)
+dSFlux_03_05_10 = -dS_3_5_10*(rho_06+rho_14)+rho_13*dS_2_5_10
+dSFlux_03_05_11 = -dS_3_5_11*(rho_06+rho_14)+dS_2_5_11*rho_13
+dSFlux_03_05_12 = -(rho_06+rho_14)*dS_3_5_12+dS_2_5_12*rho_13
+dSFlux_03_05_13 = rho_13*dS_2_5_13+S_2_5*rho_13-dS_3_5_13*(rho_06+rho_14)
+dSFlux_03_05_14 = -dS_3_5_14*(rho_06+rho_14)-S_3_5*rho_14+dS_2_5_14*rho_13
+dSFlux_03_06_06 = -(rho_06+rho_14)*dS_3_6_6-2*rho_06*S_3_6-x_03*rho_06+rho_13*dS_2_6_6
+dSFlux_03_06_07 = rho_13*dS_2_6_7-S_3_7*rho_06-dS_3_6_7*(rho_06+rho_14)
+dSFlux_03_06_08 = -dS_3_6_8*(rho_06+rho_14)-rho_06*S_3_8+dS_2_6_8*rho_13
+dSFlux_03_06_09 = -S_3_9*rho_06-dS_3_6_9*(rho_06+rho_14)+rho_13*dS_2_6_9
+dSFlux_03_06_10 = -dS_3_6_10*(rho_06+rho_14)+dS_2_6_10*rho_13-S_3_10*rho_06
+dSFlux_03_06_11 = dS_2_6_11*rho_13-(rho_06+rho_14)*dS_3_6_11-rho_06*S_3_11
+dSFlux_03_06_12 = rho_13*dS_2_6_12-S_3_12*rho_06-dS_3_6_12*(rho_06+rho_14)
+dSFlux_03_06_13 = dS_2_6_13*rho_13+S_2_6*rho_13-S_3_13*rho_06-dS_3_6_13*(rho_06+rho_14)
+dSFlux_03_06_14 = rho_13*dS_2_6_14-rho_06*S_3_14-S_3_6*rho_14-dS_3_6_14*(rho_06+rho_14)
+dSFlux_03_07_07 = -dS_3_7_7*(rho_06+rho_14)+dS_2_7_7*rho_13
+dSFlux_03_07_08 = rho_13*dS_2_7_8-dS_3_7_8*(rho_06+rho_14)
+dSFlux_03_07_09 = -dS_3_7_9*(rho_06+rho_14)+dS_2_7_9*rho_13
+dSFlux_03_07_10 = dS_2_7_10*rho_13-dS_3_7_10*(rho_06+rho_14)
+dSFlux_03_07_11 = -dS_3_7_11*(rho_06+rho_14)+rho_13*dS_2_7_11
+dSFlux_03_07_12 = dS_2_7_12*rho_13-dS_3_7_12*(rho_06+rho_14)
+dSFlux_03_07_13 = -(rho_06+rho_14)*dS_3_7_13+rho_13*S_2_7+rho_13*dS_2_7_13
+dSFlux_03_07_14 = -S_3_7*rho_14+rho_13*dS_2_7_14-dS_3_7_14*(rho_06+rho_14)
+dSFlux_03_08_08 = rho_13*dS_2_8_8-dS_3_8_8*(rho_06+rho_14)
+dSFlux_03_08_09 = dS_2_8_9*rho_13-dS_3_8_9*(rho_06+rho_14)
+dSFlux_03_08_10 = -dS_3_8_10*(rho_06+rho_14)+rho_13*dS_2_8_10
+dSFlux_03_08_11 = dS_2_8_11*rho_13-dS_3_8_11*(rho_06+rho_14)
+dSFlux_03_08_12 = -dS_3_8_12*(rho_06+rho_14)+dS_2_8_12*rho_13
+dSFlux_03_08_13 = S_2_8*rho_13+rho_13*dS_2_8_13-dS_3_8_13*(rho_06+rho_14)
+dSFlux_03_08_14 = -(rho_06+rho_14)*dS_3_8_14-rho_14*S_3_8+dS_2_8_14*rho_13
+dSFlux_03_09_09 = -dS_3_9_9*(rho_06+rho_14)+rho_13*dS_2_9_9
+dSFlux_03_09_10 = dS_2_9_10*rho_13-dS_3_9_10*(rho_06+rho_14)
+dSFlux_03_09_11 = dS_2_9_11*rho_13-dS_3_9_11*(rho_06+rho_14)
+dSFlux_03_09_12 = rho_13*dS_2_9_12-dS_3_9_12*(rho_06+rho_14)
+dSFlux_03_09_13 = -(rho_06+rho_14)*dS_3_9_13+dS_2_9_13*rho_13+rho_13*S_2_9
+dSFlux_03_09_14 = rho_13*dS_2_9_14-S_3_9*rho_14-dS_3_9_14*(rho_06+rho_14)
+dSFlux_03_10_10 = dS_2_10_10*rho_13-dS_3_10_10*(rho_06+rho_14)
+dSFlux_03_10_11 = -dS_3_10_11*(rho_06+rho_14)+rho_13*dS_2_10_11
+dSFlux_03_10_12 = dS_2_10_12*rho_13-dS_3_10_12*(rho_06+rho_14)
+dSFlux_03_10_13 = rho_13*S_2_10+rho_13*dS_2_10_13-dS_3_10_13*(rho_06+rho_14)
+dSFlux_03_10_14 = -S_3_10*rho_14+rho_13*dS_2_10_14-dS_3_10_14*(rho_06+rho_14)
+dSFlux_03_11_11 = dS_2_11_11*rho_13-dS_3_11_11*(rho_06+rho_14)
+dSFlux_03_11_12 = -dS_3_11_12*(rho_06+rho_14)+rho_13*dS_2_11_12
+dSFlux_03_11_13 = rho_13*dS_2_11_13+S_2_11*rho_13-dS_3_11_13*(rho_06+rho_14)
+dSFlux_03_11_14 = -(rho_06+rho_14)*dS_3_11_14+dS_2_11_14*rho_13-rho_14*S_3_11
+dSFlux_03_12_12 = -dS_3_12_12*(rho_06+rho_14)+dS_2_12_12*rho_13
+dSFlux_03_12_13 = -(rho_06+rho_14)*dS_3_12_13+dS_2_12_13*rho_13+rho_13*S_2_12
+dSFlux_03_12_14 = rho_13*dS_2_12_14-S_3_12*rho_14-dS_3_12_14*(rho_06+rho_14)
+dSFlux_03_13_13 = rho_13*dS_2_13_13-dS_3_13_13*(rho_06+rho_14)+rho_13*x_02+2*S_2_13*rho_13
+dSFlux_03_13_14 = -dS_3_13_14*(rho_06+rho_14)+dS_2_13_14*rho_13+S_2_14*rho_13-S_3_13*rho_14
+dSFlux_03_14_14 = -2*S_3_14*rho_14-x_03*rho_14+rho_13*dS_2_14_14-dS_3_14_14*(rho_06+rho_14)
+dSFlux_04_01_01 = -S_4_1*S_6_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*dS_6_1_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_1*(S_4_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_1*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_1+dS_3_1_1*rho_14
+dSFlux_04_01_02 = -S_6_2*S_4_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-dS_4_1_2*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-S_6_1*(2*x_04*S_6_2*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2)+dS_3_1_2*rho_14-x_04*dS_6_1_2*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_01_03 = -S_4_1*S_6_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_1_3-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_3+rho_14*dS_3_1_3-S_6_1*(2*x_04*S_6_3*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))
+dSFlux_04_01_04 = -(rho_04+S_6_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_4_1+dS_3_1_4*rho_14-x_04*dS_6_1_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_1*(2*x_04*S_6_4*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_4
+dSFlux_04_01_05 = dS_3_1_5*rho_14-S_4_1*((rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+x_06*rho_05*(1.0+x_06)^(-1))-x_04*dS_6_1_5*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_5+x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5)*S_6_1-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_5
+dSFlux_04_01_06 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_6-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_1_6+dS_3_1_6*rho_14-S_6_1*(2*x_04*S_6_6*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-S_4_1*S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_01_07 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_7-(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_1-S_6_7*S_4_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_1_7*rho_14-x_04*dS_6_1_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_01_08 = -(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_1-S_4_1*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*dS_6_1_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_8+rho_14*dS_3_1_8
+dSFlux_04_01_09 = dS_3_1_9*rho_14-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_1-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_9-x_04*dS_6_1_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_1*S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_01_10 = -dS_4_1_10*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-x_04*dS_6_1_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_1*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)+dS_3_1_10*rho_14-S_4_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10
+dSFlux_04_01_11 = dS_3_1_11*rho_14-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_1_11-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_11-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_1-S_4_1*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_01_12 = -S_6_1*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_1_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_12+dS_3_1_12*rho_14-S_6_12*S_4_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_01_13 = -S_4_1*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13+rho_14*dS_3_1_13-S_6_1*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_1_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_13
+dSFlux_04_01_14 = -S_6_1*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_1_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_1_14-S_4_1*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+S_3_1*rho_14+dS_3_1_14*rho_14
+dSFlux_04_02_02 = -x_04*dS_6_2_2*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_2*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_2-S_6_2*(2*x_04*S_6_2*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2)+rho_14*dS_3_2_2
+dSFlux_04_02_03 = dS_3_2_3*rho_14-S_6_2*(2*x_04*S_6_3*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-S_6_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2-x_04*dS_6_2_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_3
+dSFlux_04_02_04 = -x_04*dS_6_2_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_2*(2*x_04*S_6_4*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-(rho_04+S_6_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_4_2-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_4+dS_3_2_4*rho_14
+dSFlux_04_02_05 = -((rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+x_06*rho_05*(1.0+x_06)^(-1))*S_4_2-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_5-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_2_5-S_6_2*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_5+x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5)+dS_3_2_5*rho_14
+dSFlux_04_02_06 = -S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_6-S_6_2*(2*x_04*S_6_6*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))+dS_3_2_6*rho_14-x_04*dS_6_2_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_02_07 = -S_6_2*(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_2_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*dS_3_2_7-S_6_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_7
+dSFlux_04_02_08 = -x_04*dS_6_2_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_2*(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2+dS_3_2_8*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_8
+dSFlux_04_02_09 = -dS_4_2_9*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-S_6_2*(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))+dS_3_2_9*rho_14-x_04*dS_6_2_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2
+dSFlux_04_02_10 = -x_04*dS_6_2_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_2*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_10-(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2*S_6_10+dS_3_2_10*rho_14
+dSFlux_04_02_11 = dS_3_2_11*rho_14-S_6_2*(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_2_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_11-S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2
+dSFlux_04_02_12 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_2_12-S_6_2*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))+dS_3_2_12*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_12-S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2
+dSFlux_04_02_13 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_13-(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13*S_4_2-S_6_2*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_2_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_2_13*rho_14
+dSFlux_04_02_14 = dS_3_2_14*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_2_14-S_6_2*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_2+S_3_2*rho_14-x_04*dS_6_2_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_03_03 = -x_04*dS_6_3_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_3*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_3+dS_3_3_3*rho_14-S_4_3*S_6_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_3
+dSFlux_04_03_04 = dS_3_3_4*rho_14-dS_4_3_4*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-(rho_04+S_6_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_4_3-S_6_3*(2*x_04*S_6_4*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_3_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_03_05 = -x_04*dS_6_3_5*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_5-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_5+x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5)*S_6_3+dS_3_3_5*rho_14-((rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+x_06*rho_05*(1.0+x_06)^(-1))*S_4_3
+dSFlux_04_03_06 = -S_6_6*S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_3_6-S_6_3*(2*x_04*S_6_6*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_6+rho_14*dS_3_3_6
+dSFlux_04_03_07 = -x_04*dS_6_3_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_3_7*rho_14-(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_3-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_7-S_6_7*S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_03_08 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_8+dS_3_3_8*rho_14-(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_3-x_04*dS_6_3_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_3*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_03_09 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_3_9-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_9-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_3+rho_14*dS_3_3_9-S_6_9*S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_03_10 = -S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10+dS_3_3_10*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_10-x_04*dS_6_3_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_3*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)
+dSFlux_04_03_11 = -dS_6_3_11*x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_3*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_3-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_11+dS_3_3_11*rho_14
+dSFlux_04_03_12 = -S_6_3*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))+dS_3_3_12*rho_14-dS_4_3_12*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-x_04*dS_6_3_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_12*S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_03_13 = -x_04*dS_6_3_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_13-S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-S_6_3*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))+dS_3_3_13*rho_14
+dSFlux_04_03_14 = -S_6_3*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_3_14+rho_14*S_3_3+rho_14*dS_3_3_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_3_14-S_6_14*S_4_3*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_04_04 = -S_6_4*(2*x_04*S_6_4*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-S_4_4*rho_04-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_4-x_04*dS_6_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_4*(rho_04+S_6_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))+dS_3_4_4*rho_14-x_04*rho_04
+dSFlux_04_04_05 = -S_4_4*((rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+x_06*rho_05*(1.0+x_06)^(-1))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_4_5-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_5+rho_14*dS_3_4_5-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_5+x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5)*S_6_4-rho_04*S_4_5
+dSFlux_04_04_06 = -S_4_4*S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*dS_6_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_4_6*rho_14-S_6_4*(2*x_04*S_6_6*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-rho_04*S_4_6-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_6
+dSFlux_04_04_07 = -(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_4+dS_3_4_7*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_7-S_6_7*S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*dS_6_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_7*rho_04
+dSFlux_04_04_08 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_4_8-(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_4-rho_04*S_4_8-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_8-S_4_4*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*dS_3_4_8
+dSFlux_04_04_09 = dS_3_4_9*rho_14-S_4_4*S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_4-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_9-x_04*dS_6_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_9*rho_04
+dSFlux_04_04_10 = -S_6_4*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)-x_04*dS_6_4_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10+dS_3_4_10*rho_14-rho_04*S_4_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_10
+dSFlux_04_04_11 = dS_3_4_11*rho_14-rho_04*S_4_11-S_4_4*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-dS_4_4_11*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-x_04*dS_6_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_4
+dSFlux_04_04_12 = -x_04*dS_6_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_12-S_4_12*rho_04-S_6_4*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-S_4_4*S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_4_12*rho_14
+dSFlux_04_04_13 = -S_6_4*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_4_13-rho_04*S_4_13-S_4_4*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_13+rho_14*dS_3_4_13
+dSFlux_04_04_14 = -x_04*dS_6_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_4*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-rho_04*S_4_14-S_6_4*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_4_14+S_3_4*rho_14+dS_3_4_14*rho_14
+dSFlux_04_05_05 = -x_04*x_06*rho_05*(1.0+x_06)^(-1)-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+dS_3_5_5*rho_14-dS_4_5_5*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-((rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_5+x_06*rho_05*(1.0+x_06)^(-1))*S_4_5-x_04*dS_6_5_5*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_06*rho_05*S_4_5*(1.0+x_06)^(-1)-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_5+x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5)*S_6_5
+dSFlux_04_05_06 = -x_04*S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_6-x_06*S_4_6*rho_05*(1.0+x_06)^(-1)-(2*x_04*S_6_6*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_5+dS_3_5_6*rho_14-x_04*dS_6_5_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_05_07 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_5_7-(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_5-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_7-x_04*S_6_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_7*x_06*rho_05*(1.0+x_06)^(-1)-S_6_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5+rho_14*dS_3_5_7
+dSFlux_04_05_08 = -(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_5-x_06*rho_05*S_4_8*(1.0+x_06)^(-1)+dS_3_5_8*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_8-S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5-x_04*dS_6_5_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_05_09 = -x_06*S_4_9*rho_05*(1.0+x_06)^(-1)-x_04*dS_6_5_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_5_9*rho_14-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_5-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_9-S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5
+dSFlux_04_05_10 = -x_06*rho_05*S_4_10*(1.0+x_06)^(-1)+dS_3_5_10*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_10-(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5*S_6_10-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)*S_6_5-x_04*dS_6_5_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_05_11 = -x_06*S_4_11*rho_05*(1.0+x_06)^(-1)-x_04*dS_6_5_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_11+dS_3_5_11*rho_14-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_5-S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5
+dSFlux_04_05_12 = -S_6_5*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_5_12-S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5+rho_14*dS_3_5_12-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_12-x_04*S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_12*x_06*rho_05*(1.0+x_06)^(-1)
+dSFlux_04_05_13 = -(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_5-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5*S_6_13-x_04*dS_6_5_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_06*rho_05*S_4_13*(1.0+x_06)^(-1)+dS_3_5_13*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_13
+dSFlux_04_05_14 = dS_3_5_14*rho_14-S_6_5*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_5_14+S_3_5*rho_14-x_04*dS_6_5_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_5-x_04*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_06*S_4_14*rho_05*(1.0+x_06)^(-1)
+dSFlux_04_06_06 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_6_6-S_4_6*S_6_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*dS_3_6_6-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_6-S_6_6*(2*x_04*S_6_6*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))
+dSFlux_04_06_07 = -x_04*dS_6_6_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_7*S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_6-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_7+dS_3_6_7*rho_14
+dSFlux_04_06_08 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_8+dS_3_6_8*rho_14-x_04*dS_6_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_6*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_6
+dSFlux_04_06_09 = -(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_6-S_6_9*S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_9+dS_3_6_9*rho_14-x_04*dS_6_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_06_10 = -S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10-S_6_6*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)+dS_3_6_10*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_10-x_04*dS_6_6_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_06_11 = -S_4_6*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_6_11-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_6+rho_14*dS_3_6_11-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_11
+dSFlux_04_06_12 = -S_6_12*S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*dS_6_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_6*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))+dS_3_6_12*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_12
+dSFlux_04_06_13 = -S_6_6*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_13+dS_3_6_13*rho_14-S_4_6*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-x_04*dS_6_6_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_06_14 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_6_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_6_14-S_4_6*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_6*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))+S_3_6*rho_14+rho_14*dS_3_6_14
+dSFlux_04_07_07 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_7-S_4_7*S_6_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_7*(2*x_04*S_6_7*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))+dS_3_7_7*rho_14-x_04*dS_6_7_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_07_08 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_7_8-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_8-S_6_7*(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-S_4_7*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*dS_3_7_8
+dSFlux_04_07_09 = -S_4_7*S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_7+dS_3_7_9*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_9-x_04*dS_6_7_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_07_10 = -S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10-dS_6_7_10*x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_7*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_10+dS_3_7_10*rho_14
+dSFlux_04_07_11 = -S_4_7*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_7+dS_3_7_11*rho_14-dS_4_7_11*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-x_04*dS_6_7_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_07_12 = -x_04*dS_6_7_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_12-S_4_7*S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_7_12*rho_14-S_6_7*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))
+dSFlux_04_07_13 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_7_13-S_4_7*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-S_6_7*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_13+rho_14*dS_3_7_13
+dSFlux_04_07_14 = S_3_7*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_7_14-S_4_7*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_7*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))+dS_3_7_14*rho_14-x_04*dS_6_7_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_08_08 = dS_3_8_8*rho_14-x_04*dS_6_8_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_8_8-(S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_8*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_8-S_4_8*S_6_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_08_09 = -x_04*dS_6_8_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_8-S_6_9*S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_8_9+rho_14*dS_3_8_9
+dSFlux_04_08_10 = dS_3_8_10*rho_14-dS_4_8_10*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10-x_04*dS_6_8_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)*S_6_8
+dSFlux_04_08_11 = -(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_8-x_04*dS_6_8_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_8_11-S_6_11*S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_8_11*rho_14
+dSFlux_04_08_12 = dS_3_8_12*rho_14-S_6_12*S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_8_12-S_6_8*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_8_12
+dSFlux_04_08_13 = -x_04*dS_6_8_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13+dS_3_8_13*rho_14-(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_8-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_8_13
+dSFlux_04_08_14 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_8_14-S_6_14*S_4_8*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_8*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_8_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*S_3_8+rho_14*dS_3_8_14
+dSFlux_04_09_09 = -dS_4_9_9*(rho_04+x_06*rho_05*(1.0+x_06)^(-1))-S_4_9*S_6_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_9*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_9+dS_3_9_9*rho_14-x_04*dS_6_9_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_09_10 = -x_04*dS_6_9_10*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_9*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)-S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_9_10+dS_3_9_10*rho_14
+dSFlux_04_09_11 = dS_3_9_11*rho_14-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_9_11-S_4_9*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_9_11-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_9
+dSFlux_04_09_12 = -x_04*dS_6_9_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_12*S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_9_12*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_9_12-S_6_9*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))
+dSFlux_04_09_13 = -(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_9_13-S_4_9*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-S_6_9*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))+rho_14*dS_3_9_13-x_04*dS_6_9_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_09_14 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_9_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_9_14+dS_3_9_14*rho_14+S_3_9*rho_14-S_6_9*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-S_4_9*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_10_10 = -(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_10+(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10)*S_6_10-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_10_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_10_10+rho_14*dS_3_10_10-(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10*S_6_10
+dSFlux_04_10_11 = dS_3_10_11*rho_14-x_04*dS_6_10_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_10-S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_10_11
+dSFlux_04_10_12 = -(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_10_12+dS_3_10_12*rho_14-S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10-x_04*dS_6_10_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_10_13 = -(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_10-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_10_13-(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13*S_4_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_10_13+dS_3_10_13*rho_14
+dSFlux_04_10_14 = S_3_10*rho_14+dS_3_10_14*rho_14-(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))*S_6_10-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_10_14-x_04*dS_6_10_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_4_10
+dSFlux_04_11_11 = -(2*x_04*S_6_11*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))+S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_11-x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_11_11-S_4_11*S_6_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_11_11+dS_3_11_11*rho_14
+dSFlux_04_11_12 = -x_04*dS_6_11_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_11_12*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_11_12-S_6_12*S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_11*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))
+dSFlux_04_11_13 = -S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-S_6_11*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_11_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_11_13+dS_3_11_13*rho_14
+dSFlux_04_11_14 = rho_14*dS_3_11_14-S_6_14*S_4_11*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_11*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_11_14+rho_14*S_3_11-x_04*dS_6_11_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))
+dSFlux_04_12_12 = -S_4_12*S_6_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_12*(S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_12*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_12_12-x_04*dS_6_12_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+dS_3_12_12*rho_14
+dSFlux_04_12_13 = -x_04*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*dS_6_12_13+rho_14*dS_3_12_13-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_12_13-S_6_12*(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))-S_4_12*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13
+dSFlux_04_12_14 = -S_4_12*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+S_3_12*rho_14-S_6_12*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_12_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_12_14+dS_3_12_14*rho_14
+dSFlux_04_13_13 = -(2*x_04*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2))*S_6_13+S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2)))*S_6_13+dS_3_13_13*rho_14-x_04*dS_6_13_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))*S_6_13-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_13_13
+dSFlux_04_13_14 = dS_3_13_14*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_13_14-x_04*dS_6_13_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))-S_6_14*S_4_13*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+S_3_13*rho_14-S_6_13*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))
+dSFlux_04_14_14 = -S_4_14*S_6_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*S_3_14*rho_14+x_03*rho_14-(rho_04+x_06*rho_05*(1.0+x_06)^(-1))*dS_4_14_14-S_6_14*(S_4_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+2*x_04*S_6_14*(x_06*rho_05*(1.0+x_06)^(-3)-rho_05*(1.0+x_06)^(-2)))-x_04*dS_6_14_14*(rho_05*(1.0+x_06)^(-1)-x_06*rho_05*(1.0+x_06)^(-2))+rho_14*dS_3_14_14
+dSFlux_05_01_01 = -rho_08*S_4_1*rho_09*S_5_1-rho_08*rho_09*dS_4_1_1*(-10.0+x_05)-rho_08*S_3_1*S_5_1-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_1_1-rho_08*(-10.0+x_05)*dS_3_1_1-(rho_08*S_4_1*rho_09+rho_08*S_3_1)*S_5_1
+dSFlux_05_01_02 = -rho_08*dS_3_1_2*(-10.0+x_05)-(rho_08*S_3_2+rho_08*rho_09*S_4_2)*S_5_1-dS_5_1_2*(rho_08*(x_03+x_04*rho_09)+rho_10)-dS_4_1_2*rho_08*rho_09*(-10.0+x_05)-rho_08*S_5_2*S_3_1-rho_08*S_4_1*rho_09*S_5_2
+dSFlux_05_01_03 = -(rho_08*S_3_3+rho_08*rho_09*S_4_3)*S_5_1-dS_5_1_3*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_5_3*S_3_1-rho_08*(-10.0+x_05)*dS_3_1_3-rho_08*rho_09*(-10.0+x_05)*dS_4_1_3-rho_08*S_5_3*S_4_1*rho_09
+dSFlux_05_01_04 = -(rho_08*S_4_4*rho_09+rho_08*S_3_4)*S_5_1-rho_08*S_4_1*rho_09*S_5_4-rho_08*dS_3_1_4*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_1_4-rho_08*S_3_1*S_5_4-rho_08*dS_4_1_4*rho_09*(-10.0+x_05)
+dSFlux_05_01_05 = -rho_08*S_4_1*rho_09*S_5_5-(S_3_5*rho_08+rho_08*rho_09*S_4_5)*S_5_1-dS_3_1_5*rho_08*(-10.0+x_05)-dS_5_1_5*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_1_5-rho_08*S_5_5*S_3_1
+dSFlux_05_01_06 = -rho_08*S_4_1*rho_09*S_5_6-rho_08*(-10.0+x_05)*dS_3_1_6-rho_08*rho_09*(-10.0+x_05)*dS_4_1_6-(rho_08*S_3_6+rho_08*S_4_6*rho_09)*S_5_1-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_1_6-rho_08*S_3_1*S_5_6
+dSFlux_05_01_07 = -rho_08*S_4_1*rho_09*S_5_7-rho_08*dS_4_1_7*rho_09*(-10.0+x_05)-rho_08*S_5_7*S_3_1-dS_5_1_7*(rho_08*(x_03+x_04*rho_09)+rho_10)-(rho_08*S_3_7+S_4_7*rho_08*rho_09)*S_5_1-rho_08*dS_3_1_7*(-10.0+x_05)
+dSFlux_05_01_08 = -rho_08*rho_09*(-10.0+x_05)*dS_4_1_8-rho_08*(-10.0+x_05)*dS_3_1_8-(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_1-(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))*S_5_1-(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_1-dS_5_1_8*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_01_09 = -rho_08*dS_3_1_9*(-10.0+x_05)-rho_08*dS_4_1_9*rho_09*(-10.0+x_05)-rho_08*S_3_1*S_5_9-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_1_9-S_4_1*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)*S_5_1
+dSFlux_05_01_10 = -dS_4_1_10*rho_08*rho_09*(-10.0+x_05)-(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)*S_5_1-rho_08*S_5_10*S_4_1*rho_09-rho_08*S_5_10*S_3_1-dS_3_1_10*rho_08*(-10.0+x_05)-dS_5_1_10*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_01_11 = -rho_08*S_4_1*rho_09*S_5_11-dS_5_1_11*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_1_11-rho_08*S_3_1*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_1-rho_08*rho_09*(-10.0+x_05)*dS_4_1_11
+dSFlux_05_01_12 = -(rho_08*S_3_12+S_4_12*rho_08*rho_09)*S_5_1-rho_08*dS_4_1_12*rho_09*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_1_12-rho_08*S_5_12*S_3_1-rho_08*dS_3_1_12*(-10.0+x_05)-rho_08*S_4_1*rho_09*S_5_12
+dSFlux_05_01_13 = -rho_08*(-10.0+x_05)*dS_3_1_13-rho_08*S_5_13*S_3_1-rho_08*S_5_13*S_4_1*rho_09-dS_5_1_13*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_1_13-(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_1
+dSFlux_05_01_14 = -rho_08*S_4_1*rho_09*S_5_14-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_1-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_1_14-rho_08*rho_09*dS_4_1_14*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_1_14-rho_08*S_3_1*S_5_14
+dSFlux_05_02_02 = -dS_5_2_2*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*S_5_2*S_4_2-rho_08*(-10.0+x_05)*dS_3_2_2-(rho_08*S_3_2+rho_08*rho_09*S_4_2)*S_5_2-rho_08*rho_09*(-10.0+x_05)*dS_4_2_2-rho_08*S_3_2*S_5_2
+dSFlux_05_02_03 = -rho_08*S_5_3*rho_09*S_4_2-rho_08*dS_3_2_3*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_2_3-S_5_2*(rho_08*S_3_3+rho_08*rho_09*S_4_3)-rho_08*dS_4_2_3*rho_09*(-10.0+x_05)-rho_08*S_5_3*S_3_2
+dSFlux_05_02_04 = -dS_5_2_4*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*S_5_4*S_4_2-rho_08*rho_09*(-10.0+x_05)*dS_4_2_4-dS_3_2_4*rho_08*(-10.0+x_05)-rho_08*S_3_2*S_5_4-(rho_08*S_4_4*rho_09+rho_08*S_3_4)*S_5_2
+dSFlux_05_02_05 = -rho_08*S_3_2*S_5_5-rho_08*rho_09*(-10.0+x_05)*dS_4_2_5-rho_08*rho_09*S_5_5*S_4_2-rho_08*(-10.0+x_05)*dS_3_2_5-(S_3_5*rho_08+rho_08*rho_09*S_4_5)*S_5_2-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_2_5
+dSFlux_05_02_06 = -rho_08*rho_09*S_5_6*S_4_2-dS_5_2_6*(rho_08*(x_03+x_04*rho_09)+rho_10)-(rho_08*S_3_6+rho_08*S_4_6*rho_09)*S_5_2-rho_08*S_3_2*S_5_6-rho_08*dS_4_2_6*rho_09*(-10.0+x_05)-rho_08*dS_3_2_6*(-10.0+x_05)
+dSFlux_05_02_07 = -rho_08*rho_09*(-10.0+x_05)*dS_4_2_7-(rho_08*S_3_7+S_4_7*rho_08*rho_09)*S_5_2-rho_08*S_3_2*S_5_7-rho_08*(-10.0+x_05)*dS_3_2_7-rho_08*rho_09*S_5_7*S_4_2-dS_5_2_7*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_02_08 = -(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_2-(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))*S_5_2-rho_08*rho_09*dS_4_2_8*(-10.0+x_05)-(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_2-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_2_8-rho_08*(-10.0+x_05)*dS_3_2_8
+dSFlux_05_02_09 = -dS_3_2_9*rho_08*(-10.0+x_05)-(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)*S_5_2-(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))*S_4_2-rho_08*S_3_2*S_5_9-dS_4_2_9*rho_08*rho_09*(-10.0+x_05)-dS_5_2_9*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_02_10 = -rho_08*S_5_10*rho_09*S_4_2-dS_5_2_10*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_2_10-rho_08*S_3_2*S_5_10-rho_08*rho_09*(-10.0+x_05)*dS_4_2_10-S_5_2*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)
+dSFlux_05_02_11 = -rho_08*dS_4_2_11*rho_09*(-10.0+x_05)-rho_08*S_3_2*S_5_11-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_2_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_2-rho_08*dS_3_2_11*(-10.0+x_05)-rho_08*rho_09*S_5_11*S_4_2
+dSFlux_05_02_12 = -dS_3_2_12*rho_08*(-10.0+x_05)-dS_5_2_12*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_2_12-rho_08*rho_09*S_5_12*S_4_2-rho_08*S_3_2*S_5_12-S_5_2*(rho_08*S_3_12+S_4_12*rho_08*rho_09)
+dSFlux_05_02_13 = -(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_2-rho_08*rho_09*(-10.0+x_05)*dS_4_2_13-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_2_13-rho_08*S_5_13*S_3_2-rho_08*(-10.0+x_05)*dS_3_2_13-rho_08*S_5_13*rho_09*S_4_2
+dSFlux_05_02_14 = -rho_08*dS_3_2_14*(-10.0+x_05)-dS_4_2_14*rho_08*rho_09*(-10.0+x_05)-rho_08*S_3_2*S_5_14-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_2-rho_08*rho_09*S_5_14*S_4_2-dS_5_2_14*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_03_03 = -rho_08*rho_09*dS_4_3_3*(-10.0+x_05)-S_5_3*(rho_08*S_3_3+rho_08*rho_09*S_4_3)-rho_08*S_5_3*rho_09*S_4_3-dS_3_3_3*rho_08*(-10.0+x_05)-dS_5_3_3*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_5_3*S_3_3
+dSFlux_05_03_04 = -rho_08*rho_09*S_4_3*S_5_4-S_5_3*(rho_08*S_4_4*rho_09+rho_08*S_3_4)-rho_08*S_5_4*S_3_3-rho_08*(-10.0+x_05)*dS_3_3_4-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_3_4-dS_4_3_4*rho_08*rho_09*(-10.0+x_05)
+dSFlux_05_03_05 = -(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_3_5-S_5_3*(S_3_5*rho_08+rho_08*rho_09*S_4_5)-rho_08*rho_09*S_5_5*S_4_3-rho_08*dS_3_3_5*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_3_5-rho_08*S_5_5*S_3_3
+dSFlux_05_03_06 = -rho_08*(-10.0+x_05)*dS_3_3_6-S_5_3*(rho_08*S_3_6+rho_08*S_4_6*rho_09)-rho_08*rho_09*S_4_3*S_5_6-rho_08*S_5_6*S_3_3-dS_5_3_6*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*dS_4_3_6*rho_09*(-10.0+x_05)
+dSFlux_05_03_07 = -S_5_3*(rho_08*S_3_7+S_4_7*rho_08*rho_09)-rho_08*rho_09*S_5_7*S_4_3-rho_08*rho_09*(-10.0+x_05)*dS_4_3_7-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_3_7-rho_08*S_5_7*S_3_3-rho_08*(-10.0+x_05)*dS_3_3_7
+dSFlux_05_03_08 = -S_5_3*(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))-(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_3-rho_08*dS_3_3_8*(-10.0+x_05)-dS_5_3_8*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_3_8-(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_3
+dSFlux_05_03_09 = -rho_08*dS_4_3_9*rho_09*(-10.0+x_05)-dS_5_3_9*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_3_9-S_5_3*(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)-S_4_3*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-rho_08*S_5_9*S_3_3
+dSFlux_05_03_10 = -rho_08*rho_09*(-10.0+x_05)*dS_4_3_10-S_5_3*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)-rho_08*dS_3_3_10*(-10.0+x_05)-rho_08*S_5_10*S_3_3-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_3_10-rho_08*S_5_10*rho_09*S_4_3
+dSFlux_05_03_11 = -S_5_3*(rho_08*rho_09*S_4_11+rho_08*S_3_11)-dS_5_3_11*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*dS_4_3_11*rho_09*(-10.0+x_05)-dS_3_3_11*rho_08*(-10.0+x_05)-rho_08*rho_09*S_4_3*S_5_11-rho_08*S_3_3*S_5_11
+dSFlux_05_03_12 = -rho_08*S_5_12*S_3_3-S_5_3*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-rho_08*rho_09*S_5_12*S_4_3-rho_08*(-10.0+x_05)*dS_3_3_12-dS_4_3_12*rho_08*rho_09*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_3_12
+dSFlux_05_03_13 = -rho_08*S_5_13*rho_09*S_4_3-dS_5_3_13*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_5_13*S_3_3-S_5_3*(rho_08*rho_09*S_4_13+S_3_13*rho_08)-rho_08*dS_3_3_13*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_3_13
+dSFlux_05_03_14 = -rho_08*rho_09*S_4_3*S_5_14-rho_08*S_5_14*S_3_3-rho_08*(-10.0+x_05)*dS_3_3_14-rho_08*dS_4_3_14*rho_09*(-10.0+x_05)-S_5_3*(rho_08*S_4_14*rho_09+rho_08*S_3_14)-dS_5_3_14*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_04_04 = -rho_08*S_3_4*S_5_4-(rho_08*S_4_4*rho_09+rho_08*S_3_4)*S_5_4-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_4_4-rho_08*dS_3_4_4*(-10.0+x_05)-rho_08*S_4_4*rho_09*S_5_4-rho_08*rho_09*(-10.0+x_05)*dS_4_4_4
+dSFlux_05_04_05 = -rho_08*(-10.0+x_05)*dS_3_4_5-rho_08*S_5_5*S_3_4-(S_3_5*rho_08+rho_08*rho_09*S_4_5)*S_5_4-dS_5_4_5*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*dS_4_4_5*rho_09*(-10.0+x_05)-rho_08*S_4_4*rho_09*S_5_5
+dSFlux_05_04_06 = -rho_08*rho_09*(-10.0+x_05)*dS_4_4_6-rho_08*S_3_4*S_5_6-rho_08*S_4_4*rho_09*S_5_6-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_4_6-rho_08*(-10.0+x_05)*dS_3_4_6-(rho_08*S_3_6+rho_08*S_4_6*rho_09)*S_5_4
+dSFlux_05_04_07 = -rho_08*S_5_7*S_3_4-rho_08*dS_3_4_7*(-10.0+x_05)-dS_5_4_7*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_4_7-(rho_08*S_3_7+S_4_7*rho_08*rho_09)*S_5_4-rho_08*S_4_4*rho_09*S_5_7
+dSFlux_05_04_08 = -dS_5_4_8*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_4_8-(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_4-rho_08*dS_4_4_8*rho_09*(-10.0+x_05)-(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))*S_5_4-(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_4
+dSFlux_05_04_09 = -rho_08*rho_09*(-10.0+x_05)*dS_4_4_9-rho_08*dS_3_4_9*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_4_9-S_4_4*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-rho_08*S_3_4*S_5_9-(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)*S_5_4
+dSFlux_05_04_10 = -dS_5_4_10*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_4_4*S_5_10*rho_09-rho_08*rho_09*dS_4_4_10*(-10.0+x_05)-dS_3_4_10*rho_08*(-10.0+x_05)-rho_08*S_5_10*S_3_4-S_5_4*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)
+dSFlux_05_04_11 = -rho_08*S_3_4*S_5_11-dS_4_4_11*rho_08*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_4_11-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_4_11-rho_08*S_4_4*rho_09*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_4
+dSFlux_05_04_12 = -rho_08*S_4_4*rho_09*S_5_12-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_4_12-S_5_4*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-rho_08*dS_3_4_12*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_4_12-rho_08*S_3_4*S_5_12
+dSFlux_05_04_13 = -rho_08*dS_4_4_13*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_4_13-rho_08*S_5_13*S_3_4-dS_5_4_13*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_5_13*S_4_4*rho_09-(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_4
+dSFlux_05_04_14 = -rho_08*rho_09*(-10.0+x_05)*dS_4_4_14-rho_08*S_3_4*S_5_14-rho_08*S_4_4*rho_09*S_5_14-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_4_14-rho_08*(-10.0+x_05)*dS_3_4_14-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_4
+dSFlux_05_05_05 = -(S_3_5*rho_08+rho_08*rho_09*S_4_5)*S_5_5-dS_4_5_5*rho_08*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_5_5-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_5_5-S_3_5*rho_08*S_5_5-rho_08*rho_09*S_5_5*S_4_5
+dSFlux_05_05_06 = -rho_08*rho_09*S_4_5*S_5_6-dS_5_5_6*(rho_08*(x_03+x_04*rho_09)+rho_10)-S_3_5*rho_08*S_5_6-rho_08*rho_09*(-10.0+x_05)*dS_4_5_6-(rho_08*S_3_6+rho_08*S_4_6*rho_09)*S_5_5-rho_08*dS_3_5_6*(-10.0+x_05)
+dSFlux_05_05_07 = -rho_08*(-10.0+x_05)*dS_3_5_7-rho_08*dS_4_5_7*rho_09*(-10.0+x_05)-S_3_5*rho_08*S_5_7-rho_08*rho_09*S_5_7*S_4_5-(rho_08*S_3_7+S_4_7*rho_08*rho_09)*S_5_5-dS_5_5_7*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_05_08 = -rho_08*dS_3_5_8*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_5_8-(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_5-S_3_5*(S_5_8*rho_08+rho_08*(-10.0+x_05))-(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))*S_5_5-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_5_8
+dSFlux_05_05_09 = -rho_08*rho_09*dS_4_5_9*(-10.0+x_05)-S_3_5*rho_08*S_5_9-S_5_5*(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)-dS_3_5_9*rho_08*(-10.0+x_05)-S_4_5*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-dS_5_5_9*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_05_10 = -S_5_5*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)-dS_5_5_10*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_5_10*rho_09*S_4_5-S_3_5*rho_08*S_5_10-rho_08*(-10.0+x_05)*dS_3_5_10-dS_4_5_10*rho_08*rho_09*(-10.0+x_05)
+dSFlux_05_05_11 = -(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_5_11-rho_08*rho_09*S_4_5*S_5_11-rho_08*dS_3_5_11*(-10.0+x_05)-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_5-rho_08*rho_09*(-10.0+x_05)*dS_4_5_11-S_3_5*rho_08*S_5_11
+dSFlux_05_05_12 = -rho_08*rho_09*S_5_12*S_4_5-rho_08*(-10.0+x_05)*dS_3_5_12-S_3_5*rho_08*S_5_12-S_5_5*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-dS_5_5_12*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*dS_4_5_12*rho_09*(-10.0+x_05)
+dSFlux_05_05_13 = -rho_08*rho_09*(-10.0+x_05)*dS_4_5_13-S_3_5*rho_08*S_5_13-rho_08*S_5_13*rho_09*S_4_5-S_5_5*(rho_08*rho_09*S_4_13+S_3_13*rho_08)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_5_13-rho_08*(-10.0+x_05)*dS_3_5_13
+dSFlux_05_05_14 = -rho_08*rho_09*S_5_14*S_4_5-rho_08*dS_3_5_14*(-10.0+x_05)-S_5_5*(rho_08*S_4_14*rho_09+rho_08*S_3_14)-dS_5_5_14*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_5_14-S_3_5*rho_08*S_5_14
+dSFlux_05_06_06 = -rho_08*(-10.0+x_05)*dS_3_6_6-rho_08*S_3_6*S_5_6-rho_08*dS_4_6_6*rho_09*(-10.0+x_05)-rho_08*S_4_6*rho_09*S_5_6-dS_5_6_6*(rho_08*(x_03+x_04*rho_09)+rho_10)-(rho_08*S_3_6+rho_08*S_4_6*rho_09)*S_5_6
+dSFlux_05_06_07 = -rho_08*rho_09*(-10.0+x_05)*dS_4_6_7-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_6_7-rho_08*S_5_7*S_3_6-(rho_08*S_3_7+S_4_7*rho_08*rho_09)*S_5_6-rho_08*S_4_6*rho_09*S_5_7-rho_08*dS_3_6_7*(-10.0+x_05)
+dSFlux_05_06_08 = -(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_6-dS_3_6_8*rho_08*(-10.0+x_05)-(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_6-rho_08*rho_09*dS_4_6_8*(-10.0+x_05)-(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))*S_5_6-dS_5_6_8*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_06_09 = -dS_5_6_9*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_6_9-S_4_6*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-rho_08*S_5_9*S_3_6-dS_4_6_9*rho_08*rho_09*(-10.0+x_05)-(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)*S_5_6
+dSFlux_05_06_10 = -rho_08*S_5_10*S_4_6*rho_09-rho_08*S_5_10*S_3_6-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_6_10-rho_08*dS_3_6_10*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_6_10-S_5_6*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)
+dSFlux_05_06_11 = -rho_08*(-10.0+x_05)*dS_3_6_11-rho_08*S_3_6*S_5_11-dS_5_6_11*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*dS_4_6_11*rho_09*(-10.0+x_05)-rho_08*S_4_6*rho_09*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_6
+dSFlux_05_06_12 = -rho_08*S_4_6*rho_09*S_5_12-rho_08*S_5_12*S_3_6-rho_08*rho_09*(-10.0+x_05)*dS_4_6_12-rho_08*(-10.0+x_05)*dS_3_6_12-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_6_12-S_5_6*(rho_08*S_3_12+S_4_12*rho_08*rho_09)
+dSFlux_05_06_13 = -rho_08*dS_3_6_13*(-10.0+x_05)-dS_5_6_13*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_6_13-rho_08*S_5_13*S_3_6-rho_08*S_5_13*S_4_6*rho_09-(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_6
+dSFlux_05_06_14 = -rho_08*(-10.0+x_05)*dS_3_6_14-rho_08*S_3_6*S_5_14-rho_08*S_4_6*rho_09*S_5_14-rho_08*dS_4_6_14*rho_09*(-10.0+x_05)-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_6-dS_5_6_14*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_07_07 = -rho_08*dS_3_7_7*(-10.0+x_05)-rho_08*S_3_7*S_5_7-dS_5_7_7*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_7_7-S_4_7*rho_08*rho_09*S_5_7-(rho_08*S_3_7+S_4_7*rho_08*rho_09)*S_5_7
+dSFlux_05_07_08 = -S_4_7*(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)-rho_08*dS_4_7_8*rho_09*(-10.0+x_05)-(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_7-rho_08*(-10.0+x_05)*dS_3_7_8-(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))*S_5_7-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_7_8
+dSFlux_05_07_09 = -rho_08*S_3_7*S_5_9-rho_08*rho_09*(-10.0+x_05)*dS_4_7_9-rho_08*dS_3_7_9*(-10.0+x_05)-dS_5_7_9*(rho_08*(x_03+x_04*rho_09)+rho_10)-S_5_7*(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)-S_4_7*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))
+dSFlux_05_07_10 = -dS_5_7_10*(rho_08*(x_03+x_04*rho_09)+rho_10)-S_4_7*rho_08*S_5_10*rho_09-dS_3_7_10*rho_08*(-10.0+x_05)-rho_08*dS_4_7_10*rho_09*(-10.0+x_05)-S_5_7*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)-rho_08*S_5_10*S_3_7
+dSFlux_05_07_11 = -(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_7_11-dS_4_7_11*rho_08*rho_09*(-10.0+x_05)-rho_08*S_3_7*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_7-rho_08*(-10.0+x_05)*dS_3_7_11-S_4_7*rho_08*rho_09*S_5_11
+dSFlux_05_07_12 = -S_4_7*rho_08*rho_09*S_5_12-dS_5_7_12*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_3_7*S_5_12-S_5_7*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-rho_08*dS_3_7_12*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_7_12
+dSFlux_05_07_13 = -rho_08*(-10.0+x_05)*dS_3_7_13-rho_08*dS_4_7_13*rho_09*(-10.0+x_05)-rho_08*S_5_13*S_3_7-S_5_7*(rho_08*rho_09*S_4_13+S_3_13*rho_08)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_7_13-S_4_7*rho_08*S_5_13*rho_09
+dSFlux_05_07_14 = -rho_08*rho_09*(-10.0+x_05)*dS_4_7_14-dS_5_7_14*(rho_08*(x_03+x_04*rho_09)+rho_10)-S_5_7*(rho_08*S_4_14*rho_09+rho_08*S_3_14)-S_4_7*rho_08*rho_09*S_5_14-rho_08*dS_3_7_14*(-10.0+x_05)-rho_08*S_3_7*S_5_14
+dSFlux_05_08_08 = -(S_5_8*rho_08+rho_08*(-10.0+x_05))*S_3_8-S_5_8*rho_08*(x_03+x_04*rho_09)-rho_08*(-10.0+x_05)*S_3_8-rho_08*dS_3_8_8*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_8_8-dS_5_8_8*(rho_08*(x_03+x_04*rho_09)+rho_10)-S_5_8*(rho_08*rho_09*S_4_8+rho_08*S_3_8+rho_08*(x_03+x_04*rho_09))-rho_08*(x_03+x_04*rho_09)*(-10.0+x_05)-(rho_08*rho_09*(-10.0+x_05)+S_5_8*rho_08*rho_09)*S_4_8-rho_08*rho_09*(-10.0+x_05)*S_4_8
+dSFlux_05_08_09 = -S_5_8*(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)-rho_08*rho_09*dS_4_8_9*(-10.0+x_05)-S_4_8*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-rho_08*(-10.0+x_05)*dS_3_8_9-rho_08*S_4_9*rho_09*(-10.0+x_05)-x_04*rho_08*rho_09*(-10.0+x_05)-rho_08*(x_03+x_04*rho_09)*S_5_9-rho_08*(-10.0+x_05)*S_3_9-rho_08*S_5_9*S_3_8-dS_5_8_9*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_08_10 = -rho_08*S_3_10*(-10.0+x_05)-rho_08*S_5_10*(x_03+x_04*rho_09)-rho_08*dS_3_8_10*(-10.0+x_05)-rho_08*S_5_10*S_3_8-dS_4_8_10*rho_08*rho_09*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*S_4_10-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_8_10-rho_08*S_5_10*rho_09*S_4_8-S_5_8*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)
+dSFlux_05_08_11 = -dS_5_8_11*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(x_03+x_04*rho_09)*S_5_11-rho_08*(-10.0+x_05)*S_3_11-S_5_8*(rho_08*rho_09*S_4_11+rho_08*S_3_11)-rho_08*rho_09*S_4_11*(-10.0+x_05)-dS_3_8_11*rho_08*(-10.0+x_05)-rho_08*S_5_11*S_3_8-rho_08*rho_09*S_4_8*S_5_11-rho_08*rho_09*(-10.0+x_05)*dS_4_8_11
+dSFlux_05_08_12 = -rho_08*S_3_12*(-10.0+x_05)-rho_08*S_5_12*S_3_8-rho_08*dS_4_8_12*rho_09*(-10.0+x_05)-S_4_12*rho_08*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_8_12-rho_08*(x_03+x_04*rho_09)*S_5_12-S_5_8*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-rho_08*rho_09*S_5_12*S_4_8-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_8_12
+dSFlux_05_08_13 = -S_5_8*(rho_08*rho_09*S_4_13+S_3_13*rho_08)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_8_13-rho_08*S_5_13*rho_09*S_4_8-rho_08*rho_09*(-10.0+x_05)*dS_4_8_13-S_3_13*rho_08*(-10.0+x_05)-rho_08*S_5_13*S_3_8-rho_08*dS_3_8_13*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*S_4_13-rho_08*S_5_13*(x_03+x_04*rho_09)
+dSFlux_05_08_14 = -rho_08*(-10.0+x_05)*dS_3_8_14-S_5_8*(rho_08*S_4_14*rho_09+rho_08*S_3_14)-rho_08*S_5_14*S_3_8-rho_08*(x_03+x_04*rho_09)*S_5_14-rho_08*(-10.0+x_05)*S_3_14-dS_5_8_14*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_4_14*rho_09*(-10.0+x_05)-rho_08*rho_09*S_4_8*S_5_14-rho_08*rho_09*dS_4_8_14*(-10.0+x_05)
+dSFlux_05_09_09 = -(rho_08*S_4_9*rho_09+rho_08*S_3_9+x_04*rho_08*rho_09)*S_5_9-rho_08*S_4_9*rho_09*(-10.0+x_05)-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_9_9-x_04*rho_08*rho_09*S_5_9-S_4_9*(rho_08*rho_09*S_5_9+rho_08*rho_09*(-10.0+x_05))-x_04*rho_08*rho_09*(-10.0+x_05)-rho_08*S_3_9*S_5_9-dS_4_9_9*rho_08*rho_09*(-10.0+x_05)-rho_08*dS_3_9_9*(-10.0+x_05)
+dSFlux_05_09_10 = -S_5_9*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)-rho_08*S_4_9*S_5_10*rho_09-rho_08*rho_09*(-10.0+x_05)*S_4_10-rho_08*S_5_10*S_3_9-rho_08*rho_09*(-10.0+x_05)*dS_4_9_10-dS_3_9_10*rho_08*(-10.0+x_05)-x_04*rho_08*S_5_10*rho_09-dS_5_9_10*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_09_11 = -x_04*rho_08*rho_09*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_9-rho_08*S_3_9*S_5_11-dS_5_9_11*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_9_11-rho_08*rho_09*S_4_11*(-10.0+x_05)-rho_08*S_4_9*rho_09*S_5_11-rho_08*dS_4_9_11*rho_09*(-10.0+x_05)
+dSFlux_05_09_12 = -S_5_9*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-rho_08*S_4_9*rho_09*S_5_12-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_9_12-S_4_12*rho_08*rho_09*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_9_12-rho_08*dS_3_9_12*(-10.0+x_05)-x_04*rho_08*rho_09*S_5_12-rho_08*S_5_12*S_3_9
+dSFlux_05_09_13 = -x_04*rho_08*S_5_13*rho_09-rho_08*(-10.0+x_05)*dS_3_9_13-(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_9-dS_5_9_13*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_5_13*S_4_9*rho_09-rho_08*S_5_13*S_3_9-rho_08*rho_09*(-10.0+x_05)*dS_4_9_13-rho_08*rho_09*(-10.0+x_05)*S_4_13
+dSFlux_05_09_14 = -rho_08*dS_4_9_14*rho_09*(-10.0+x_05)-rho_08*S_3_9*S_5_14-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_9-x_04*rho_08*rho_09*S_5_14-rho_08*S_4_14*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_9_14-rho_08*S_4_9*rho_09*S_5_14-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_9_14
+dSFlux_05_10_10 = -rho_08*S_5_10*rho_09*S_4_10-dS_5_10_10*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*(-10.0+x_05)*dS_3_10_10-S_5_10*rho_10-rho_08*dS_4_10_10*rho_09*(-10.0+x_05)-rho_08*S_3_10*S_5_10-x_05*rho_10-S_5_10*(rho_08*rho_09*S_4_10+rho_08*S_3_10+rho_10)
+dSFlux_05_10_11 = -rho_08*rho_09*(-10.0+x_05)*dS_4_10_11-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_10_11-rho_10*S_5_11-rho_08*dS_3_10_11*(-10.0+x_05)-rho_08*rho_09*S_4_10*S_5_11-rho_08*S_3_10*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_10
+dSFlux_05_10_12 = -S_5_12*rho_10-dS_3_10_12*rho_08*(-10.0+x_05)-rho_08*S_3_10*S_5_12-dS_5_10_12*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*S_5_12*S_4_10-rho_08*rho_09*(-10.0+x_05)*dS_4_10_12-S_5_10*(rho_08*S_3_12+S_4_12*rho_08*rho_09)
+dSFlux_05_10_13 = -S_5_10*(rho_08*rho_09*S_4_13+S_3_13*rho_08)-rho_08*S_5_13*S_3_10-S_5_13*rho_10-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_10_13-rho_08*S_5_13*rho_09*S_4_10-rho_08*(-10.0+x_05)*dS_3_10_13-rho_08*dS_4_10_13*rho_09*(-10.0+x_05)
+dSFlux_05_10_14 = -rho_08*dS_3_10_14*(-10.0+x_05)-S_5_10*(rho_08*S_4_14*rho_09+rho_08*S_3_14)-rho_10*S_5_14-rho_08*rho_09*(-10.0+x_05)*dS_4_10_14-rho_08*rho_09*S_5_14*S_4_10-dS_5_10_14*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*S_3_10*S_5_14
+dSFlux_05_11_11 = -dS_5_11_11*(rho_08*(x_03+x_04*rho_09)+rho_10)-dS_3_11_11*rho_08*(-10.0+x_05)-rho_08*rho_09*S_4_11*S_5_11-rho_08*S_3_11*S_5_11-(rho_08*rho_09*S_4_11+rho_08*S_3_11)*S_5_11-rho_08*rho_09*(-10.0+x_05)*dS_4_11_11
+dSFlux_05_11_12 = -(rho_08*S_3_12+S_4_12*rho_08*rho_09)*S_5_11-rho_08*S_5_12*S_3_11-rho_08*dS_4_11_12*rho_09*(-10.0+x_05)-rho_08*rho_09*S_4_11*S_5_12-rho_08*(-10.0+x_05)*dS_3_11_12-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_11_12
+dSFlux_05_11_13 = -rho_08*rho_09*(-10.0+x_05)*dS_4_11_13-rho_08*S_5_13*rho_09*S_4_11-dS_5_11_13*(rho_08*(x_03+x_04*rho_09)+rho_10)-(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_11-rho_08*dS_3_11_13*(-10.0+x_05)-rho_08*S_5_13*S_3_11
+dSFlux_05_11_14 = -rho_08*(-10.0+x_05)*dS_3_11_14-rho_08*rho_09*S_4_11*S_5_14-rho_08*rho_09*dS_4_11_14*(-10.0+x_05)-rho_08*S_5_14*S_3_11-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_11-dS_5_11_14*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_12_12 = -rho_08*S_3_12*S_5_12-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_12_12-S_4_12*rho_08*rho_09*S_5_12-S_5_12*(rho_08*S_3_12+S_4_12*rho_08*rho_09)-rho_08*dS_3_12_12*(-10.0+x_05)-rho_08*rho_09*(-10.0+x_05)*dS_4_12_12
+dSFlux_05_12_13 = -rho_08*dS_4_12_13*rho_09*(-10.0+x_05)-rho_08*(-10.0+x_05)*dS_3_12_13-(rho_08*rho_09*S_4_13+S_3_13*rho_08)*S_5_12-S_4_12*rho_08*S_5_13*rho_09-rho_08*S_5_13*S_3_12-dS_5_12_13*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_05_12_14 = -(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_12-rho_08*rho_09*(-10.0+x_05)*dS_4_12_14-rho_08*S_3_12*S_5_14-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_12_14-S_4_12*rho_08*rho_09*S_5_14-rho_08*(-10.0+x_05)*dS_3_12_14
+dSFlux_05_13_13 = -rho_08*rho_09*(-10.0+x_05)*dS_4_13_13-rho_08*S_5_13*rho_09*S_4_13-(rho_08*(x_03+x_04*rho_09)+rho_10)*dS_5_13_13-rho_08*(-10.0+x_05)*dS_3_13_13-S_5_13*(rho_08*rho_09*S_4_13+S_3_13*rho_08)-S_3_13*rho_08*S_5_13
+dSFlux_05_13_14 = -rho_08*dS_3_13_14*(-10.0+x_05)-S_3_13*rho_08*S_5_14-dS_5_13_14*(rho_08*(x_03+x_04*rho_09)+rho_10)-rho_08*rho_09*(-10.0+x_05)*dS_4_13_14-rho_08*rho_09*S_4_13*S_5_14-S_5_13*(rho_08*S_4_14*rho_09+rho_08*S_3_14)
+dSFlux_05_14_14 = -rho_08*S_4_14*rho_09*S_5_14-rho_08*(-10.0+x_05)*dS_3_14_14-rho_08*S_3_14*S_5_14-rho_08*dS_4_14_14*rho_09*(-10.0+x_05)-(rho_08*S_4_14*rho_09+rho_08*S_3_14)*S_5_14-dS_5_14_14*(rho_08*(x_03+x_04*rho_09)+rho_10)
+dSFlux_06_01_01 = -2*rho_11*S_6_1*S_5_1-rho_11*(-10.0+x_06)*dS_5_1_1-dS_6_1_1*(rho_12+rho_11*x_05)
+dSFlux_06_01_02 = -dS_6_1_2*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_1_2-rho_11*S_6_1*S_5_2-S_6_2*rho_11*S_5_1
+dSFlux_06_01_03 = -rho_11*S_6_3*S_5_1-S_5_3*rho_11*S_6_1-dS_5_1_3*rho_11*(-10.0+x_06)-(rho_12+rho_11*x_05)*dS_6_1_3
+dSFlux_06_01_04 = -rho_11*(-10.0+x_06)*dS_5_1_4-rho_11*S_6_1*S_5_4-dS_6_1_4*(rho_12+rho_11*x_05)-rho_11*S_6_4*S_5_1
+dSFlux_06_01_05 = -rho_11*S_6_5*S_5_1-dS_6_1_5*(rho_12+rho_11*x_05)-rho_11*S_6_1*S_5_5-rho_11*(-10.0+x_06)*dS_5_1_5
+dSFlux_06_01_06 = -rho_11*S_6_1*S_5_6-rho_11*S_6_6*S_5_1-rho_11*(-10.0+x_06)*dS_5_1_6-dS_6_1_6*(rho_12+rho_11*x_05)
+dSFlux_06_01_07 = -dS_6_1_7*(rho_12+rho_11*x_05)-rho_11*S_6_1*S_5_7-rho_11*(-10.0+x_06)*dS_5_1_7-S_6_7*rho_11*S_5_1
+dSFlux_06_01_08 = -S_5_8*rho_11*S_6_1-rho_11*S_6_8*S_5_1-dS_5_1_8*rho_11*(-10.0+x_06)-dS_6_1_8*(rho_12+rho_11*x_05)
+dSFlux_06_01_09 = -dS_6_1_9*(rho_12+rho_11*x_05)-rho_11*S_6_1*S_5_9-rho_11*(-10.0+x_06)*dS_5_1_9-rho_11*S_6_9*S_5_1
+dSFlux_06_01_10 = -rho_11*S_6_10*S_5_1-rho_11*(-10.0+x_06)*dS_5_1_10-dS_6_1_10*(rho_12+rho_11*x_05)-rho_11*S_5_10*S_6_1
+dSFlux_06_01_11 = -(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_1-dS_5_1_11*rho_11*(-10.0+x_06)-(rho_11*S_5_11+rho_11*x_05)*S_6_1-(rho_12+rho_11*x_05)*dS_6_1_11
+dSFlux_06_01_12 = -S_6_1*(rho_12+rho_11*S_5_12)-rho_11*(-10.0+x_06)*dS_5_1_12-S_6_12*rho_11*S_5_1-dS_6_1_12*(rho_12+rho_11*x_05)
+dSFlux_06_01_13 = -dS_6_1_13*(rho_12+rho_11*x_05)-rho_11*S_6_13*S_5_1-S_5_13*rho_11*S_6_1-rho_11*dS_5_1_13*(-10.0+x_06)
+dSFlux_06_01_14 = -rho_11*S_6_1*S_5_14-rho_11*S_6_14*S_5_1-dS_6_1_14*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_1_14
+dSFlux_06_02_02 = -dS_5_2_2*rho_11*(-10.0+x_06)-2*S_6_2*rho_11*S_5_2-dS_6_2_2*(rho_12+rho_11*x_05)
+dSFlux_06_02_03 = -rho_11*(-10.0+x_06)*dS_5_2_3-S_6_2*S_5_3*rho_11-rho_11*S_5_2*S_6_3-dS_6_2_3*(rho_12+rho_11*x_05)
+dSFlux_06_02_04 = -rho_11*S_6_4*S_5_2-S_6_2*rho_11*S_5_4-rho_11*(-10.0+x_06)*dS_5_2_4-dS_6_2_4*(rho_12+rho_11*x_05)
+dSFlux_06_02_05 = -rho_11*(-10.0+x_06)*dS_5_2_5-rho_11*S_5_2*S_6_5-(rho_12+rho_11*x_05)*dS_6_2_5-S_6_2*rho_11*S_5_5
+dSFlux_06_02_06 = -dS_6_2_6*(rho_12+rho_11*x_05)-rho_11*S_6_6*S_5_2-rho_11*(-10.0+x_06)*dS_5_2_6-S_6_2*rho_11*S_5_6
+dSFlux_06_02_07 = -dS_5_2_7*rho_11*(-10.0+x_06)-dS_6_2_7*(rho_12+rho_11*x_05)-S_6_7*rho_11*S_5_2-S_6_2*rho_11*S_5_7
+dSFlux_06_02_08 = -rho_11*S_5_2*S_6_8-S_6_2*S_5_8*rho_11-dS_6_2_8*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_2_8
+dSFlux_06_02_09 = -rho_11*S_6_9*S_5_2-dS_6_2_9*(rho_12+rho_11*x_05)-S_6_2*rho_11*S_5_9-rho_11*(-10.0+x_06)*dS_5_2_9
+dSFlux_06_02_10 = -dS_5_2_10*rho_11*(-10.0+x_06)-S_6_2*rho_11*S_5_10-rho_11*S_5_2*S_6_10-dS_6_2_10*(rho_12+rho_11*x_05)
+dSFlux_06_02_11 = -rho_11*(-10.0+x_06)*dS_5_2_11-S_6_2*(rho_11*S_5_11+rho_11*x_05)-dS_6_2_11*(rho_12+rho_11*x_05)-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_2
+dSFlux_06_02_12 = -S_6_2*(rho_12+rho_11*S_5_12)-rho_11*(-10.0+x_06)*dS_5_2_12-S_6_12*rho_11*S_5_2-(rho_12+rho_11*x_05)*dS_6_2_12
+dSFlux_06_02_13 = -S_6_2*S_5_13*rho_11-rho_11*(-10.0+x_06)*dS_5_2_13-dS_6_2_13*(rho_12+rho_11*x_05)-rho_11*S_5_2*S_6_13
+dSFlux_06_02_14 = -dS_6_2_14*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_2_14-S_6_2*rho_11*S_5_14-rho_11*S_6_14*S_5_2
+dSFlux_06_03_03 = -rho_11*(-10.0+x_06)*dS_5_3_3-2*S_5_3*rho_11*S_6_3-dS_6_3_3*(rho_12+rho_11*x_05)
+dSFlux_06_03_04 = -dS_6_3_4*(rho_12+rho_11*x_05)-rho_11*S_6_3*S_5_4-S_5_3*rho_11*S_6_4-rho_11*(-10.0+x_06)*dS_5_3_4
+dSFlux_06_03_05 = -S_5_3*rho_11*S_6_5-rho_11*(-10.0+x_06)*dS_5_3_5-dS_6_3_5*(rho_12+rho_11*x_05)-rho_11*S_5_5*S_6_3
+dSFlux_06_03_06 = -rho_11*dS_5_3_6*(-10.0+x_06)-rho_11*S_6_3*S_5_6-S_5_3*rho_11*S_6_6-(rho_12+rho_11*x_05)*dS_6_3_6
+dSFlux_06_03_07 = -dS_6_3_7*(rho_12+rho_11*x_05)-rho_11*S_5_7*S_6_3-rho_11*(-10.0+x_06)*dS_5_3_7-S_6_7*S_5_3*rho_11
+dSFlux_06_03_08 = -dS_6_3_8*(rho_12+rho_11*x_05)-S_5_3*rho_11*S_6_8-S_5_8*rho_11*S_6_3-rho_11*(-10.0+x_06)*dS_5_3_8
+dSFlux_06_03_09 = -S_5_3*rho_11*S_6_9-dS_5_3_9*rho_11*(-10.0+x_06)-rho_11*S_6_3*S_5_9-dS_6_3_9*(rho_12+rho_11*x_05)
+dSFlux_06_03_10 = -S_5_3*rho_11*S_6_10-rho_11*(-10.0+x_06)*dS_5_3_10-dS_6_3_10*(rho_12+rho_11*x_05)-rho_11*S_5_10*S_6_3
+dSFlux_06_03_11 = -(rho_11*S_5_11+rho_11*x_05)*S_6_3-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_3-dS_6_3_11*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_3_11
+dSFlux_06_03_12 = -dS_6_3_12*(rho_12+rho_11*x_05)-S_6_12*S_5_3*rho_11-rho_11*(-10.0+x_06)*dS_5_3_12-(rho_12+rho_11*S_5_12)*S_6_3
+dSFlux_06_03_13 = -S_5_3*rho_11*S_6_13-rho_11*(-10.0+x_06)*dS_5_3_13-S_5_13*rho_11*S_6_3-dS_6_3_13*(rho_12+rho_11*x_05)
+dSFlux_06_03_14 = -S_5_3*rho_11*S_6_14-rho_11*S_6_3*S_5_14-dS_5_3_14*rho_11*(-10.0+x_06)-(rho_12+rho_11*x_05)*dS_6_3_14
+dSFlux_06_04_04 = -rho_11*(-10.0+x_06)*dS_5_4_4-dS_6_4_4*(rho_12+rho_11*x_05)-2*rho_11*S_6_4*S_5_4
+dSFlux_06_04_05 = -rho_11*S_6_4*S_5_5-(rho_12+rho_11*x_05)*dS_6_4_5-rho_11*S_5_4*S_6_5-rho_11*dS_5_4_5*(-10.0+x_06)
+dSFlux_06_04_06 = -rho_11*(-10.0+x_06)*dS_5_4_6-dS_6_4_6*(rho_12+rho_11*x_05)-rho_11*S_6_4*S_5_6-rho_11*S_6_6*S_5_4
+dSFlux_06_04_07 = -S_6_7*rho_11*S_5_4-dS_6_4_7*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_4_7-rho_11*S_6_4*S_5_7
+dSFlux_06_04_08 = -rho_11*S_6_8*S_5_4-dS_5_4_8*rho_11*(-10.0+x_06)-S_5_8*rho_11*S_6_4-dS_6_4_8*(rho_12+rho_11*x_05)
+dSFlux_06_04_09 = -rho_11*S_6_4*S_5_9-rho_11*(-10.0+x_06)*dS_5_4_9-dS_6_4_9*(rho_12+rho_11*x_05)-rho_11*S_6_9*S_5_4
+dSFlux_06_04_10 = -dS_6_4_10*(rho_12+rho_11*x_05)-rho_11*S_6_4*S_5_10-rho_11*S_5_4*S_6_10-rho_11*(-10.0+x_06)*dS_5_4_10
+dSFlux_06_04_11 = -dS_6_4_11*(rho_12+rho_11*x_05)-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_4-rho_11*(-10.0+x_06)*dS_5_4_11-(rho_11*S_5_11+rho_11*x_05)*S_6_4
+dSFlux_06_04_12 = -S_6_12*rho_11*S_5_4-rho_11*(-10.0+x_06)*dS_5_4_12-S_6_4*(rho_12+rho_11*S_5_12)-dS_6_4_12*(rho_12+rho_11*x_05)
+dSFlux_06_04_13 = -dS_5_4_13*rho_11*(-10.0+x_06)-rho_11*S_6_13*S_5_4-S_5_13*rho_11*S_6_4-(rho_12+rho_11*x_05)*dS_6_4_13
+dSFlux_06_04_14 = -rho_11*S_6_14*S_5_4-dS_6_4_14*(rho_12+rho_11*x_05)-rho_11*S_6_4*S_5_14-rho_11*(-10.0+x_06)*dS_5_4_14
+dSFlux_06_05_05 = -2*rho_11*S_5_5*S_6_5-dS_6_5_5*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_5_5
+dSFlux_06_05_06 = -dS_6_5_6*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_5_6-rho_11*S_5_5*S_6_6-rho_11*S_5_6*S_6_5
+dSFlux_06_05_07 = -S_6_7*rho_11*S_5_5-rho_11*S_5_7*S_6_5-dS_6_5_7*(rho_12+rho_11*x_05)-dS_5_5_7*rho_11*(-10.0+x_06)
+dSFlux_06_05_08 = -dS_6_5_8*(rho_12+rho_11*x_05)-S_5_8*rho_11*S_6_5-rho_11*S_5_5*S_6_8-rho_11*(-10.0+x_06)*dS_5_5_8
+dSFlux_06_05_09 = -rho_11*S_5_9*S_6_5-rho_11*(-10.0+x_06)*dS_5_5_9-dS_6_5_9*(rho_12+rho_11*x_05)-rho_11*S_6_9*S_5_5
+dSFlux_06_05_10 = -dS_6_5_10*(rho_12+rho_11*x_05)-rho_11*S_5_5*S_6_10-dS_5_5_10*rho_11*(-10.0+x_06)-rho_11*S_5_10*S_6_5
+dSFlux_06_05_11 = -rho_11*(-10.0+x_06)*dS_5_5_11-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_5-dS_6_5_11*(rho_12+rho_11*x_05)-(rho_11*S_5_11+rho_11*x_05)*S_6_5
+dSFlux_06_05_12 = -S_6_12*rho_11*S_5_5-rho_11*dS_5_5_12*(-10.0+x_06)-(rho_12+rho_11*S_5_12)*S_6_5-(rho_12+rho_11*x_05)*dS_6_5_12
+dSFlux_06_05_13 = -rho_11*S_5_5*S_6_13-dS_6_5_13*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_5_13-S_5_13*rho_11*S_6_5
+dSFlux_06_05_14 = -dS_6_5_14*(rho_12+rho_11*x_05)-rho_11*S_6_14*S_5_5-rho_11*S_5_14*S_6_5-rho_11*(-10.0+x_06)*dS_5_5_14
+dSFlux_06_06_06 = -dS_5_6_6*rho_11*(-10.0+x_06)-2*rho_11*S_6_6*S_5_6-(rho_12+rho_11*x_05)*dS_6_6_6
+dSFlux_06_06_07 = -S_6_7*rho_11*S_5_6-rho_11*S_5_7*S_6_6-rho_11*(-10.0+x_06)*dS_5_6_7-dS_6_6_7*(rho_12+rho_11*x_05)
+dSFlux_06_06_08 = -rho_11*S_6_8*S_5_6-dS_6_6_8*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_6_8-S_5_8*rho_11*S_6_6
+dSFlux_06_06_09 = -dS_6_6_9*(rho_12+rho_11*x_05)-rho_11*S_6_6*S_5_9-dS_5_6_9*rho_11*(-10.0+x_06)-rho_11*S_6_9*S_5_6
+dSFlux_06_06_10 = -rho_11*(-10.0+x_06)*dS_5_6_10-rho_11*S_5_10*S_6_6-dS_6_6_10*(rho_12+rho_11*x_05)-rho_11*S_5_6*S_6_10
+dSFlux_06_06_11 = -(rho_11*S_5_11+rho_11*x_05)*S_6_6-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_6-(rho_12+rho_11*x_05)*dS_6_6_11-rho_11*dS_5_6_11*(-10.0+x_06)
+dSFlux_06_06_12 = -S_6_12*rho_11*S_5_6-rho_11*(-10.0+x_06)*dS_5_6_12-dS_6_6_12*(rho_12+rho_11*x_05)-(rho_12+rho_11*S_5_12)*S_6_6
+dSFlux_06_06_13 = -dS_6_6_13*(rho_12+rho_11*x_05)-S_5_13*rho_11*S_6_6-rho_11*(-10.0+x_06)*dS_5_6_13-rho_11*S_6_13*S_5_6
+dSFlux_06_06_14 = -rho_11*S_6_14*S_5_6-dS_6_6_14*(rho_12+rho_11*x_05)-dS_5_6_14*rho_11*(-10.0+x_06)-rho_11*S_6_6*S_5_14
+dSFlux_06_07_07 = -rho_11*dS_5_7_7*(-10.0+x_06)-2*S_6_7*rho_11*S_5_7-dS_6_7_7*(rho_12+rho_11*x_05)
+dSFlux_06_07_08 = -S_5_8*S_6_7*rho_11-dS_6_7_8*(rho_12+rho_11*x_05)-rho_11*S_5_7*S_6_8-rho_11*(-10.0+x_06)*dS_5_7_8
+dSFlux_06_07_09 = -dS_6_7_9*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_7_9-S_6_7*rho_11*S_5_9-rho_11*S_6_9*S_5_7
+dSFlux_06_07_10 = -S_6_7*rho_11*S_5_10-dS_5_7_10*rho_11*(-10.0+x_06)-rho_11*S_5_7*S_6_10-dS_6_7_10*(rho_12+rho_11*x_05)
+dSFlux_06_07_11 = -(rho_11*S_5_11+rho_11*x_05)*S_6_7-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_7-rho_11*(-10.0+x_06)*dS_5_7_11-dS_6_7_11*(rho_12+rho_11*x_05)
+dSFlux_06_07_12 = -S_6_12*rho_11*S_5_7-S_6_7*(rho_12+rho_11*S_5_12)-rho_11*(-10.0+x_06)*dS_5_7_12-dS_6_7_12*(rho_12+rho_11*x_05)
+dSFlux_06_07_13 = -rho_11*S_5_7*S_6_13-S_6_7*S_5_13*rho_11-(rho_12+rho_11*x_05)*dS_6_7_13-rho_11*(-10.0+x_06)*dS_5_7_13
+dSFlux_06_07_14 = -dS_6_7_14*(rho_12+rho_11*x_05)-S_6_7*rho_11*S_5_14-rho_11*S_6_14*S_5_7-rho_11*(-10.0+x_06)*dS_5_7_14
+dSFlux_06_08_08 = -dS_6_8_8*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_8_8-2*S_5_8*rho_11*S_6_8
+dSFlux_06_08_09 = -S_5_8*rho_11*S_6_9-dS_6_8_9*(rho_12+rho_11*x_05)-rho_11*S_5_9*S_6_8-dS_5_8_9*rho_11*(-10.0+x_06)
+dSFlux_06_08_10 = -S_5_8*rho_11*S_6_10-rho_11*S_5_10*S_6_8-dS_6_8_10*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_8_10
+dSFlux_06_08_11 = -(rho_11*S_5_11+rho_11*x_05)*S_6_8-S_5_8*(rho_11*(-10.0+x_06)+rho_11*S_6_11)-dS_6_8_11*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_8_11
+dSFlux_06_08_12 = -S_5_8*S_6_12*rho_11-rho_11*(-10.0+x_06)*dS_5_8_12-(rho_12+rho_11*S_5_12)*S_6_8-(rho_12+rho_11*x_05)*dS_6_8_12
+dSFlux_06_08_13 = -S_5_8*rho_11*S_6_13-S_5_13*rho_11*S_6_8-rho_11*(-10.0+x_06)*dS_5_8_13-dS_6_8_13*(rho_12+rho_11*x_05)
+dSFlux_06_08_14 = -rho_11*dS_5_8_14*(-10.0+x_06)-S_5_8*rho_11*S_6_14-rho_11*S_6_8*S_5_14-dS_6_8_14*(rho_12+rho_11*x_05)
+dSFlux_06_09_09 = -dS_6_9_9*(rho_12+rho_11*x_05)-2*rho_11*S_6_9*S_5_9-rho_11*(-10.0+x_06)*dS_5_9_9
+dSFlux_06_09_10 = -rho_11*S_5_9*S_6_10-rho_11*S_5_10*S_6_9-rho_11*(-10.0+x_06)*dS_5_9_10-dS_6_9_10*(rho_12+rho_11*x_05)
+dSFlux_06_09_11 = -(rho_11*S_5_11+rho_11*x_05)*S_6_9-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_9-(rho_12+rho_11*x_05)*dS_6_9_11-dS_5_9_11*rho_11*(-10.0+x_06)
+dSFlux_06_09_12 = -rho_11*(-10.0+x_06)*dS_5_9_12-S_6_12*rho_11*S_5_9-dS_6_9_12*(rho_12+rho_11*x_05)-S_6_9*(rho_12+rho_11*S_5_12)
+dSFlux_06_09_13 = -rho_11*S_5_9*S_6_13-dS_6_9_13*(rho_12+rho_11*x_05)-S_5_13*rho_11*S_6_9-rho_11*dS_5_9_13*(-10.0+x_06)
+dSFlux_06_09_14 = -rho_11*S_6_9*S_5_14-rho_11*(-10.0+x_06)*dS_5_9_14-dS_6_9_14*(rho_12+rho_11*x_05)-rho_11*S_6_14*S_5_9
+dSFlux_06_10_10 = -dS_5_10_10*rho_11*(-10.0+x_06)-2*rho_11*S_5_10*S_6_10-(rho_12+rho_11*x_05)*dS_6_10_10
+dSFlux_06_10_11 = -rho_11*(-10.0+x_06)*dS_5_10_11-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_10-dS_6_10_11*(rho_12+rho_11*x_05)-(rho_11*S_5_11+rho_11*x_05)*S_6_10
+dSFlux_06_10_12 = -dS_6_10_12*(rho_12+rho_11*x_05)-S_6_12*rho_11*S_5_10-(rho_12+rho_11*S_5_12)*S_6_10-rho_11*(-10.0+x_06)*dS_5_10_12
+dSFlux_06_10_13 = -rho_11*(-10.0+x_06)*dS_5_10_13-rho_11*S_5_10*S_6_13-dS_6_10_13*(rho_12+rho_11*x_05)-S_5_13*rho_11*S_6_10
+dSFlux_06_10_14 = -dS_6_10_14*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_10_14-rho_11*S_5_14*S_6_10-rho_11*S_5_10*S_6_14
+dSFlux_06_11_11 = -(rho_11*S_5_11+rho_11*x_05)*S_6_11-(rho_11*(-10.0+x_06)+rho_11*S_6_11)*S_5_11-rho_11*(-10.0+x_06)*x_05-rho_11*S_6_11*x_05-rho_11*(-10.0+x_06)*S_5_11-(rho_12+rho_11*x_05)*dS_6_11_11-rho_11*(-10.0+x_06)*dS_5_11_11
+dSFlux_06_11_12 = -S_6_12*rho_11*S_5_11-rho_11*(-10.0+x_06)*S_5_12-S_6_12*rho_11*x_05-(rho_12+rho_11*S_5_12)*S_6_11-rho_11*(-10.0+x_06)*dS_5_11_12-dS_6_11_12*(rho_12+rho_11*x_05)
+dSFlux_06_11_13 = -S_5_13*rho_11*S_6_11-rho_11*x_05*S_6_13-rho_11*(-10.0+x_06)*dS_5_11_13-dS_6_11_13*(rho_12+rho_11*x_05)-S_5_13*rho_11*(-10.0+x_06)-rho_11*S_6_13*S_5_11
+dSFlux_06_11_14 = -dS_6_11_14*(rho_12+rho_11*x_05)-rho_11*S_6_14*S_5_11-rho_11*S_6_11*S_5_14-dS_5_11_14*rho_11*(-10.0+x_06)-rho_11*(-10.0+x_06)*S_5_14-rho_11*S_6_14*x_05
+dSFlux_06_12_12 = -dS_6_12_12*(rho_12+rho_11*x_05)-rho_11*(-10.0+x_06)*dS_5_12_12-S_6_12*rho_12-S_6_12*(rho_12+rho_11*S_5_12)-x_06*rho_12-S_6_12*rho_11*S_5_12
+dSFlux_06_12_13 = -rho_12*S_6_13-dS_5_12_13*rho_11*(-10.0+x_06)-S_5_13*S_6_12*rho_11-dS_6_12_13*(rho_12+rho_11*x_05)-rho_11*S_5_12*S_6_13
+dSFlux_06_12_14 = -dS_6_12_14*(rho_12+rho_11*x_05)-S_6_12*rho_11*S_5_14-S_6_14*rho_12-rho_11*S_6_14*S_5_12-rho_11*(-10.0+x_06)*dS_5_12_14
+dSFlux_06_13_13 = -dS_6_13_13*(rho_12+rho_11*x_05)-2*S_5_13*rho_11*S_6_13-rho_11*(-10.0+x_06)*dS_5_13_13
+dSFlux_06_13_14 = -rho_11*(-10.0+x_06)*dS_5_13_14-dS_6_13_14*(rho_12+rho_11*x_05)-S_5_13*rho_11*S_6_14-rho_11*S_5_14*S_6_13
+dSFlux_06_14_14 = -2*rho_11*S_6_14*S_5_14-dS_6_14_14*(rho_12+rho_11*x_05)-dS_5_14_14*rho_11*(-10.0+x_06)
+********** MODEL FUNCTIONS
+
+********** MODEL EVENTS
+
+********** MODEL MATLAB FUNCTIONS
+

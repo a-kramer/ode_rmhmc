@@ -1,0 +1,52 @@
+********** MODEL NAME
+SBexpMAPK
+********** MODEL NOTES
+exponential parameters
+********** MODEL STATES
+d/dt(x_01) = -((2.0)*exp(theta_01)*(1.0+u_1)^(-1)+exp(theta_02))*x_01+u_1*exp(theta_01)*(1.0+u_1)^(-1)-(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*x_02
+d/dt(x_02) = x_01*exp(theta_01)*(1.0+u_1)^(-1)-x_02*exp(theta_02)
+
+d/dt(S_1_1) = S_1_1*(-(2.0)*exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))-(2.0)*x_01*exp(theta_01)*(1.0+u_1)^(-1)-x_02*exp(theta_01)*(1.0+u_1)^(-1)+u_1*exp(theta_01)*(1.0+u_1)^(-1)-(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*S_2_1
+d/dt(S_2_1) = -exp(theta_02)*S_2_1+x_01*exp(theta_01)*(1.0+u_1)^(-1)+S_1_1*exp(theta_01)*(1.0+u_1)^(-1)
+d/dt(S_1_2) = -exp(theta_02)*x_01+(-(2.0)*exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*S_1_2-(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*S_2_2+x_02*exp(theta_02)
+d/dt(S_2_2) = exp(theta_01)*S_1_2*(1.0+u_1)^(-1)-x_02*exp(theta_02)-S_2_2*exp(theta_02)
+
+d/dt(dS_1_1_1) = -(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*dS_2_1_1-(2.0)*x_01*exp(theta_01)*(1.0+u_1)^(-1)-x_02*exp(theta_01)*(1.0+u_1)^(-1)-(4.0)*S_1_1*exp(theta_01)*(1.0+u_1)^(-1)+u_1*exp(theta_01)*(1.0+u_1)^(-1)+(-(2.0)*exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*dS_1_1_1-2*S_2_1*exp(theta_01)*(1.0+u_1)^(-1)
+d/dt(dS_2_1_1) = x_01*exp(theta_01)*(1.0+u_1)^(-1)-dS_2_1_1*exp(theta_02)+2*S_1_1*exp(theta_01)*(1.0+u_1)^(-1)+dS_1_1_1*exp(theta_01)*(1.0+u_1)^(-1)
+d/dt(dS_1_2_1) = -S_1_1*exp(theta_02)+exp(theta_02)*S_2_1-(2.0)*exp(theta_01)*S_1_2*(1.0+u_1)^(-1)+(-(2.0)*exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*dS_1_2_1-(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*dS_2_2_1-S_2_2*exp(theta_01)*(1.0+u_1)^(-1)
+d/dt(dS_2_2_1) = -exp(theta_02)*S_2_1+exp(theta_01)*S_1_2*(1.0+u_1)^(-1)-exp(theta_02)*dS_2_2_1+exp(theta_01)*dS_1_2_1*(1.0+u_1)^(-1)
+d/dt(dS_1_1_2) = -S_1_1*exp(theta_02)+exp(theta_02)*S_2_1-(2.0)*exp(theta_01)*S_1_2*(1.0+u_1)^(-1)-(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*dS_2_1_2+dS_1_1_2*(-(2.0)*exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))-S_2_2*exp(theta_01)*(1.0+u_1)^(-1)
+d/dt(dS_2_1_2) = -exp(theta_02)*dS_2_1_2-exp(theta_02)*S_2_1+exp(theta_01)*S_1_2*(1.0+u_1)^(-1)+dS_1_1_2*exp(theta_01)*(1.0+u_1)^(-1)
+d/dt(dS_1_2_2) = -2*exp(theta_02)*S_1_2-exp(theta_02)*x_01-dS_2_2_2*(exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))+x_02*exp(theta_02)+(-(2.0)*exp(theta_01)*(1.0+u_1)^(-1)-exp(theta_02))*dS_1_2_2+2*S_2_2*exp(theta_02)
+d/dt(dS_2_2_2) = dS_1_2_2*exp(theta_01)*(1.0+u_1)^(-1)-x_02*exp(theta_02)-2*S_2_2*exp(theta_02)-dS_2_2_2*exp(theta_02)
+
+x_01(0) = 1.0
+x_02(0) = 1.0
+S_1_1(0) = 0.0
+S_2_1(0) = 0.0
+S_1_2(0) = 0.0
+S_2_2(0) = 0.0
+dS_1_1_1(0) = 0.0
+dS_2_1_1(0) = 0.0
+dS_1_2_1(0) = 0.0
+dS_2_2_1(0) = 0.0
+dS_1_1_2(0) = 0.0
+dS_2_1_2(0) = 0.0
+dS_1_2_2(0) = 0.0
+dS_2_2_2(0) = 0.0
+
+
+********** MODEL PARAMETERS
+theta_01 = 0.0
+theta_02 = 0.0
+u_1 = 0.0
+********** MODEL VARIABLES
+
+********** MODEL REACTIONS
+
+********** MODEL FUNCTIONS
+
+********** MODEL EVENTS
+
+********** MODEL MATLAB FUNCTIONS
+
