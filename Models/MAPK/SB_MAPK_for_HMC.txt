@@ -1,0 +1,33 @@
+********** MODEL NAME
+SB_MAPK_for_HMC
+********** MODEL NOTES
+exponential parameters
+********** MODEL STATES
+d/dt(x_01) = (exp(theta_02)-(1.0+u_1)^(-1)*exp(theta_01))*x_02-(exp(theta_02)+(2.0)*(1.0+u_1)^(-1)*exp(theta_01))*x_01+(1.0+u_1)^(-1)*u_1*exp(theta_01)
+d/dt(x_02) = (1.0+u_1)^(-1)*exp(theta_01)*x_01-exp(theta_02)*x_02
+
+d/dt(S_1_1) = -(1.0+u_1)^(-1)*x_02*exp(theta_01)-S_1_1*(exp(theta_02)+(2.0)*(1.0+u_1)^(-1)*exp(theta_01))+(exp(theta_02)-(1.0+u_1)^(-1)*exp(theta_01))*S_2_1-(2.0)*(1.0+u_1)^(-1)*exp(theta_01)*x_01+(1.0+u_1)^(-1)*u_1*exp(theta_01)
+d/dt(S_2_1) = -exp(theta_02)*S_2_1+(1.0+u_1)^(-1)*exp(theta_01)*x_01+S_1_1*(1.0+u_1)^(-1)*exp(theta_01)
+d/dt(S_1_2) = (exp(theta_02)-(1.0+u_1)^(-1)*exp(theta_01))*S_2_2-exp(theta_02)*x_01-S_1_2*(exp(theta_02)+(2.0)*(1.0+u_1)^(-1)*exp(theta_01))+exp(theta_02)*x_02
+d/dt(S_2_2) = -exp(theta_02)*S_2_2-exp(theta_02)*x_02+(1.0+u_1)^(-1)*exp(theta_01)*S_1_2
+
+x_01(0) = 1.0
+x_02(0) = 1.0
+S_1_1(0) = 0.0
+S_2_1(0) = 0.0
+S_1_2(0) = 0.0
+S_2_2(0) = 0.0
+********** MODEL PARAMETERS
+theta_01 = 0.0
+theta_02 = 0.0
+u_1 = 0.0
+********** MODEL VARIABLES
+
+********** MODEL REACTIONS
+
+********** MODEL FUNCTIONS
+
+********** MODEL EVENTS
+
+********** MODEL MATLAB FUNCTIONS
+
