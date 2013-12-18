@@ -1,0 +1,81 @@
+********** MODEL NAME
+SBMma_for_HMC
+********** MODEL NOTES
+exponential parameters
+********** MODEL STATES
+d/dt(x_01) = flux_03-flux_02-flux_01
+d/dt(x_02) = flux_02-flux_04+flux_01
+d/dt(x_03) = flux_05-flux_06
+
+d/dt(S_1_1) = -S_2_1*rho_03-rho_01*x_01-(rho_01+u_1*rho_02+rho_03)*S_1_1
+d/dt(S_2_1) = rho_01*x_01-rho_04*S_2_1+(rho_01+u_1*rho_02)*S_1_1
+d/dt(S_3_1) = -(rho_05*x_02+rho_06)*S_3_1-S_2_1*(-10.0+x_03)*rho_05
+d/dt(S_1_2) = -S_1_2*(rho_01+u_1*rho_02+rho_03)-u_1*rho_02*x_01-rho_03*S_2_2
+d/dt(S_2_2) = S_1_2*(rho_01+u_1*rho_02)+u_1*rho_02*x_01-rho_04*S_2_2
+d/dt(S_3_2) = -(-10.0+x_03)*rho_05*S_2_2-S_3_2*(rho_05*x_02+rho_06)
+d/dt(S_1_3) = -S_2_3*rho_03-(-10.0+x_02+x_01)*rho_03-(rho_01+u_1*rho_02+rho_03)*S_1_3
+d/dt(S_2_3) = (rho_01+u_1*rho_02)*S_1_3-rho_04*S_2_3
+d/dt(S_3_3) = -(-10.0+x_03)*rho_05*S_2_3-S_3_3*(rho_05*x_02+rho_06)
+d/dt(S_1_4) = -S_2_4*rho_03-(rho_01+u_1*rho_02+rho_03)*S_1_4
+d/dt(S_2_4) = -rho_04*S_2_4-rho_04*x_02+S_1_4*(rho_01+u_1*rho_02)
+d/dt(S_3_4) = -S_2_4*(-10.0+x_03)*rho_05-(rho_05*x_02+rho_06)*S_3_4
+d/dt(S_1_5) = -S_2_5*rho_03-(rho_01+u_1*rho_02+rho_03)*S_1_5
+d/dt(S_2_5) = -rho_04*S_2_5+(rho_01+u_1*rho_02)*S_1_5
+d/dt(S_3_5) = -(-10.0+x_03)*rho_05*x_02-(-10.0+x_03)*rho_05*S_2_5-S_3_5*(rho_05*x_02+rho_06)
+d/dt(S_1_6) = -(rho_01+u_1*rho_02+rho_03)*S_1_6-S_2_6*rho_03
+d/dt(S_2_6) = -rho_04*S_2_6+(rho_01+u_1*rho_02)*S_1_6
+d/dt(S_3_6) = -(-10.0+x_03)*rho_05*S_2_6-x_03*rho_06-S_3_6*(rho_05*x_02+rho_06)
+
+x_01(0) = 10
+x_02(0) = 0
+x_03(0) = 0
+S_1_1(0) = 0.0
+S_2_1(0) = 0.0
+S_3_1(0) = 0.0
+S_1_2(0) = 0.0
+S_2_2(0) = 0.0
+S_3_2(0) = 0.0
+S_1_3(0) = 0.0
+S_2_3(0) = 0.0
+S_3_3(0) = 0.0
+S_1_4(0) = 0.0
+S_2_4(0) = 0.0
+S_3_4(0) = 0.0
+S_1_5(0) = 0.0
+S_2_5(0) = 0.0
+S_3_5(0) = 0.0
+S_1_6(0) = 0.0
+S_2_6(0) = 0.0
+S_3_6(0) = 0.0
+
+
+********** MODEL PARAMETERS
+theta_01 = 0.0
+theta_02 = 0.0
+theta_03 = 0.0
+theta_04 = 0.0
+theta_05 = 0.0
+theta_06 = 0.0
+u_1 = 0.0
+********** MODEL VARIABLES
+
+rho_01 = exp(theta_01)
+rho_02 = exp(theta_02)
+rho_03 = exp(theta_03)
+rho_04 = exp(theta_04)
+rho_05 = exp(theta_05)
+rho_06 = exp(theta_06)
+********** MODEL REACTIONS
+
+flux_01=rho_01*x_01
+flux_02=u_1*rho_02*x_01
+flux_03=-(-10.0+x_02+x_01)*rho_03
+flux_04=rho_04*x_02
+flux_05=-(-10.0+x_03)*rho_05*x_02
+flux_06=x_03*rho_06
+********** MODEL FUNCTIONS
+
+********** MODEL EVENTS
+
+********** MODEL MATLAB FUNCTIONS
+
