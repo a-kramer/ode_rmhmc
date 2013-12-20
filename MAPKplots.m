@@ -1,6 +1,6 @@
 addpath(genpath('.'))
-files={'Results/ODE_RMHMC_SBodeMAPK_1_1_9DPS_735532_2  21  29_4538.mat';
-       'Results/ODE_RMHMC_expMAPK_1_1_9DPS_735531_19  36  31_2742.mat';       
+files={'Results/ODE_RMHMC_SBodeMAPK_1_1_9DPS_735532_2_21_29_4538.mat';
+       'Results/ODE_RMHMC_expMAPK_1_1_9DPS_735531_19_36_31_2742.mat';       
        'Results/NRsensRefHMC_NRrefHMC_MAPK_1_1_Obs9_LFsteps_10_FPsteps_10_date_19-Nov-2013_time_16_5.mat'};
 
 

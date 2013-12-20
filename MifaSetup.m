@@ -28,6 +28,7 @@ Options.StartingParameters        = [-2.3152   -3.1816  -6.0268  -21.1434    8.5
 
 Options.NumOfLeapFrogSteps = 20;
 Options.StepSize           = 2e-2; %1.8e-2
+%Options.StepSize           = 1.8e-2; % for the last row in Table 1
 Options.NumOfFixPointSteps = 20;
 
 
@@ -37,7 +38,7 @@ Options.NumOfFixPointSteps = 20;
 
 mu=Options.StartingParameters;
 sigma=4*ones(1,Options.NumOfParameters);
-%sigma([1,2,4,7,8,10,12,14])=0.01*ones(1,8);
+sigma([1,2,4,7,8,10,12,14])=0.01*ones(1,8);
 for i=1:Options.NumOfParameters
  Options.PriorInfo.Type{i}       = 'Normal';
  Options.PriorInfo.Para(i,:)     = [mu(i),sigma(i)];
