@@ -1,7 +1,7 @@
 RMHMC for steady state ODE models
 =================================
 
-this collection of matlab and octave scripts was used to perform
+This collection of matlab and octave scripts was used to perform
 simulations for the publication «Hamiltonian Monte Carlo Methods for
 Efficient Parameter Estimation in Steady State Dynamical Systems».
 You should read the publication first. A link will be provided as soon
@@ -17,8 +17,11 @@ The reference implementations of RMHMC, HMC and SMMALA require the
 matlab toolbox [SBPOP](http://www.sbtoolbox2.org/main.php) to be
 installed.
 
+The steady state adapted algorithms do not integrate the model and do
+not require this package.
+
 The model files for the steady state adapted algorithms (NR prefix)
-have been build using octave forge's [symbolic package](http://octave.sourceforge.net/symbolic/). 
+have been built using octave forge's [symbolic package](http://octave.sourceforge.net/symbolic/). 
 However, the symbolic calculations required can be done using any other
 software capable of symbolic calculations.
 
@@ -65,4 +68,5 @@ Files
 =====
 
 All files not mentioned here have been used to process the results and
-need not be investigated but are provided for the curious.
+need not necessarily be investigated but are provided nevertheless for
+the curious.
