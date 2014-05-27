@@ -1,6 +1,6 @@
 %Options.SaveFullEvery         = 10000;
 Options.MaxIterations         = 1000;
-Options.NumOfPosteriorSamples = 10000;
+Options.NumOfPosteriorSamples = 80000; % 10000 %forRMHMC
 
 
 %%% Set starting values %%%
@@ -20,7 +20,7 @@ Options.StartingParameters        = [ 0.3460    0.4023    5.1190    2.3106   -9.
 %%% RMHMC Setup %%%
 
 Options.NumOfLeapFrogSteps = 28;
-Options.StepSize           = 2.3e-2;
+Options.StepSize           = 6e-1; %2.3e-2;
 Options.NumOfFixPointSteps = 20;
 
 
