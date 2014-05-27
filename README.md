@@ -10,6 +10,8 @@ as the manuscriupt becomes available.
 We will improve the documentation and hope that this project will
 mature to an implementation that can be used more easily by everyone.
 
+This project has a [github page](http://a-kramer.github.io/ode_rmhmc)
+
 How to replicate the results
 ============================
 
