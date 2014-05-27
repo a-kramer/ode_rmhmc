@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ODE NR RMHMC : Sources for the MATLAB implementation of RMHMC using Newton-Raphson steady state finding and linear equation sensitivity analysis" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ODE NR RMHMC</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/a-kramer/ode_rmhmc">View on GitHub</a>
+
+          <h1 id="project_title">ODE NR RMHMC</h1>
+          <h2 id="project_tagline">Sources for the MATLAB implementation of RMHMC using Newton-Raphson steady state finding and linear equation sensitivity analysis</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/a-kramer/ode_rmhmc/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/a-kramer/ode_rmhmc/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="rmhmc-for-steady-state-ode-models" class="anchor" href="#rmhmc-for-steady-state-ode-models"><span class="octicon octicon-link"></span></a>RMHMC for steady state ODE models</h1>
+
+<p>This collection of matlab and octave scripts was used to perform
+simulations for the publication «Hamiltonian Monte Carlo Methods for
+Efficient Parameter Estimation in Steady State Dynamical Systems».
+You should read the publication first. A link will be provided as soon
+as the manuscriupt becomes available.</p>
+
+<p>We will improve the documentation and hope that this project will
+mature to an implementation that can be used more easily by everyone.</p>
+
+<h1>
+<a name="how-to-replicate-the-results" class="anchor" href="#how-to-replicate-the-results"><span class="octicon octicon-link"></span></a>How to replicate the results</h1>
+
+<p>The reference implementations of RMHMC, HMC and SMMALA require the
+matlab toolbox <a href="http://www.sbtoolbox2.org/main.php">SBPOP</a> to be
+installed.</p>
+
+<p>The steady state adapted algorithms do not integrate the model and do
+not require this package.</p>
+
+<p>The model files for the steady state adapted algorithms (NR prefix)
+have been built using octave forge's <a href="http://octave.sourceforge.net/symbolic/">symbolic package</a>. 
+However, the symbolic calculations required can be done using any other
+software capable of symbolic calculations.</p>
+
+<p>The models are named <em>MAPK</em>, <em>Mma</em> and <em>Mifa</em>. You will find setup files for
+each of them (called <code>MAPKsetup.m</code>, <code>MmaSetup.m</code> and
+<code>MifaSetup.m</code>). These files set variables that are not algorithm
+specific. But some of the values may impact an algorithm's performance
+(such as the step size).</p>
+
+<p>If your SBPOP package is installed correctly you should be able to run
+the procedures called <code>Run_«model»_using_«algorithm».m</code>.</p>
+
+<p>The only files you need to investigate are the setup files. They
+contain prior setups, step sizes and sample sizes.</p>
+
+<h1>
+<a name="inspect-the-simulation-results" class="anchor" href="#inspect-the-simulation-results"><span class="octicon octicon-link"></span></a>Inspect the simulation results</h1>
+
+<p>You have acces to the values of all defined options as used by us
+during sampling by loading the <code>.mat</code> files in the <code>Results</code>
+folders and checking the options variable.</p>
+
+<h1>
+<a name="how-to-set-up-your-own-example" class="anchor" href="#how-to-set-up-your-own-example"><span class="octicon octicon-link"></span></a>How to set up your own example</h1>
+
+<p>This is not very convenient yet, since a lot of the model setup is not
+automated. If you wish to try it out anyway, then inspect the
+<code>symmodel</code> octave files, e.g. <code>Models/Insulin/Mma_symmodel.m</code>
+and adjust them to your needs. If you wish you can also inspect the
+model files themselves, e.g. <code>make_Mma_model.m</code> and produce a
+similar file for your model using Maple, Maxima, Mathematica or any
+other symbolic software package.</p>
+
+<p>If you really want to compare performance, you will have to build an
+SBToolBox2 model file as well. But, keep in mind, that the proposed
+method (using Newton Raphson and steady state sensitivity analysis)
+should be strictly superior to the reference implementation in all
+cases (the drawback beeing the restriction to steady states). So,
+there is no need to compare RMHMC to the steady state adapted version
+described in the publication. You will probably want to compare this
+method to the one you have been using in the past.</p>
+
+<h1>
+<a name="files" class="anchor" href="#files"><span class="octicon octicon-link"></span></a>Files</h1>
+
+<p>All files not mentioned here have been used to process the results and
+need not necessarily be investigated but are provided nevertheless for
+the curious.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ODE NR RMHMC maintained by <a href="https://github.com/a-kramer">a-kramer</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
